@@ -1,0 +1,50 @@
+KNOWLEDGE BASE & DESCRIPTIVE CONTEXT: TEXTILFIT AUTOMATION SYSTEM
+Versión: 44.4 (Estado Estable de Catálogo)
+Propiedad: Director de Proyecto TextilFit
+
+Este documento contiene el registro acumulado de ingeniería paramétrica, convenciones de nomenclatura, leyes topológicas y soluciones de depuración desarrolladas para el sistema de automatización de moldería en Seamly2D y SeamlyMe. El Agente debe asimilar este contexto como verdades absolutas antes de proceder a cualquier tarea de codificación.
+
+1. CORE ARCHITECTURE & PREVENTIVE SEQUENCING (XML TOPOLOGY)
+El motor matemático y el validador XML de Seamly2D operan bajo principios físicos y computacionales muy estrictos. Para evitar fallas críticas de lectura, se deben cumplir las siguientes leyes de programación:
+
+Regla del Carácter Cero: La declaración obligatoria <?xml version="1.0" encoding="UTF-8"?> debe ubicarse sin excepción en la Línea 1, Columna 1. No se admiten saltos de línea, sangrías ni espacios en blanco previos. Un solo carácter invisible antes de la etiqueta bloqueará el parser XML con un error estructural.
+
+Ley de Secuencia Absoluta (Fantasmas Topológicos): Seamly2D procesa el bloque de <calculation> de manera lineal y secuencial descendente. No es posible invocar una medición o una longitud de línea (ej. Line_F_Centro_Tiro_F_Costado_Tiro) en la fórmula de un punto si el elemento línea correspondiente no ha sido declarado explícitamente en una línea de código XML previa.
+
+Inyección de Cintas Métricas Invisibles: Cuando un punto necesite heredar el ancho de un segmento que aún no es visible en el diseño, se deben inyectar primero las líneas de referencia usando el atributo lineType="none" (cintas métricas invisibles). Esto permite realizar cálculos geométricos complejos avanzados sin saturar visualmente el lienzo del borrador.
+
+2. STANDARD VARIABLE NOMENCLATURA (ANATOMICAL PREFIX SYSTEM)
+Queda terminantemente prohibido proponer o codificar agrupaciones de variables basadas en rangos o bloques numéricos. El sistema de bases de datos de TextilFit exige una clasificación anatómica estricta basada exclusivamente en prefijos fijos con el símbolo @.
+
+@G_ (Medidas Generales): Alturas macro, largos totales de prendas y constantes físicas de la tela. Ejemplos obligatorios: @G_ALTO_CADERA, @G_LARGO_PRENDA, @G_ESTATURA.
+
+@S_ (Medidas Superiores): Perímetros, anchos y largos correspondientes al torso, busto, hombros, sisa, cuello y extremidades superiores. Ejemplos obligatorios: @S_CONT_BUSTO, @S_ANCHO_ESPALDA, @S_ANCHO_PECHO.
+
+@I_ (Medidas Inferiores): Perímetros, alturas y largos aplicados de la cintura hacia abajo (antropometría de pelvis y piernas). Ejemplos obligatorios: @I_ALTO_TIRO, @I_ALTO_RODILLA, @I_CONT_RODILLA.
+
+@N_ (Variables Complementarias): Constantes matemáticas auxiliares, ángulos específicos de soporte o factores de escala no corporales.
+
+@D_ (Parámetros de Diseño y Confección): Holguras añadidas por el diseñador, anchos de pretina, bocas y profundidades de bolsillo, márgenes de ruedo o dobladillo, y componentes de avíos (cierres, botones). Ejemplos obligatorios: @D_ANCHO_PRETINA, @D_BOLS_ANCHO, @D_RUEDO_PRENDA.
+
+Nota de Interfaz de Usuario: Para la correcta manipulación o carga manual de estas variables en las fórmulas dentro de Seamly2D, el operador debe ubicar y presionar el minúsculo icono azul en forma de flechita indicando hacia arriba en el panel de propiedades.
+
+3. MOTOR ANATÓMICO DE SISAS (M.A.S.)
+El desarrollo de prendas superiores con mangas requiere la aplicación automática del Motor M.A.S. para asegurar ergonomía y perfecta usabilidad de la prenda:
+
+Diferenciación de Cavidad Frontal: La curva de sisa delantera debe ser invariablemente más profunda y cóncava que la trasera. Esto se logra parametrizando el tope de restricción horizontal con la variable @S_ANCHO_PECHO en el delantero y @S_ANCHO_ESPALDA en el trasero.
+
+Puntos de Entrada y Salida a Plomo: Al programar las splines (<spline>) que delimitan la axila y el hombro, las tangentes de los extremos deben configurarse de manera ortogonal estricta (ángulos fijos de 90° o 270° según el cuadrante). Esto anula la formación de "picos" angulares o estrías de tensión en las uniones de las costuras laterales, garantizando un acople tubular limpio.
+
+4. BIBLIOTECA MODULAR EN LEGO
+La escalabilidad del catálogo de TextilFit depende de la independencia total de las piezas. Los archivos maestros .val de las prendas base (cuerpos) no contienen el dibujo de las mangas o cuellos de manera integrada.
+
+Independencia de Archivos: Las mangas, capuchas y cuellos se desarrollan en archivos .val aislados e independientes.
+
+El Puente de Datos Dinámico: El encaje perfecto entre una manga de la biblioteca y un cuerpo del catálogo se realiza utilizando el archivo de medidas individuales como pasarela de comunicación. El patrón del cuerpo mide dinámicamente sus propias curvas finales de sisa y las guarda de forma automática en variables estáticas puente dentro del archivo de medidas corporales (por ejemplo: @S_SISA_DELANTERA y @S_SISA_TRASERA).
+
+Copa Autoajustable: El archivo modular de la manga lee dichas variables puente y calcula la altura y recorrido de su propia copa matemática de forma autónoma. Esto permite adosar cualquier tipo de manga a cualquier tipo de cuerpo, logrando un embebido exacto y parametrizado.
+
+5. REGLAS DE EXTENSIÓN Y FORMATO INDIVIDUAL (.VIT VS .SMIS)
+Archivos Personales (.vit): Utilizados para la confección sobre medida de clientes individuales específicos (ej. Mariangel). Operan obligatoriamente bajo la etiqueta raíz <body-parameters>. El uso de tablas de tallas industriales en este formato causará un fallo de esquema.
+
+Archivos Multitalla (.smis): Reservados exclusivamente para el escalado industrial y tablas de medidas por rangos comerciales (Catálogo estándar). Operan bajo la etiqueta raíz <body-measurements>. No se deben mezclar los entornos de validación de ambas extensiones.

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <version>0.7.3</version>
+    <unit>cm</unit>
+    <description>Modulo Pantalon Maestro TextilFit - CALCADO INDUSTRIAL (SECUENCIA EXACTA)</description>
+    <notes>Fase 43: Expansión Anatómica de Gavilán. Se eliminó la fórmula restrictiva del 15% y se implementó la regla de sastrería clásica [(Semi-cadera/10) + 1] garantizando el centrado dinámico del Eje de Aplomo.</notes>
+    <measurements>Maestro_Variables_IA.smis</measurements>
+    <variables/>
+    <draftBlock name="Pantalon_Base">
+        <calculation>
+            <point id="1" mx="0.1" my="0.1" name="Aplomo_Cintura" showPointName="true" type="single" x="0" y="0"/>
+            <point angle="270" basePoint="1" id="2" length="@G_ALTO_CADERA" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="Aplomo_Cadera" showPointName="true" type="endLine"/>
+            <point angle="270" basePoint="1" id="3" length="@I_ALTO_TIRO" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="Aplomo_Tiro" showPointName="true" type="endLine"/>
+            <point angle="270" basePoint="1" id="4" length="@I_ALTO_RODILLA" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="Aplomo_Rodilla" showPointName="true" type="endLine"/>
+            <point angle="270" basePoint="1" id="5" length="@G_LARGO_PRENDA" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="Aplomo_Bota" showPointName="true" type="endLine"/>
+            <line firstPoint="1" id="10" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="5"/>
+            
+            <point angle="180" basePoint="3" id="11" length="(((@G_CONT_CADERA_BAJA / 4) - 1) + ((@G_CONT_CADERA_BAJA / 20) + 1)) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Gavilan" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="11" id="12" length="(@G_CONT_CADERA_BAJA / 20) + 1" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Centro_Tiro" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="3" id="13" length="(((@G_CONT_CADERA_BAJA / 4) - 1) + ((@G_CONT_CADERA_BAJA / 20) + 1)) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Costado_Tiro" showPointName="true" type="endLine"/>
+            
+            <point angle="90" basePoint="12" id="14" length="@I_ALTO_TIRO" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Centro_Cintura_Alta" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="14" id="15" length="1" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Guia_Cintura_C" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="15" id="16" length="(@G_CONT_CINTURA / 4) + 3" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Guia_Cintura_Cost" showPointName="false" type="endLine"/>
+            <line firstPoint="12" id="28" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="15"/>
+            <line firstPoint="13" id="204" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="16"/>
+            <point firstPoint="15" id="200" length="@D_ANCHO_PRETINA" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Cintura_Real_C" secondPoint="12" showPointName="true" type="alongLine"/>
+            <point firstPoint="16" id="201" length="@D_ANCHO_PRETINA" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Cintura_Real_Cost" secondPoint="13" showPointName="true" type="alongLine"/>
+            <point angle="180" basePoint="4" id="17" length="((@I_CONT_RODILLA / 2) - 1) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Rodilla_Ent" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="4" id="18" length="((@I_CONT_RODILLA / 2) - 1) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Rodilla_Cost" showPointName="true" type="endLine"/>
+            <point angle="180" basePoint="5" id="19" length="((@I_CONT_TOBILLO / 2) - 1) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Bota_Ent" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="5" id="20" length="((@I_CONT_TOBILLO / 2) - 1) / 2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Bota_Cost" showPointName="true" type="endLine"/>
+                    <node idObject="1088" reverse="0" type="NodeSpline"/>
+                </nodes>
+                <iPaths>
+                    <record path="1110"/>
+                    <record path="1113"/>
+                    <record path="1116"/>
+                    <record path="1119"/>
+                    <record path="1122"/>
+                </iPaths>
+            </piece>
+        </pieces>
+        <groups/>
+    </draftBlock>
+</pattern>
