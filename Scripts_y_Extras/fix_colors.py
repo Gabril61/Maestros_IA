@@ -1,21 +1,11 @@
-import xml.etree.ElementTree as ET
+file_path = r'C:\Users\Ricx18\Desktop\Maestros_IA\Pantalon_Jogger_Clinico_Maestro.val'
+with open(file_path, 'r', encoding='utf-8') as f:
+    text = f.read()
 
-file_path = r'c:\Users\Ricx18\Desktop\Maestros_IA\Scrub_Top_Medico_Dama_Maestro.val'
-tree = ET.parse(file_path)
-root = tree.getroot()
+text = text.replace('lineColor="red"', 'lineColor="black"')
+text = text.replace('lineColor="green"', 'lineColor="black"')
+text = text.replace('lineColor="blue"', 'lineColor="black"')
 
-changed = False
-for tag in ['line', 'spline']:
-    for el in root.findall(f'.//{tag}'):
-        if el.get('color') == 'red':
-            el.set('color', 'black')
-            changed = True
-        if el.get('lineColor') == 'red':
-            el.set('lineColor', 'black')
-            changed = True
-
-if changed:
-    tree.write(file_path, encoding='UTF-8', xml_declaration=True)
-    print("Fixed colors successfully.")
-else:
-    print("No red colors found.")
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(text)
+print('Colors fixed')
