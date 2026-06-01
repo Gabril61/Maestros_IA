@@ -251,25 +251,6 @@
             <point angle="90" basePoint="50001" id="50142" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A1" p1Line="302" p2Line="300" showPointName="true" type="lineIntersectAxis"/>
         </calculation>
         <modeling>
-            <point id="1034" idObject="501" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1035" idObject="502" inUse="false" mx="0.1" my="0.1" showPointName="false" type="modeling"/>
-            <point id="1036" idObject="301" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1037" idObject="24" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <spline id="1038" idObject="25" inUse="false" type="modelingSpline"/>
-            <point id="1039" idObject="28" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <spline id="1040" idObject="32" inUse="false" type="modelingSpline"/>
-            <spline id="1041" idObject="34" inUse="false" type="modelingSpline"/>
-            <spline id="1042" idObject="207" inUse="false" type="modelingSpline"/>
-            <point id="1043" idObject="203" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1045" idObject="303" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1046" idObject="502" inUse="false" mx="0.1" my="0.1" showPointName="false" type="modeling"/>
-            <point id="1047" idObject="501" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1048" idObject="204" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="1049" idObject="14" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <spline id="1050" idObject="209" inUse="false" type="modelingSpline"/>
-            <spline id="1051" idObject="33" inUse="false" type="modelingSpline"/>
-            <point id="1052" idObject="200" inUse="false" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <spline id="1053" idObject="307" inUse="false" type="modelingSpline"/>
             <point id="9107" idObject="2004" inUse="true" mx="-0.01" my="0.21" showPointName="true" type="modeling"/>
             <point id="9108" idObject="2027" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
             <point id="9109" idObject="2035" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
@@ -303,7 +284,7 @@
             <spline id="50128" idObject="207" inUse="true" type="modelingSpline"/>
             <point id="50129" idObject="203" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
             <point id="50130" idObject="501" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
-            <point id="50132" idObject="50102" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
+            <point id="50132" idObject="50102" inUse="true" mx="-13.9055" my="-5.1709" showPointName="true" type="modeling"/>
             <point id="50133" idObject="50005" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
             <point id="50134" idObject="501" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
             <point id="50135" idObject="204" inUse="true" mx="0.1" my="0.1" showPointName="true" type="modeling"/>
@@ -314,7 +295,7 @@
             <spline id="50140" idObject="307" inUse="true" type="modelingSpline"/>
         </modeling>
         <pieces>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="9117" inLayout="true" locked="false" mx="-62.223" my="14.5142" name="Manga" seamAllowance="true" united="false" version="2" width="1">
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="9117" inLayout="true" locked="false" mx="-151.828" my="42.3747" name="Manga" seamAllowance="true" united="false" version="2" width="1">
                 <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="M" mx="5912.05" my="491.339" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
                 <patternInfo fontSize="0" height="2" mx="5334.53" my="491.339" rotation="0" visible="true" width="3"/>
                 <grainline arrowLength="1.27" arrows="0" length="2.667" mx="5679.98" my="579.534" rotation="90" visible="true"/>
