@@ -31,19 +31,26 @@
             <point angle="270" basePoint="104" id="105" length="4" mx="-10.8046" my="-0.165984" name="F_Caida_Hombro" showPointName="false" type="endLine"/>
             <line firstPoint="101" id="106" lineColor="blue" lineType="solidLine" lineWeight="0.35" secondPoint="105"/>
             <point angle="0" basePoint="109" id="110" length="(@S_ANCHOESP/2) - 1.5" mx="-8.7884" my="0.442678" name="F_Ancho_Pecho" showPointName="false" type="endLine"/>
-            <point angle="0" basePoint="107" id="111" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" mx="-9.34635" my="1.29228" name="F_Costado_Sisa" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="107" id="111" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) + 2" mx="-9.34635" my="1.29228" name="F_Costado_Sisa" showPointName="false" type="endLine"/>
             <line firstPoint="105" id="112" secondPoint="110"/>
             <line firstPoint="110" id="113" secondPoint="111"/>
+            <point angle="AngleLine_F_Ancho_Pecho_F_Costado_Sisa" basePoint="110" id="8001" length="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Sisa_Pinza_Sup" showPointName="true" type="endLine"/>
+            <point angle="AngleLine_F_Ancho_Pecho_F_Costado_Sisa" basePoint="8001" id="8002" length="2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="F_Sisa_Pinza_Inf" showPointName="true" type="endLine"/>
+            <line firstPoint="110" id="8007" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="8001"/>
+            <line firstPoint="8002" id="8008" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="111"/>
             <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="blue" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" lineWeight="0.35" penStyle="solidLine" point1="105" point4="110" type="simpleInteractive"/>
-            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="blue" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" lineWeight="0.35" penStyle="solidLine" point1="110" point4="111" type="simpleInteractive"/>
+            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="AngleLine_F_Ancho_Pecho_F_Costado_Sisa + 180" color="blue" id="115" length1="Line_F_Ancho_Pecho_F_Sisa_Pinza_Sup * 0.35" length2="Line_F_Ancho_Pecho_F_Sisa_Pinza_Sup * 0.35" lineWeight="0.35" penStyle="solidLine" point1="110" point4="8001" type="simpleInteractive"/>
+            <spline angle1="AngleLine_F_Ancho_Pecho_F_Costado_Sisa" angle2="180" color="blue" id="8015" length1="Line_F_Sisa_Pinza_Inf_F_Costado_Sisa * 0.4" length2="Line_F_Sisa_Pinza_Inf_F_Costado_Sisa * 0.3" lineWeight="0.35" penStyle="solidLine" point1="8002" point4="111" type="simpleInteractive"/>
             <point angle="0" basePoint="116" id="119" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 0.5" mx="-10.2213" my="-2.59643" name="F_Costado_Cintura" showPointName="false" type="endLine"/>
-            <point angle="0" basePoint="118" id="121" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" mx="-10.4157" my="-6.48514" name="F_Costado_Ruedo" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="118" id="121" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4 + 2" mx="-10.4157" my="-6.48514" name="F_Costado_Ruedo" showPointName="false" type="endLine"/>
             <line firstPoint="111" id="120" secondPoint="119"/>
             <line firstPoint="119" id="122" secondPoint="121"/>
             <spline angle1="270" angle2="90" color="blue" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" lineWeight="0.35" penStyle="solidLine" point1="111" point4="119" type="simpleInteractive"/>
             <spline angle1="270" angle2="90" color="blue" id="131" length1="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" length2="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" lineWeight="0.35" penStyle="solidLine" point1="119" point4="121" type="simpleInteractive"/>
             <line firstPoint="109" id="133" secondPoint="118"/>
             <point angle="0" basePoint="159" id="160" length="(@S_CONTBUSTO / 10)" mx="2.02814" my="-0.36042" name="F_Centro_Busto" showPointName="false" type="endLine"/>
+            <line firstPoint="160" id="8003" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="8001"/>
+            <line firstPoint="160" id="8004" lineColor="black" lineType="none" lineWeight="0.35" secondPoint="8002"/>
             <point angle="0" basePoint="116" id="161" length="(@S_CONTBUSTO / 10)" mx="-3.70772" my="2.55612" name="F_Pinza_Centro" showPointName="false" type="endLine"/>
             <point angle="180" basePoint="161" id="162" length="1" mx="-6.91591" my="-2.30478" name="F_Pinza_Izq" showPointName="false" type="endLine"/>
             <point angle="0" basePoint="161" id="163" length="1" mx="2.61144" my="1.29228" name="F_Pinza_Der" showPointName="false" type="endLine"/>
@@ -57,7 +64,7 @@
             <line firstPoint="184" id="171" lineColor="blue" lineType="solidLine" lineWeight="0.35" secondPoint="162"/>
             <line firstPoint="184" id="173" lineColor="blue" lineType="solidLine" lineWeight="0.35" secondPoint="163"/>
             <line firstPoint="110" id="9001" secondPoint="160"/>
-            <spline angle1="240" angle2="75" color="blue" id="180" length1="Line_F_Ancho_Pecho_F_Centro_Busto * 0.35" length2="Line_F_Ancho_Pecho_F_Centro_Busto * 0.35" lineWeight="0.35" penStyle="solidLine" point1="110" point4="160" type="simpleInteractive"/>
+            <spline angle1="AngleLine_F_Centro_Busto_F_Sisa_Pinza_Sup + 165" angle2="90" color="blue" id="180" length1="Line_F_Centro_Busto_F_Sisa_Pinza_Sup * 0.25" length2="Line_F_Centro_Busto_F_Sisa_Pinza_Sup * 0.25" lineWeight="0.35" penStyle="solidLine" point1="8001" point4="160" type="simpleInteractive"/>
             <point id="200" mx="-5.53864" my="3.01654" name="T_Origen" type="single" x="80" y="0"/>
             <point angle="270" basePoint="200" id="216" length="@S_TALLETRA" mx="-10.3185" my="-8.33228" name="T_Nivel_Cintura" type="endLine"/>
             <point angle="270" basePoint="200" id="218" length="@G_LARGOPRENDA" mx="10.4434" my="-1.34147" name="T_Nivel_Largo" type="endLine"/>
@@ -79,13 +86,13 @@
             <point angle="270" basePoint="200" id="207" length="(@S_ANCHOESP/2) + 4" mx="-7.20756" my="-1.42982" name="T_Nivel_Sisa" type="endLine"/>
             <point angle="270" basePoint="200" id="209" length="((@S_ANCHOESP/2)+4)/2" mx="-7.69365" my="-2.30478" name="T_Nivel_Pecho" type="endLine"/>
             <point angle="180" basePoint="209" id="210" length="(@S_ANCHOESP/2) - 0.5" mx="1.44483" my="1.77837" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" id="211" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" mx="0.904647" my="3.72555" name="T_Costado_Sisa" type="endLine"/>
+            <point angle="180" basePoint="207" id="211" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) + 1.5" mx="0.904647" my="3.72555" name="T_Costado_Sisa" type="endLine"/>
             <line firstPoint="205" id="212" secondPoint="210"/>
             <line firstPoint="210" id="213" secondPoint="211"/>
             <spline angle1="280" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" point1="205" point4="210" type="simpleInteractive"/>
             <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="blue" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" lineWeight="0.35" penStyle="solidLine" point1="210" point4="211" type="simpleInteractive"/>
-            <point angle="180" basePoint="216" id="219" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 0.5" mx="0.95874" my="-3.27696" name="T_Costado_Cintura" type="endLine"/>
-            <point angle="180" basePoint="218" id="221" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" mx="1.05596" my="-2.402" name="T_Costado_Ruedo" type="endLine"/>
+            <point angle="180" basePoint="216" id="219" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 0.5 + 1.5" mx="0.95874" my="-3.27696" name="T_Costado_Cintura" type="endLine"/>
+            <point angle="180" basePoint="218" id="221" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4 + 1.5" mx="1.05596" my="-2.402" name="T_Costado_Ruedo" type="endLine"/>
             <line firstPoint="211" id="220" secondPoint="219"/>
             <line firstPoint="219" id="222" secondPoint="221"/>
             <spline angle1="270" angle2="90" color="blue" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" lineWeight="0.35" penStyle="solidLine" point1="211" point4="219" type="simpleInteractive"/>
@@ -99,7 +106,7 @@
             <line firstPoint="218" id="268" secondPoint="265"/>
             <line firstPoint="266" id="269" secondPoint="221"/>
             <line firstPoint="210" id="9005" secondPoint="261"/>
-            <spline angle1="285" angle2="90" color="black" id="280" length1="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.3" length2="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.3" point1="210" point4="262" type="simpleInteractive"/>
+            <spline angle1="AngleLine_T_Ancho_Espalda_T_Pinza_Centro - 5" angle2="(AngleLine_T_Ancho_Espalda_T_Pinza_Centro + 180) + 5" color="black" id="280" length1="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.2" length2="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.2" point1="210" point4="262" type="simpleInteractive"/>
             <point angle="270" basePoint="116" id="117" length="20" mx="0.764304" my="-2.402" name="F_Nivel_Cadera" showPointName="true" type="endLine"/>
             <point angle="270" basePoint="216" id="217" length="20" mx="-9.92966" my="-1.91591" name="T_Nivel_Cadera" type="endLine"/>
             <point angle="0" basePoint="117" id="181" length="(@S_CONTBUSTO / 10)" mx="0.667086" my="-1.23538" name="F_Pinza_Cadera_Centro" showPointName="false" type="endLine"/>
@@ -116,8 +123,8 @@
             <spline angle1="270" angle2="0" color="blue" id="135" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" lineWeight="0.35" penStyle="solidLine" point1="101" point4="102" type="simpleInteractive"/>
             <line firstPoint="102" id="136" secondPoint="109"/>
             <line firstPoint="109" id="137" secondPoint="101"/>
-            <spline angle1="290" angle2="90" color="blue" id="284" length1="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.3" length2="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.3" lineWeight="0.35" penStyle="solidLine" point1="210" point4="263" type="simpleInteractive"/>
-            <spline angle1="250" angle2="60" color="blue" id="186" length1="Line_F_Ancho_Pecho_F_Centro_Busto * 0.35" length2="Line_F_Ancho_Pecho_F_Centro_Busto * 0.35" lineWeight="0.35" penStyle="solidLine" point1="110" point4="160" type="simpleInteractive"/>
+            <spline angle1="AngleLine_T_Ancho_Espalda_T_Pinza_Centro - 5" angle2="(AngleLine_T_Ancho_Espalda_T_Pinza_Centro + 180) + 5" color="blue" id="284" length1="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.2" length2="Line_T_Ancho_Espalda_T_Pinza_Centro * 0.2" lineWeight="0.35" penStyle="solidLine" point1="210" point4="263" type="simpleInteractive"/>
+            <spline angle1="AngleLine_F_Centro_Busto_F_Sisa_Pinza_Inf + 165" angle2="90" color="blue" id="186" length1="Line_F_Centro_Busto_F_Sisa_Pinza_Inf * 0.25" length2="Line_F_Centro_Busto_F_Sisa_Pinza_Inf * 0.25" lineWeight="0.35" penStyle="solidLine" point1="8002" point4="160" type="simpleInteractive"/>
             <point angle="180" basePoint="102" id="10001" length="1" mx="-8.39953" my="1.09785" name="F_Solapa_Top" showPointName="true" type="endLine"/>
             <point angle="180" basePoint="118" id="10002" length="1" mx="-7.402" my="-6.87402" name="F_Solapa_Bot" showPointName="false" type="endLine"/>
             <line firstPoint="10001" id="10003" lineColor="blue" lineType="solidLine" lineWeight="0.35" secondPoint="10002"/>
@@ -204,6 +211,32 @@
             <point angle="0" basePoint="30007" id="232" length="5" mx="-1.86058" my="-4.24913" name="T_Aletilla_Bot" type="endLine"/>
             <line firstPoint="231" id="244" secondPoint="232"/>
             <line firstPoint="232" id="249" secondPoint="30007"/>
+            <point angle="90" basePoint="160" id="95000" length="2" lineColor="black" lineType="none" name="F_Bolsillo_Alto_C" showPointName="false" type="endLine"/>
+            <point angle="180" basePoint="95000" id="95001" length="((@S_CONTBUSTO / 10) + 2) / 2" lineColor="black" lineType="none" name="F_Bolsillo_Alto_TopIzq" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="95000" id="95002" length="((@S_CONTBUSTO / 10) + 2) / 2" lineColor="black" lineType="none" name="F_Bolsillo_Alto_TopDer" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="95001" id="95003" length="(@S_CONTBUSTO / 10) + 4" lineColor="black" lineType="none" name="F_Bolsillo_Alto_BotIzq" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="95002" id="95004" length="(@S_CONTBUSTO / 10) + 4" lineColor="black" lineType="none" name="F_Bolsillo_Alto_BotDer" showPointName="false" type="endLine"/>
+            <line firstPoint="95001" id="95014" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95002"/>
+            <line firstPoint="95002" id="95015" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95004"/>
+            <line firstPoint="95004" id="95016" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95003"/>
+            <line firstPoint="95003" id="95017" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95001"/>
+            <point angle="90" basePoint="181" id="95005" length="3" lineColor="black" lineType="none" name="F_Bolsillo_Bajo_C" showPointName="false" type="endLine"/>
+            <point angle="180" basePoint="95005" id="95006" length="((@S_CONTBUSTO / 10) + 8) / 2" lineColor="black" lineType="none" name="F_Bolsillo_Bajo_TopIzq" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="95005" id="95007" length="((@S_CONTBUSTO / 10) + 8) / 2" lineColor="black" lineType="none" name="F_Bolsillo_Bajo_TopDer" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="95006" id="95008" length="(@S_CONTBUSTO / 10) + 10" lineColor="black" lineType="none" name="F_Bolsillo_Bajo_BotIzq" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="95007" id="95009" length="(@S_CONTBUSTO / 10) + 10" lineColor="black" lineType="none" name="F_Bolsillo_Bajo_BotDer" showPointName="false" type="endLine"/>
+            <line firstPoint="95006" id="95018" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95007"/>
+            <line firstPoint="95007" id="95019" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95009"/>
+            <line firstPoint="95009" id="95020" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95008"/>
+            <line firstPoint="95008" id="95021" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="95006"/>
+            <point angle="270" basePoint="119" id="96001" length="7" lineColor="black" lineType="none" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="119" id="96002" length="7 + (@S_CONTBUSTO / 10) + 6" lineColor="black" lineType="none" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="219" id="96003" length="7" lineColor="black" lineType="none" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="219" id="96004" length="7 + (@S_CONTBUSTO / 10) + 6" lineColor="black" lineType="none" showPointName="false" type="endLine"/>
+            <point angle="180" basePoint="96001" curve="131" id="95010" lineColor="black" lineType="none" name="F_Pasamano_Sup" showPointName="true" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="96002" curve="131" id="95011" lineColor="black" lineType="none" name="F_Pasamano_Inf" showPointName="true" type="curveIntersectAxis"/>
+            <point angle="0" basePoint="96003" curve="242" id="95012" lineColor="black" lineType="none" name="T_Pasamano_Sup" showPointName="true" type="curveIntersectAxis"/>
+            <point angle="0" basePoint="96004" curve="242" id="95013" lineColor="black" lineType="none" name="T_Pasamano_Inf" showPointName="true" type="curveIntersectAxis"/>
         </calculation>
         <modeling>
             <point id="30050" idObject="166" inUse="true" mx="3.38919" my="-4.15192" showPointName="false" type="modeling"/>
@@ -314,14 +347,6 @@
                 <nodes>
                     <node idObject="30147" type="NodePoint"/>
                     <node idObject="30148" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30150" idObject="221" inUse="false" mx="1.05596" my="-2.402" showPointName="true" type="modeling"/>
-            <point id="30151" idObject="266" inUse="false" mx="-11.2907" my="-6.58236" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30152" inUse="false" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="L_Largo_1" type="2">
-                <nodes>
-                    <node idObject="30150" type="NodePoint"/>
-                    <node idObject="30151" type="NodePoint"/>
                 </nodes>
             </path>
             <point id="30153" idObject="221" inUse="true" mx="1.05596" my="-2.402" showPointName="true" type="modeling"/>

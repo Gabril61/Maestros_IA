@@ -1,6962 +1,6962 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<pattern>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <version>0.7.3</version>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <unit>cm</unit>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <description>Patrón Maestro - Scrub Top Médico Caballero</description>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <notes>Conjunto Médico: Scrub Top para caballero. Cuello en V cruzado clásico, aberturas laterales y bolsillos inferiores.</notes>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <measurements />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <variables>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Contorno de cuello" formula="36.5" name="@S_CONTCUELLO" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Ancho de espalda" formula="36" name="@S_ANCHOESP" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Talle delantero" formula="44" name="@S_TALLEDEL" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Talle trasero" formula="42" name="@S_TALLETRA" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Contorno de busto" formula="92" name="@S_CONTBUSTO" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Contorno de cadera baja" formula="98" name="@I_CONTCADBA" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Largo total de la bata" formula="100" name="@G_LARGOPRENDA" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Contorno del brazo" formula="28" name="@S_CONTBRAZO" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Largo de manga" formula="60" name="@G_LARGOMANGA" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <variable description="Holgura industrial bata" formula="8" name="@M_HOLGURA_BATA" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </variables>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <draftBlock name="Bata_Elegante">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <calculation>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="100" mx="0.1" my="0.1" name="F_Origen" type="single" x="0" y="0" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="100" id="102" length="(@S_CONTCUELLO/6) + 2" name="F_Escote_Alto" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="100" id="107" length="(@S_ANCHOESP/2) + 4" name="F_Nivel_Sisa" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="100" id="109" length="((@S_ANCHOESP/2)+4)/2" name="F_Nivel_Pecho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="100" id="116" length="@S_TALLEDEL" name="F_Nivel_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="100" id="118" length="@S_TALLEDEL + 25" name="F_Nivel_Largo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="100" id="101" length="(@S_CONTCUELLO/6) + 1" name="F_Escote_Ancho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="102" id="152" length="1" name="F_Cruce_Pecho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="116" id="150" length="1" name="F_Cruce_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="118" id="151" length="1" name="F_Cruce_Ruedo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="100" id="104" length="(@S_ANCHOESP/2)" name="F_Guia_Espalda" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="104" id="105" length="4" name="F_Caida_Hombro" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="101" id="106" secondPoint="105" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="109" id="110" length="(@S_ANCHOESP/2) - 1.5" name="F_Ancho_Pecho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="107" id="111" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="F_Costado_Sisa" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="105" id="112" secondPoint="110" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="110" id="113" secondPoint="111" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="black" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" point1="105" point4="110" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="black" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" point1="110" point4="111" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="116" id="119" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="F_Costado_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="118" id="121" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="F_Costado_Ruedo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="111" id="120" secondPoint="119" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="119" id="122" secondPoint="121" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="270" angle2="90" color="black" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" point1="111" point4="119" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="270" angle2="90" color="black" id="131" length1="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" length2="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" point1="119" point4="121" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="101" id="134" secondPoint="152" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="152" id="133" secondPoint="151" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="151" id="132" secondPoint="121" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="116" id="140" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/8)" name="F_Bolsillo_Centro_Top" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="140" id="141" length="5" name="F_Bolsillo_Origen" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="141" id="142" length="7" name="F_Bolsillo_TL" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="141" id="143" length="7" name="F_Bolsillo_TR" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="142" id="144" length="14" name="F_Bolsillo_BL" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="143" id="145" length="14" name="F_Bolsillo_BR" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="141" id="146" length="16" name="F_Bolsillo_BotCenter" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="142" id="147" secondPoint="143" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="143" id="148" secondPoint="145" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="145" id="149" secondPoint="146" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="146" id="160" secondPoint="144" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="144" id="161" secondPoint="142" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="200" mx="0.1" my="0.1" name="T_Origen" type="single" x="80" y="0" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="200" id="216" length="@S_TALLETRA" name="T_Nivel_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="200" id="218" length="@S_TALLETRA + 25" name="T_Nivel_Largo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="216" id="250" length="2.5" name="T_Centro_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="270" angle2="90" color="black" id="247" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="200" point4="250" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="200" id="201" length="(@S_CONTCUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="200" id="204" length="(@S_ANCHOESP/2)" name="T_Guia_Espalda" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="204" id="205" length="3" name="T_Caida_Hombro" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="201" id="206" secondPoint="205" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="200" id="207" length="(@S_ANCHOESP/2) + 4" name="T_Nivel_Sisa" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="200" id="209" length="((@S_ANCHOESP/2)+4)/2" name="T_Nivel_Pecho" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="209" id="210" length="(@S_ANCHOESP/2) - 0.5" name="T_Ancho_Espalda" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="207" id="211" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="T_Costado_Sisa" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="205" id="212" secondPoint="210" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="210" id="213" secondPoint="211" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro - 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" point1="205" point4="210" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="216" id="219" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="T_Costado_Cintura" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="218" id="221" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="T_Costado_Ruedo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="211" id="220" secondPoint="219" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="219" id="222" secondPoint="221" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="270" angle2="90" color="black" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" point1="211" point4="219" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="270" angle2="90" color="black" id="242" length1="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" length2="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" point1="219" point4="221" type="simpleInteractive" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="219" id="228" length="5" name="T_Pasamanos_Top" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="228" id="223" length="20" name="T_Pasamanos_Bot" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="200" id="20000" secondPoint="202" /><spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive" /><spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive" /><line firstPoint="101" id="20003" secondPoint="102" /><spline angle1="270" angle2="0" color="black" id="20004" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" point1="101" point4="102" type="simpleInteractive" /><point id="1000" mx="-3.01097" my="3.8915" name="M_Origen" type="single" x="150" y="0" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="1000" id="1001" length="@G_LARGOMANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="270" basePoint="1000" id="1002" length="(@S_CONTBUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="1002" id="1003" length="(@S_CONTBRAZO/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="1002" id="1004" length="(@S_CONTBRAZO/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="180" basePoint="1001" id="1005" length="14" mx="0.861522" my="-3.95748" name="M_Puno_Izq" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point angle="0" basePoint="1001" id="1006" length="14" mx="-6.91591" my="-3.95748" name="M_Puno_Der" type="endLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <line firstPoint="1000" id="20015" secondPoint="1003" /><line firstPoint="1000" id="20016" secondPoint="1004" /><point firstPoint="1000" id="1020" length="Line_M_Origen_M_Ancho_Izq / 2" mx="0.278215" my="1.68115" name="M_Guia_Izq" secondPoint="1003" type="alongLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point firstPoint="1000" id="1021" length="Line_M_Origen_M_Ancho_Der / 2" mx="-3.90215" my="3.72273" name="M_Guia_Der" secondPoint="1004" type="alongLine" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline angle1="180" angle2="AngleLine_M_Origen_M_Ancho_Izq - 180" color="black" id="20017" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.05" point1="1000" point4="1020" type="simpleInteractive" /><spline angle1="AngleLine_M_Origen_M_Ancho_Izq + 20" angle2="0" color="black" id="20018" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.4" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.2" point1="1020" point4="1003" type="simpleInteractive" /><spline angle1="0" angle2="AngleLine_M_Origen_M_Ancho_Der - 220" color="black" id="20019" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.05" point1="1000" point4="1021" type="simpleInteractive" /><spline angle1="AngleLine_M_Origen_M_Ancho_Der - 20" angle2="180" color="black" id="20020" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.3" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.2" point1="1021" point4="1004" type="simpleInteractive" /><line firstPoint="1003" id="20021" secondPoint="1005" /><line firstPoint="1004" id="20022" secondPoint="1006" /><spline angle1="AngleLine_M_Ancho_Izq_M_Puno_Izq + 10" angle2="AngleLine_M_Ancho_Izq_M_Puno_Izq + 180" color="black" id="20023" length1="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" length2="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" point1="1003" point4="1005" type="simpleInteractive" /><spline angle1="AngleLine_M_Ancho_Der_M_Puno_Der - 10" angle2="AngleLine_M_Ancho_Der_M_Puno_Der + 180" color="black" id="20024" length1="Line_M_Ancho_Der_M_Puno_Der * 0.3" length2="Line_M_Ancho_Der_M_Puno_Der * 0.3" point1="1004" point4="1006" type="simpleInteractive" /><line firstPoint="1005" id="20025" secondPoint="1006" /><point id="40000" name="F_Escote_V" type="endLine" basePoint="102" angle="270" length="18" mx="0.1" my="0.1" showPointName="true" /><point id="40001" name="F_Cruce_V" type="endLine" basePoint="40000" angle="180" length="1.5" mx="0.1" my="0.1" showPointName="true" /><point id="40002" name="F_Cruce_Ruedo" type="endLine" basePoint="118" angle="180" length="1.5" mx="0.1" my="0.1" showPointName="true" /><point id="40003" name="F_Vista_Hombro" type="alongLine" firstPoint="101" secondPoint="109" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40004" name="F_Vista_Abajo" type="alongLine" firstPoint="40002" secondPoint="118" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40005" name="F_Vista_Pico" type="endLine" basePoint="40000" angle="0" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40200" name="Ext_F_Cruce_Ruedo" type="endLine" basePoint="40002" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40201" name="Ext_F_Nivel_Largo" type="endLine" basePoint="118" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40202" name="Ext_F_Costado_Ruedo" type="endLine" basePoint="121" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40203" name="Ext_T_Costado_Ruedo" type="endLine" basePoint="221" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40204" name="Ext_T_Nivel_Largo" type="endLine" basePoint="218" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><line id="40100" firstPoint="101" secondPoint="40001" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40101" firstPoint="40001" secondPoint="40002" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40102" firstPoint="118" secondPoint="40002" lineColor="black" lineType="solidLine" lineWeight="0.35" /><spline id="40103" point1="40003" point4="40005" angle1="270" angle2="90" length1="10" length2="10" color="black" type="simpleInteractive" /><line id="40104" firstPoint="40005" secondPoint="40004" lineColor="black" /><line id="40300" firstPoint="40002" secondPoint="40200" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40301" firstPoint="118" secondPoint="40201" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40302" firstPoint="121" secondPoint="40202" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40303" firstPoint="221" secondPoint="40203" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40304" firstPoint="218" secondPoint="40204" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40305" firstPoint="40200" secondPoint="40201" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40306" firstPoint="40201" secondPoint="40202" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40307" firstPoint="40203" secondPoint="40204" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40500" firstPoint="250" secondPoint="218" lineColor="black" lineType="solidLine" lineWeight="0.35" /></calculation>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <modeling>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="401" idObject="101" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="402" idObject="105" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="403" idObject="114" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="404" idObject="110" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="405" idObject="115" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="406" idObject="111" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="407" idObject="130" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="408" idObject="119" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="409" idObject="131" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="410" idObject="121" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="411" idObject="151" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="412" idObject="152" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="501" idObject="200" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="502" idObject="240" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="503" idObject="201" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="504" idObject="205" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="505" idObject="214" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="506" idObject="210" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="507" idObject="215" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="508" idObject="211" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="509" idObject="241" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="510" idObject="219" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="511" idObject="242" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="512" idObject="221" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="513" idObject="232" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="514" idObject="231" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="515" idObject="230" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <point id="516" idObject="250" inUse="false" type="modeling" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <spline id="517" idObject="247" inUse="false" type="modelingSpline" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </modeling>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <pieces />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <groups />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </draftBlock>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?xml version='1.0' encoding='UTF-8'?>
+<pattern>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <version>0.7.3</version>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <unit>cm</unit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <description>Patrón Maestro - Scrub Top Médico Caballero</description>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <notes>Conjunto Médico: Scrub Top para caballero. Cuello en V cruzado clásico, aberturas laterales y bolsillos inferiores.</notes>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <measurements />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <variables>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Contorno de cuello" formula="36.5" name="@S_CONTCUELLO" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Ancho de espalda" formula="36" name="@S_ANCHOESP" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Talle delantero" formula="44" name="@S_TALLEDEL" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Talle trasero" formula="42" name="@S_TALLETRA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Contorno de busto" formula="92" name="@S_CONTBUSTO" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Contorno de cadera baja" formula="98" name="@I_CONTCADBA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Largo total de la bata" formula="100" name="@G_LARGOPRENDA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Contorno del brazo" formula="28" name="@S_CONTBRAZO" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Largo de manga" formula="60" name="@G_LARGOMANGA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <variable description="Holgura industrial bata" formula="8" name="@M_HOLGURA_BATA" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </variables>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <draftBlock name="Bata_Elegante">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <calculation>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="100" mx="0.1" my="0.1" name="F_Origen" type="single" x="0" y="0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="100" id="102" length="(@S_CONTCUELLO/6) + 2" name="F_Escote_Alto" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="100" id="107" length="(@S_ANCHOESP/2) + 4" name="F_Nivel_Sisa" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="100" id="109" length="((@S_ANCHOESP/2)+4)/2" name="F_Nivel_Pecho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="100" id="116" length="@S_TALLEDEL" name="F_Nivel_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="100" id="118" length="@S_TALLEDEL + 25" name="F_Nivel_Largo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="100" id="101" length="(@S_CONTCUELLO/6) + 1" name="F_Escote_Ancho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="102" id="152" length="1" name="F_Cruce_Pecho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="116" id="150" length="1" name="F_Cruce_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="118" id="151" length="1" name="F_Cruce_Ruedo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="100" id="104" length="(@S_ANCHOESP/2)" name="F_Guia_Espalda" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="104" id="105" length="4" name="F_Caida_Hombro" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="101" id="106" secondPoint="105" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="109" id="110" length="(@S_ANCHOESP/2) - 1.5" name="F_Ancho_Pecho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="107" id="111" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="F_Costado_Sisa" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="105" id="112" secondPoint="110" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="110" id="113" secondPoint="111" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="black" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" point1="105" point4="110" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="black" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" point1="110" point4="111" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="116" id="119" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="F_Costado_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="118" id="121" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="F_Costado_Ruedo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="111" id="120" secondPoint="119" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="119" id="122" secondPoint="121" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="270" angle2="90" color="black" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" point1="111" point4="119" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="270" angle2="90" color="black" id="131" length1="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" length2="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" point1="119" point4="121" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="101" id="134" secondPoint="152" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="152" id="133" secondPoint="151" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="151" id="132" secondPoint="121" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="116" id="140" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/8)" name="F_Bolsillo_Centro_Top" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="140" id="141" length="5" name="F_Bolsillo_Origen" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="141" id="142" length="7" name="F_Bolsillo_TL" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="141" id="143" length="7" name="F_Bolsillo_TR" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="142" id="144" length="14" name="F_Bolsillo_BL" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="143" id="145" length="14" name="F_Bolsillo_BR" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="141" id="146" length="16" name="F_Bolsillo_BotCenter" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="142" id="147" secondPoint="143" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="143" id="148" secondPoint="145" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="145" id="149" secondPoint="146" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="146" id="160" secondPoint="144" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="144" id="161" secondPoint="142" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="200" mx="0.1" my="0.1" name="T_Origen" type="single" x="80" y="0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="200" id="216" length="@S_TALLETRA" name="T_Nivel_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="200" id="218" length="@S_TALLETRA + 25" name="T_Nivel_Largo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="216" id="250" length="2.5" name="T_Centro_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="270" angle2="90" color="black" id="247" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="200" point4="250" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="200" id="201" length="(@S_CONTCUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="200" id="204" length="(@S_ANCHOESP/2)" name="T_Guia_Espalda" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="204" id="205" length="3" name="T_Caida_Hombro" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="201" id="206" secondPoint="205" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="200" id="207" length="(@S_ANCHOESP/2) + 4" name="T_Nivel_Sisa" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="200" id="209" length="((@S_ANCHOESP/2)+4)/2" name="T_Nivel_Pecho" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="209" id="210" length="(@S_ANCHOESP/2) - 0.5" name="T_Ancho_Espalda" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="207" id="211" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="T_Costado_Sisa" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="205" id="212" secondPoint="210" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="210" id="213" secondPoint="211" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro - 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" point1="205" point4="210" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="216" id="219" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="T_Costado_Cintura" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="218" id="221" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="T_Costado_Ruedo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="211" id="220" secondPoint="219" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="219" id="222" secondPoint="221" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="270" angle2="90" color="black" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" point1="211" point4="219" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="270" angle2="90" color="black" id="242" length1="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" length2="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" point1="219" point4="221" type="simpleInteractive" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="219" id="228" length="5" name="T_Pasamanos_Top" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="228" id="223" length="20" name="T_Pasamanos_Bot" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="200" id="20000" secondPoint="202" /><spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive" /><spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive" /><line firstPoint="101" id="20003" secondPoint="102" /><spline angle1="270" angle2="0" color="black" id="20004" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" point1="101" point4="102" type="simpleInteractive" /><point id="1000" mx="-3.01097" my="3.8915" name="M_Origen" type="single" x="150" y="0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="1000" id="1001" length="@G_LARGOMANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="270" basePoint="1000" id="1002" length="(@S_CONTBUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="1002" id="1003" length="(@S_CONTBRAZO/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="1002" id="1004" length="(@S_CONTBRAZO/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="180" basePoint="1001" id="1005" length="14" mx="0.861522" my="-3.95748" name="M_Puno_Izq" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point angle="0" basePoint="1001" id="1006" length="14" mx="-6.91591" my="-3.95748" name="M_Puno_Der" type="endLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <line firstPoint="1000" id="20015" secondPoint="1003" /><line firstPoint="1000" id="20016" secondPoint="1004" /><point firstPoint="1000" id="1020" length="Line_M_Origen_M_Ancho_Izq / 2" mx="0.278215" my="1.68115" name="M_Guia_Izq" secondPoint="1003" type="alongLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point firstPoint="1000" id="1021" length="Line_M_Origen_M_Ancho_Der / 2" mx="-3.90215" my="3.72273" name="M_Guia_Der" secondPoint="1004" type="alongLine" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline angle1="180" angle2="AngleLine_M_Origen_M_Ancho_Izq - 180" color="black" id="20017" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.05" point1="1000" point4="1020" type="simpleInteractive" /><spline angle1="AngleLine_M_Origen_M_Ancho_Izq + 20" angle2="0" color="black" id="20018" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.4" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.2" point1="1020" point4="1003" type="simpleInteractive" /><spline angle1="0" angle2="AngleLine_M_Origen_M_Ancho_Der - 220" color="black" id="20019" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.05" point1="1000" point4="1021" type="simpleInteractive" /><spline angle1="AngleLine_M_Origen_M_Ancho_Der - 20" angle2="180" color="black" id="20020" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.3" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.2" point1="1021" point4="1004" type="simpleInteractive" /><line firstPoint="1003" id="20021" secondPoint="1005" /><line firstPoint="1004" id="20022" secondPoint="1006" /><spline angle1="AngleLine_M_Ancho_Izq_M_Puno_Izq + 10" angle2="AngleLine_M_Ancho_Izq_M_Puno_Izq + 180" color="black" id="20023" length1="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" length2="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" point1="1003" point4="1005" type="simpleInteractive" /><spline angle1="AngleLine_M_Ancho_Der_M_Puno_Der - 10" angle2="AngleLine_M_Ancho_Der_M_Puno_Der + 180" color="black" id="20024" length1="Line_M_Ancho_Der_M_Puno_Der * 0.3" length2="Line_M_Ancho_Der_M_Puno_Der * 0.3" point1="1004" point4="1006" type="simpleInteractive" /><line firstPoint="1005" id="20025" secondPoint="1006" /><point id="40000" name="F_Escote_V" type="endLine" basePoint="102" angle="270" length="18" mx="0.1" my="0.1" showPointName="true" /><point id="40001" name="F_Cruce_V" type="endLine" basePoint="40000" angle="180" length="1.5" mx="0.1" my="0.1" showPointName="true" /><point id="40002" name="F_Cruce_Ruedo" type="endLine" basePoint="118" angle="180" length="1.5" mx="0.1" my="0.1" showPointName="true" /><point id="40003" name="F_Vista_Hombro" type="alongLine" firstPoint="101" secondPoint="109" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40004" name="F_Vista_Abajo" type="alongLine" firstPoint="40002" secondPoint="118" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40005" name="F_Vista_Pico" type="endLine" basePoint="40000" angle="0" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40200" name="Ext_F_Cruce_Ruedo" type="endLine" basePoint="40002" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40201" name="Ext_F_Nivel_Largo" type="endLine" basePoint="118" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40202" name="Ext_F_Costado_Ruedo" type="endLine" basePoint="121" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40203" name="Ext_T_Costado_Ruedo" type="endLine" basePoint="221" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><point id="40204" name="Ext_T_Nivel_Largo" type="endLine" basePoint="218" angle="270" length="4" mx="0.1" my="0.1" showPointName="true" /><line id="40100" firstPoint="101" secondPoint="40001" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40101" firstPoint="40001" secondPoint="40002" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40102" firstPoint="118" secondPoint="40002" lineColor="black" lineType="solidLine" lineWeight="0.35" /><spline id="40103" point1="40003" point4="40005" angle1="270" angle2="90" length1="10" length2="10" color="black" type="simpleInteractive" /><line id="40104" firstPoint="40005" secondPoint="40004" lineColor="black" /><line id="40300" firstPoint="40002" secondPoint="40200" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40301" firstPoint="118" secondPoint="40201" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40302" firstPoint="121" secondPoint="40202" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40303" firstPoint="221" secondPoint="40203" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40304" firstPoint="218" secondPoint="40204" lineColor="black" lineType="solidLine" lineWeight="0.35" /><line id="40305" firstPoint="40200" secondPoint="40201" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40306" firstPoint="40201" secondPoint="40202" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40307" firstPoint="40203" secondPoint="40204" lineColor="black" lineType="solidLine" lineWeight="0.7" /><line id="40500" firstPoint="250" secondPoint="218" lineColor="black" lineType="solidLine" lineWeight="0.35" /></calculation>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <modeling>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="401" idObject="101" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="402" idObject="105" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="403" idObject="114" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="404" idObject="110" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="405" idObject="115" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="406" idObject="111" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="407" idObject="130" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="408" idObject="119" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="409" idObject="131" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="410" idObject="121" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="411" idObject="151" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="412" idObject="152" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="501" idObject="200" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="502" idObject="240" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="503" idObject="201" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="504" idObject="205" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="505" idObject="214" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="506" idObject="210" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="507" idObject="215" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="508" idObject="211" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="509" idObject="241" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="510" idObject="219" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="511" idObject="242" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="512" idObject="221" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="513" idObject="232" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="514" idObject="231" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="515" idObject="230" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <point id="516" idObject="250" inUse="false" type="modeling" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <spline id="517" idObject="247" inUse="false" type="modelingSpline" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </modeling>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <pieces />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <groups />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </draftBlock>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pattern>
