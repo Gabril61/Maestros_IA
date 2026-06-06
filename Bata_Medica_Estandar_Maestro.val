@@ -6,40 +6,40 @@
     <notes>Patron refactorizado con entalles, solapa, cruce y sisas tangenciales.</notes>
     <measurements/>
     <variables>
-        <variable description="Contorno de cuello" formula="36.5" name="@S_CONTCUELLO"/>
-        <variable description="Ancho de espalda" formula="36" name="@S_ANCHOESP"/>
-        <variable description="Talle delantero" formula="44" name="@S_TALLEDEL"/>
-        <variable description="Talle trasero" formula="42" name="@S_TALLETRA"/>
-        <variable description="Contorno de busto" formula="92" name="@S_CONTBUSTO"/>
-        <variable description="Contorno de cadera baja" formula="98" name="@I_CONTCADBA"/>
-        <variable description="Largo total de la bata" formula="100" name="@G_LARGOPRENDA"/>
-        <variable description="Contorno del brazo" formula="28" name="@S_CONTBRAZO"/>
-        <variable description="Largo de manga" formula="60" name="@G_LARGOMANGA"/>
+        <variable description="Contorno de cuello" formula="36.5" name="@S_CONT_CUELLO"/>
+        <variable description="Ancho de espalda" formula="36" name="@S_ANCHO_ESPALDA"/>
+        <variable description="Talle delantero" formula="44" name="@S_TALLE_DELANTERO"/>
+        <variable description="Talle trasero" formula="42" name="@S_TALLE_TRASERO"/>
+        <variable description="Contorno de busto" formula="92" name="@S_CONT_BUSTO"/>
+        <variable description="Contorno de cadera baja" formula="98" name="@G_CONT_CADERA_BAJA"/>
+        <variable description="Largo total de la bata" formula="100" name="@G_LARGO_PRENDA"/>
+        <variable description="Contorno del brazo" formula="28" name="@S_CONT_BICEP"/>
+        <variable description="Largo de manga" formula="60" name="@S_LARGO_MANGA"/>
         <variable description="Holgura industrial bata" formula="8" name="@M_HOLGURA_BATA"/>
     </variables>
     <draftBlock name="Bata_Elegante">
         <calculation>
             <point id="100" mx="0.1" my="0.1" name="F_Origen" type="single" x="0" y="0"/>
-            <point angle="270" basePoint="100" id="102" length="(@S_CONTCUELLO/6) + 2" name="F_Escote_Alto" type="endLine"/>
-            <point angle="270" basePoint="100" id="107" length="(@S_ANCHOESP/2) + 4" name="F_Nivel_Sisa" type="endLine"/>
-            <point angle="270" basePoint="100" id="109" length="((@S_ANCHOESP/2)+4)/2" name="F_Nivel_Pecho" type="endLine"/>
-            <point angle="270" basePoint="100" id="116" length="@S_TALLEDEL" name="F_Nivel_Cintura" type="endLine"/>
-            <point angle="270" basePoint="100" id="118" length="@G_LARGOPRENDA" name="F_Nivel_Largo" type="endLine"/>
-            <point angle="0" basePoint="100" id="101" length="(@S_CONTCUELLO/6) + 1" name="F_Escote_Ancho" type="endLine"/>
+            <point angle="270" basePoint="100" id="102" length="(@S_CONT_CUELLO/6) + 2" name="F_Escote_Alto" type="endLine"/>
+            <point angle="270" basePoint="100" id="107" length="(@S_ANCHO_ESPALDA/2) + 4" name="F_Nivel_Sisa" type="endLine"/>
+            <point angle="270" basePoint="100" id="109" length="((@S_ANCHO_ESPALDA/2)+4)/2" name="F_Nivel_Pecho" type="endLine"/>
+            <point angle="270" basePoint="100" id="116" length="@S_TALLE_DELANTERO" name="F_Nivel_Cintura" type="endLine"/>
+            <point angle="270" basePoint="100" id="118" length="@G_LARGO_PRENDA" name="F_Nivel_Largo" type="endLine"/>
+            <point angle="0" basePoint="100" id="101" length="(@S_CONT_CUELLO/6) + 1" name="F_Escote_Ancho" type="endLine"/>
             <point angle="180" basePoint="102" id="152" length="1" name="F_Cruce_Pecho" type="endLine"/>
             <point angle="180" basePoint="116" id="150" length="1" name="F_Cruce_Cintura" type="endLine"/>
             <point angle="180" basePoint="118" id="151" length="1" name="F_Cruce_Ruedo" type="endLine"/>
-            <point angle="0" basePoint="100" id="104" length="(@S_ANCHOESP/2)" name="F_Guia_Espalda" type="endLine"/>
+            <point angle="0" basePoint="100" id="104" length="(@S_ANCHO_ESPALDA/2)" name="F_Guia_Espalda" type="endLine"/>
             <point angle="270" basePoint="104" id="105" length="4" name="F_Caida_Hombro" type="endLine"/>
             <line firstPoint="101" id="106" secondPoint="105"/>
-            <point angle="0" basePoint="109" id="110" length="(@S_ANCHOESP/2) - 1.5" name="F_Ancho_Pecho" type="endLine"/>
-            <point angle="0" basePoint="107" id="111" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="F_Costado_Sisa" type="endLine"/>
+            <point angle="0" basePoint="109" id="110" length="(@S_ANCHO_ESPALDA/2) - 1.5" name="F_Ancho_Pecho" type="endLine"/>
+            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" name="F_Costado_Sisa" type="endLine"/>
             <line firstPoint="105" id="112" secondPoint="110"/>
             <line firstPoint="110" id="113" secondPoint="111"/>
             <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="black" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" point1="105" point4="110" type="simpleInteractive"/>
             <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="black" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" point1="110" point4="111" type="simpleInteractive"/>
-            <point angle="0" basePoint="116" id="119" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="F_Costado_Cintura" type="endLine"/>
-            <point angle="0" basePoint="118" id="121" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="F_Costado_Ruedo" type="endLine"/>
+            <point angle="0" basePoint="116" id="119" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4) - 2" name="F_Costado_Cintura" type="endLine"/>
+            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 4" name="F_Costado_Ruedo" type="endLine"/>
             <line firstPoint="111" id="120" secondPoint="119"/>
             <line firstPoint="119" id="122" secondPoint="121"/>
             <spline angle1="270" angle2="90" color="black" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" point1="111" point4="119" type="simpleInteractive"/>
@@ -47,7 +47,7 @@
             <line firstPoint="101" id="134" secondPoint="152"/>
             <line firstPoint="152" id="133" secondPoint="151"/>
             <line firstPoint="151" id="132" secondPoint="121"/>
-            <point angle="0" basePoint="116" id="140" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/8)" name="F_Bolsillo_Centro_Top" type="endLine"/>
+            <point angle="0" basePoint="116" id="140" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/8)" name="F_Bolsillo_Centro_Top" type="endLine"/>
             <point angle="270" basePoint="140" id="141" length="5" name="F_Bolsillo_Origen" type="endLine"/>
             <point angle="180" basePoint="141" id="142" length="7" name="F_Bolsillo_TL" type="endLine"/>
             <point angle="0" basePoint="141" id="143" length="7" name="F_Bolsillo_TR" type="endLine"/>
@@ -60,28 +60,28 @@
             <line firstPoint="146" id="160" secondPoint="144"/>
             <line firstPoint="144" id="161" secondPoint="142"/>
             <point id="200" mx="0.1" my="0.1" name="T_Origen" type="single" x="80" y="0"/>
-            <point angle="270" basePoint="200" id="216" length="@S_TALLETRA" name="T_Nivel_Cintura" type="endLine"/>
-            <point angle="270" basePoint="200" id="218" length="@G_LARGOPRENDA" name="T_Nivel_Largo" type="endLine"/>
+            <point angle="270" basePoint="200" id="216" length="@S_TALLE_TRASERO" name="T_Nivel_Cintura" type="endLine"/>
+            <point angle="270" basePoint="200" id="218" length="@G_LARGO_PRENDA" name="T_Nivel_Largo" type="endLine"/>
             <point angle="180" basePoint="216" id="250" length="2.5" name="T_Centro_Cintura" type="endLine"/>
             <spline angle1="270" angle2="90" color="black" id="247" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="200" point4="250" type="simpleInteractive"/>
             <point angle="90" basePoint="218" id="230" length="20" name="T_Abertura_Top" type="endLine"/>
             <point angle="0" basePoint="230" id="231" length="5" name="T_Aletilla_Top" type="endLine"/>
             <line firstPoint="250" id="246" secondPoint="230"/>
             <line firstPoint="230" id="245" secondPoint="231"/>
-            <point angle="180" basePoint="200" id="201" length="(@S_CONTCUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine"/>
-            <point angle="180" basePoint="200" id="204" length="(@S_ANCHOESP/2)" name="T_Guia_Espalda" type="endLine"/>
+            <point angle="180" basePoint="200" id="201" length="(@S_CONT_CUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine"/>
+            <point angle="180" basePoint="200" id="204" length="(@S_ANCHO_ESPALDA/2)" name="T_Guia_Espalda" type="endLine"/>
             <point angle="270" basePoint="204" id="205" length="3" name="T_Caida_Hombro" type="endLine"/>
             <line firstPoint="201" id="206" secondPoint="205"/>
-            <point angle="270" basePoint="200" id="207" length="(@S_ANCHOESP/2) + 4" name="T_Nivel_Sisa" type="endLine"/>
-            <point angle="270" basePoint="200" id="209" length="((@S_ANCHOESP/2)+4)/2" name="T_Nivel_Pecho" type="endLine"/>
-            <point angle="180" basePoint="209" id="210" length="(@S_ANCHOESP/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" id="211" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4)" name="T_Costado_Sisa" type="endLine"/>
+            <point angle="270" basePoint="200" id="207" length="(@S_ANCHO_ESPALDA/2) + 4" name="T_Nivel_Sisa" type="endLine"/>
+            <point angle="270" basePoint="200" id="209" length="((@S_ANCHO_ESPALDA/2)+4)/2" name="T_Nivel_Pecho" type="endLine"/>
+            <point angle="180" basePoint="209" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
+            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" name="T_Costado_Sisa" type="endLine"/>
             <line firstPoint="205" id="212" secondPoint="210"/>
             <line firstPoint="210" id="213" secondPoint="211"/>
             <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro + 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
             <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive"/>
-            <point angle="180" basePoint="216" id="219" length="((@S_CONTBUSTO + @M_HOLGURA_BATA)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
-            <point angle="180" basePoint="218" id="221" length="((@I_CONTCADBA + @M_HOLGURA_BATA)/4) + 4" name="T_Costado_Ruedo" type="endLine"/>
+            <point angle="180" basePoint="216" id="219" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
+            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 4" name="T_Costado_Ruedo" type="endLine"/>
             <line firstPoint="211" id="220" secondPoint="219"/>
             <line firstPoint="219" id="222" secondPoint="221"/>
             <spline angle1="270" angle2="90" color="black" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" point1="211" point4="219" type="simpleInteractive"/>
@@ -104,10 +104,10 @@
             <line firstPoint="10001" id="20005" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="10002"/>
             <line firstPoint="102" id="20006" secondPoint="10001"/>
             <line firstPoint="118" id="20007" secondPoint="10002"/>
-            <point angle="180" basePoint="100" id="3002" length="(@S_CONTCUELLO/6) + 1" mx="-7.49921" my="3.62551" name="V_Cuello_Espejo" type="endLine"/>
-            <point angle="180" basePoint="100" id="3003" length="(@S_ANCHOESP / 2)" mx="1.25039" my="0.806194" name="V_Top_Extremo" type="endLine"/>
-            <point angle="180" basePoint="118" id="3004" length="(@S_CONTBUSTO / 10) + 0.8" mx="0.569869" my="-2.79087" name="V_Bot_Extremo" type="endLine"/>
-            <point angle="180" basePoint="116" id="3005" length="(@S_CONTBUSTO / 10) + 0.8" mx="0.180997" my="-1.72147" name="V_Cintura_Extremo" type="endLine"/>
+            <point angle="180" basePoint="100" id="3002" length="(@S_CONT_CUELLO/6) + 1" mx="-7.49921" my="3.62551" name="V_Cuello_Espejo" type="endLine"/>
+            <point angle="180" basePoint="100" id="3003" length="(@S_ANCHO_ESPALDA / 2)" mx="1.25039" my="0.806194" name="V_Top_Extremo" type="endLine"/>
+            <point angle="180" basePoint="118" id="3004" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.569869" my="-2.79087" name="V_Bot_Extremo" type="endLine"/>
+            <point angle="180" basePoint="116" id="3005" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.180997" my="-1.72147" name="V_Cintura_Extremo" type="endLine"/>
             <line firstPoint="3002" id="20008" secondPoint="102"/>
             <line firstPoint="3005" id="20009" secondPoint="3003"/>
             <spline angle1="270" angle2="180" color="darkBlue" id="20010" length1="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" length2="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" lineWeight="0.35" penStyle="solidLine" point1="3002" point4="10001" type="simpleInteractive"/>
@@ -116,10 +116,10 @@
             <line firstPoint="3004" id="20013" secondPoint="118"/>
             <line firstPoint="3004" id="20014" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="3005"/>
             <point id="1000" mx="-3.01097" my="3.8915" name="M_Origen" type="single" x="150" y="0"/>
-            <point angle="270" basePoint="1000" id="1001" length="@G_LARGOMANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine"/>
-            <point angle="270" basePoint="1000" id="1002" length="(@S_CONTBUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine"/>
-            <point angle="180" basePoint="1002" id="1003" length="(@S_CONTBRAZO/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine"/>
-            <point angle="0" basePoint="1002" id="1004" length="(@S_CONTBRAZO/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine"/>
+            <point angle="270" basePoint="1000" id="1001" length="@S_LARGO_MANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine"/>
+            <point angle="270" basePoint="1000" id="1002" length="(@S_CONT_BUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine"/>
+            <point angle="180" basePoint="1002" id="1003" length="(@S_CONT_BICEP/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine"/>
+            <point angle="0" basePoint="1002" id="1004" length="(@S_CONT_BICEP/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine"/>
             <point angle="180" basePoint="1001" id="1005" length="14" mx="0.861522" my="-3.95748" name="M_Puno_Izq" type="endLine"/>
             <point angle="0" basePoint="1001" id="1006" length="14" mx="-6.91591" my="-3.95748" name="M_Puno_Der" type="endLine"/>
             <line firstPoint="1000" id="20015" secondPoint="1003"/>
@@ -137,7 +137,7 @@
             <line firstPoint="1005" id="20025" secondPoint="1006"/>
             <point id="2000" mx="1.55827" my="-2.81654" name="C_Origen" type="single" x="200" y="0"/>
             <point angle="90" basePoint="2000" id="2001" length="10" mx="1.3305" my="0.73941" name="C_Alto" type="endLine"/>
-            <point angle="0" basePoint="2000" id="2002" length="(@S_CONTCUELLO/2) + 4.5" mx="-17.0266" my="-5.90184" name="C_Ancho" type="endLine"/>
+            <point angle="0" basePoint="2000" id="2002" length="(@S_CONT_CUELLO/2) + 4.5" mx="-17.0266" my="-5.90184" name="C_Ancho" type="endLine"/>
             <point angle="90" basePoint="2002" id="2003" length="Line_C_Origen_C_Alto - 1.5" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="-8.2768" my="0.484928" name="C_Top_Ancho" showPointName="true" type="endLine"/>
             <point angle="0" basePoint="2000" id="2004" length="Line_C_Origen_C_Ancho - 7" mx="-5.36042" my="-3.17974" name="C_Equi" type="endLine"/>
             <point angle="180" basePoint="2002" id="2005" length="2" mx="-6.04095" my="-2.79087" name="C_Entrada" type="endLine"/>
