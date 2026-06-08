@@ -3843,7 +3843,7 @@
 
 
 
-        <variable description="Holgura industrial bata" formula="8" name="@M_HOLGURA_BATA" />
+        <variable description="Holgura industrial bata" formula="8" name="#holgura_bata" />
 
 
 
@@ -9843,7 +9843,7 @@
 
 
 
-            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" name="F_Costado_Sisa" type="endLine" />
+            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="F_Costado_Sisa" type="endLine" />
 
 
 
@@ -11283,7 +11283,7 @@
 
 
 
-            <point angle="0" basePoint="116" id="119" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4) - 2" name="F_Costado_Cintura" type="endLine" />
+            <point angle="0" basePoint="116" id="119" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="F_Costado_Cintura" type="endLine" />
 
 
 
@@ -11523,7 +11523,7 @@
 
 
 
-            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 4" name="F_Costado_Ruedo" type="endLine" />
+            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="F_Costado_Ruedo" type="endLine" />
 
 
 
@@ -14163,7 +14163,7 @@
 
 
 
-            <point angle="0" basePoint="116" id="140" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/8)" name="F_Bolsillo_Centro_Top" type="endLine" />
+            <point angle="0" basePoint="116" id="140" length="((@S_CONT_BUSTO + #holgura_bata)/8)" name="F_Bolsillo_Centro_Top" type="endLine" />
 
 
 
@@ -21363,7 +21363,7 @@
 
 
 
-            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" name="T_Costado_Sisa" type="endLine" />
+            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="T_Costado_Sisa" type="endLine" />
 
 
 
@@ -22803,7 +22803,7 @@
 
 
 
-            <point angle="180" basePoint="216" id="219" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4) - 2" name="T_Costado_Cintura" type="endLine" />
+            <point angle="180" basePoint="216" id="219" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="T_Costado_Cintura" type="endLine" />
 
 
 
@@ -23043,7 +23043,7 @@
 
 
 
-            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 4" name="T_Costado_Ruedo" type="endLine" />
+            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="T_Costado_Ruedo" type="endLine" />
 
 
 

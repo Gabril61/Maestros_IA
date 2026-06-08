@@ -15,7 +15,7 @@
         <variable description="Largo total de la bata" formula="100" name="@G_LARGO_PRENDA"/>
         <variable description="Contorno del brazo" formula="28" name="@S_CONT_BICEP"/>
         <variable description="Largo de manga" formula="60" name="@S_LARGO_MANGA"/>
-        <variable description="Holgura industrial bata" formula="8" name="@M_HOLGURA_BATA"/>
+        <variable description="Holgura industrial bata" formula="8" name="#holgura_bata"/>
     </variables>
     <draftBlock name="Bata_Dama">
         <calculation>
@@ -31,12 +31,12 @@
             <point angle="270" basePoint="104" id="105" length="4" mx="-10.7578" my="-0.691928" name="F_Caida_Hombro" type="endLine"/>
             <line firstPoint="101" id="106" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="105"/>
             <point angle="0" basePoint="109" id="110" length="(@S_ANCHO_ESPALDA/2) - 1.5" mx="-9.6458" my="-2.17463" name="F_Ancho_Pecho" type="endLine"/>
-            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" mx="-11.3756" my="0.667215" name="F_Costado_Sisa" type="endLine"/>
+            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + #holgura_bata)/4)" mx="-11.3756" my="0.667215" name="F_Costado_Sisa" type="endLine"/>
             <line firstPoint="105" id="112" secondPoint="110"/>
             <line firstPoint="110" id="113" secondPoint="111"/>
             <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="darkBlue" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" lineWeight="0.35" penStyle="solidLine" point1="105" point4="110" type="simpleInteractive"/>
             <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="darkBlue" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" lineWeight="0.35" penStyle="solidLine" point1="110" point4="111" type="simpleInteractive"/>
-            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 2" mx="-11.6227" my="-7.11697" name="F_Costado_Ruedo" type="endLine"/>
+            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 2" mx="-11.6227" my="-7.11697" name="F_Costado_Ruedo" type="endLine"/>
             <line firstPoint="111" id="120" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="121"/>
             <point firstPoint="121" id="800" length="25" mx="-9.31607" my="3.85404" name="F_Pasamanos_Bot" secondPoint="111" type="alongLine"/>
             <point firstPoint="121" id="801" length="45" mx="-16.3545" my="0.125239" name="F_Pasamanos_Top" secondPoint="111" showPointName="true" type="alongLine"/>
@@ -62,12 +62,12 @@
             <point angle="270" basePoint="200" id="207" length="(@S_ANCHO_ESPALDA/2) + 4" mx="-11.7463" my="1.03789" name="T_Nivel_Sisa" type="endLine"/>
             <point angle="270" basePoint="200" id="209" length="((@S_ANCHO_ESPALDA/2)+4)/2" mx="-10.6343" my="5.23888" name="T_Nivel_Pecho" type="endLine"/>
             <point angle="180" basePoint="209" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" mx="0.485996" my="1.9028" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + @M_HOLGURA_BATA)/4)" mx="1.10379" my="1.40857" name="T_Costado_Sisa" type="endLine"/>
+            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" mx="1.10379" my="1.40857" name="T_Costado_Sisa" type="endLine"/>
             <line firstPoint="205" id="212" secondPoint="210"/>
             <line firstPoint="210" id="213" secondPoint="211"/>
             <spline angle1="280" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="darkBlue" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
             <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="darkBlue" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" lineWeight="0.35" penStyle="solidLine" point1="210" point4="211" type="simpleInteractive"/>
-            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + @M_HOLGURA_BATA)/4) + 2" mx="0.733113" my="-3.78089" name="T_Costado_Ruedo" type="endLine"/>
+            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 2" mx="0.733113" my="-3.78089" name="T_Costado_Ruedo" type="endLine"/>
             <line firstPoint="211" id="220" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="221"/>
             <point firstPoint="221" id="802" length="25" name="T_Pasamanos_Bot" secondPoint="211" type="alongLine"/>
             <point firstPoint="221" id="803" length="45" name="T_Pasamanos_Top" secondPoint="211" type="alongLine"/>
