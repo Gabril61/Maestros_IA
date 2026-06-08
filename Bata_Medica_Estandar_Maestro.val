@@ -74,13 +74,19 @@
             <line firstPoint="201" id="206" secondPoint="205"/>
             <point angle="270" basePoint="200" id="207" length="(@S_ANCHO_ESPALDA/2) + 4" name="T_Nivel_Sisa" type="endLine"/>
             <point angle="270" basePoint="200" id="209" length="((@S_ANCHO_ESPALDA/2)+4)/2" name="T_Nivel_Pecho" type="endLine"/>
-            <point angle="180" basePoint="209" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="T_Costado_Sisa" type="endLine"/>
+            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine"/>
+            <line firstPoint="200" id="20000" secondPoint="202"/>
+            <spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive"/>
+            <spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive"/>
+            <point angle="180" basePoint="209" curve="20002" id="90005" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Pecho" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90005" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
+            <point angle="180" basePoint="207" curve="20002" id="90006" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Sisa" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90006" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="T_Costado_Sisa" type="endLine"/>
             <line firstPoint="205" id="212" secondPoint="210"/>
             <line firstPoint="210" id="213" secondPoint="211"/>
             <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro + 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
             <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive"/>
-            <point angle="180" basePoint="216" id="219" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
+            <point angle="180" basePoint="250" id="219" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
             <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="T_Costado_Ruedo" type="endLine"/>
             <line firstPoint="211" id="220" secondPoint="219"/>
             <line firstPoint="219" id="222" secondPoint="221"/>
@@ -93,10 +99,6 @@
             <line firstPoint="228" id="260" secondPoint="224"/>
             <line firstPoint="224" id="261" secondPoint="225"/>
             <line firstPoint="225" id="262" secondPoint="223"/>
-            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine"/>
-            <line firstPoint="200" id="20000" secondPoint="202"/>
-            <spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive"/>
-            <spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive"/>
             <line firstPoint="101" id="20003" secondPoint="102"/>
             <spline angle1="270" angle2="0" color="black" id="20004" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" point1="101" point4="102" type="simpleInteractive"/>
             <point angle="180" basePoint="102" id="10001" length="1" mx="-8.47139" my="1.09785" name="F_Solapa_Top" type="endLine"/>
@@ -200,7 +202,7 @@
             <spline id="30081" idObject="214" inUse="true" type="modelingSpline"/>
             <point id="30082" idObject="201" inUse="true" mx="10" my="15" showPointName="false" type="modeling"/>
             <spline id="30083" idObject="20001" inUse="true" type="modelingSpline"/>
-            <spline id="30084" idObject="247" inUse="true" type="modelingSpline"/>
+            <spline id="30084" idObject="20002" inUse="true" type="modelingSpline"/>
             <point id="30085" idObject="230" inUse="true" mx="-10.9698" my="1.13715" showPointName="false" type="modeling"/>
             <point id="30087" idObject="1006" inUse="true" mx="-6.91591" my="-3.95748" showPointName="false" type="modeling"/>
             <spline id="30088" idObject="20023" inUse="true" type="modelingSpline"/>

@@ -61,8 +61,10 @@
             <line firstPoint="201" id="206" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="205"/>
             <point angle="270" basePoint="200" id="207" length="(@S_ANCHO_ESPALDA/2) + 4" mx="-11.7463" my="1.03789" name="T_Nivel_Sisa" type="endLine"/>
             <point angle="270" basePoint="200" id="209" length="((@S_ANCHO_ESPALDA/2)+4)/2" mx="-10.6343" my="5.23888" name="T_Nivel_Pecho" type="endLine"/>
-            <point angle="180" basePoint="209" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" mx="0.485996" my="1.9028" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" mx="1.10379" my="1.40857" name="T_Costado_Sisa" type="endLine"/>
+            <point angle="180" basePoint="209" curve="247" id="90005" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Pecho" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="207" curve="247" id="90006" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Sisa" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90005" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" mx="0.485996" my="1.9028" name="T_Ancho_Espalda" type="endLine"/>
+            <point angle="180" basePoint="90006" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" mx="1.10379" my="1.40857" name="T_Costado_Sisa" type="endLine"/>
             <line firstPoint="205" id="212" secondPoint="210"/>
             <line firstPoint="210" id="213" secondPoint="211"/>
             <spline angle1="280" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="darkBlue" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
@@ -153,6 +155,42 @@
             <point firstPoint="31072" id="31073" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A4" secondPoint="802" showPointName="true" type="intersectXY"/>
             <point angle="180" basePoint="801" id="31074" length="3" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A5" showPointName="true" type="endLine"/>
             <point firstPoint="31074" id="31075" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A6" secondPoint="800" showPointName="true" type="intersectXY"/>
+            <point firstPoint="200" id="90030" length="9" mx="0.1" my="0.1" name="T_Canesu_Ref" secondPoint="216" showPointName="false" type="alongLine"/>
+            <point angle="180" basePoint="90030" curve="247" id="90031" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Canesu_Centro" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90031" curve="214" id="90032" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Canesu_Sisa" showPointName="false" type="curveIntersectAxis"/>
+            <line firstPoint="90031" id="90033" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="90032"/>
+            <point angle="180" basePoint="216" id="90040" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Costado_Cintura_Real" p1Line="211" p2Line="221" showPointName="false" type="lineIntersectAxis"/>
+            <point angle="90" basePoint="250" id="90041" length="2.5" mx="0.1" my="0.1" name="T_Mart_Centro_Top" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="250" id="90042" length="2.5" mx="0.1" my="0.1" name="T_Mart_Centro_Bot" showPointName="false" type="endLine"/>
+            <point angle="90" basePoint="90040" id="90043" length="2.5" mx="0.1" my="0.1" name="T_Mart_Costado_Top" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="90040" id="90044" length="2.5" mx="0.1" my="0.1" name="T_Mart_Costado_Bot" showPointName="false" type="endLine"/>
+            <line firstPoint="90041" id="90045" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="90043"/>
+            <line firstPoint="90042" id="90046" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="90044"/>
+            <point angle="0" basePoint="109" id="70010" length="(@S_CONT_BUSTO/10)" mx="0.1" my="0.1" name="F_BP_Center" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="70010" id="70011" length="2" mx="0.1" my="0.1" name="F_BP_TopCenter" showPointName="false" type="endLine"/>
+            <point angle="180" basePoint="70011" id="70012" length="5.5" mx="0.1" my="0.1" name="F_BP_TL" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="70011" id="70013" length="5.5" mx="0.1" my="0.1" name="F_BP_TR" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="70012" id="70014" length="13" mx="0.1" my="0.1" name="F_BP_BL" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="70013" id="70015" length="13" mx="0.1" my="0.1" name="F_BP_BR" showPointName="false" type="endLine"/>
+            <point firstPoint="70013" id="70016" length="3.5" mx="0.1" my="0.1" name="F_BP_PenTop" secondPoint="70012" showPointName="false" type="alongLine"/>
+            <point firstPoint="70015" id="70017" length="3.5" mx="0.1" my="0.1" name="F_BP_PenBot" secondPoint="70014" showPointName="false" type="alongLine"/>
+            <line firstPoint="70012" id="70030" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="70013"/>
+            <line firstPoint="70013" id="70031" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="70015"/>
+            <line firstPoint="70015" id="70032" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="70014"/>
+            <line firstPoint="70014" id="70033" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="70012"/>
+            <line firstPoint="70016" id="70034" lineColor="black" lineType="dashLine" lineWeight="0.35" secondPoint="70017"/>
+            <point angle="0" basePoint="116" id="74000" length="(@S_CONT_BUSTO/8)" mx="0.1" my="0.1" name="F_Bolsillo_Inf_Ref" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="74000" id="74001" length="5" mx="0.1" my="0.1" name="F_Bolsillo_Inf_TopCenter" showPointName="false" type="endLine"/>
+            <point angle="180" basePoint="74001" id="74002" length="8" mx="0.1" my="0.1" name="F_Bolsillo_Inf_TL" showPointName="false" type="endLine"/>
+            <point angle="0" basePoint="74001" id="74003" length="8" mx="0.1" my="0.1" name="F_Bolsillo_Inf_TR" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="74002" id="74004" length="16" mx="0.1" my="0.1" name="F_Bolsillo_Inf_BL" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="74003" id="74005" length="16" mx="0.1" my="0.1" name="F_Bolsillo_Inf_BR" showPointName="false" type="endLine"/>
+            <point angle="270" basePoint="74001" id="74006" length="18" mx="0.1" my="0.1" name="F_Bolsillo_Inf_BotCenter" showPointName="false" type="endLine"/>
+            <line firstPoint="74002" id="74010" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="74003"/>
+            <line firstPoint="74003" id="74011" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="74005"/>
+            <line firstPoint="74005" id="74012" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="74006"/>
+            <line firstPoint="74006" id="74013" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="74004"/>
+            <line firstPoint="74004" id="74014" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="74002"/>
         </calculation>
         <modeling>
             <point id="31019" idObject="1006" inUse="true" mx="-7.42175" my="-3.03954" showPointName="false" type="modeling"/>
@@ -227,20 +265,12 @@
                     <node idObject="31080" type="NodePoint"/>
                 </nodes>
             </path>
-            <point id="31082" idObject="10002" inUse="false" mx="-4.45634" my="-5.14003" showPointName="true" type="modeling"/>
-            <point id="31083" idObject="121" inUse="false" mx="-11.6227" my="-7.11697" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="31084" inUse="false" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="L_Largo_1" type="2">
-                <nodes>
-                    <node idObject="31082" type="NodePoint"/>
-                    <node idObject="31083" type="NodePoint"/>
-                </nodes>
-            </path>
             <point id="31085" idObject="801" inUse="true" mx="-16.3545" my="0.125239" showPointName="true" type="modeling"/>
             <point id="31086" idObject="800" inUse="true" mx="-9.31607" my="3.85404" showPointName="true" type="modeling"/>
             <point id="31087" idObject="31075" inUse="true" mx="0.132292" my="0.264583" showPointName="true" type="modeling"/>
             <point id="31088" idObject="31074" inUse="true" mx="0.132292" my="0.264583" showPointName="true" type="modeling"/>
             <point id="31089" idObject="801" inUse="true" mx="-16.3545" my="0.125239" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="31090" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Padamano" type="2">
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="31090" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Pasamanos" type="2">
                 <nodes>
                     <node idObject="31085" type="NodePoint"/>
                     <node idObject="31086" type="NodePoint"/>
@@ -277,6 +307,64 @@
                     <node idObject="31099" type="NodePoint"/>
                     <node idObject="31100" type="NodePoint"/>
                     <node idObject="31101" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="890020" idObject="90020" inUse="false" type="modeling"/>
+            <point id="890031" idObject="90031" inUse="true" type="modeling"/>
+            <point id="890032" idObject="90032" inUse="true" type="modeling"/>
+            <path cut="false" id="90034" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Canesu" type="2">
+                <nodes>
+                    <node idObject="890031" type="NodePoint"/>
+                    <node idObject="890032" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="890043" idObject="90043" inUse="true" type="modeling"/>
+            <point id="890041" idObject="90041" inUse="true" type="modeling"/>
+            <point id="890042" idObject="90042" inUse="true" type="modeling"/>
+            <point id="890044" idObject="90044" inUse="true" type="modeling"/>
+            <path cut="false" id="90047" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Martingala" type="2">
+                <nodes>
+                    <node idObject="890043" type="NodePoint"/>
+                    <node idObject="890041" type="NodePoint"/>
+                    <node idObject="890042" type="NodePoint"/>
+                    <node idObject="890044" type="NodePoint"/>
+                    <node idObject="890043" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="71012" idObject="70012" inUse="true" type="modeling"/>
+            <point id="71013" idObject="70013" inUse="true" type="modeling"/>
+            <point id="71015" idObject="70015" inUse="true" type="modeling"/>
+            <point id="71014" idObject="70014" inUse="true" type="modeling"/>
+            <point id="71016" idObject="70016" inUse="true" type="modeling"/>
+            <point id="71017" idObject="70017" inUse="true" type="modeling"/>
+            <path cut="false" id="72000" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Bolsillo_Pecho" type="2">
+                <nodes>
+                    <node idObject="71012" type="NodePoint"/>
+                    <node idObject="71013" type="NodePoint"/>
+                    <node idObject="71015" type="NodePoint"/>
+                    <node idObject="71014" type="NodePoint"/>
+                    <node idObject="71012" type="NodePoint"/>
+                </nodes>
+            </path>
+            <path cut="false" id="72001" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Division_Lapiz" type="2">
+                <nodes>
+                    <node idObject="71016" type="NodePoint"/>
+                    <node idObject="71017" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="75002" idObject="74002" inUse="true" type="modeling"/>
+            <point id="75003" idObject="74003" inUse="true" type="modeling"/>
+            <point id="75005" idObject="74005" inUse="true" type="modeling"/>
+            <point id="75006" idObject="74006" inUse="true" type="modeling"/>
+            <point id="75004" idObject="74004" inUse="true" type="modeling"/>
+            <path cut="false" id="76000" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Bolsillo_Inferior" type="2">
+                <nodes>
+                    <node idObject="75002" type="NodePoint"/>
+                    <node idObject="75003" type="NodePoint"/>
+                    <node idObject="75005" type="NodePoint"/>
+                    <node idObject="75006" type="NodePoint"/>
+                    <node idObject="75004" type="NodePoint"/>
+                    <node idObject="75002" type="NodePoint"/>
                 </nodes>
             </path>
         </modeling>
@@ -333,6 +421,9 @@
                     <record path="31078"/>
                     <record path="31081"/>
                     <record path="31090"/>
+                    <record path="72000"/>
+                    <record path="72001"/>
+                    <record path="76000"/>
                 </iPaths>
             </piece>
             <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="31057" inLayout="true" locked="false" mx="-230.378" my="-47.0066" name="Posterior" seamAllowance="true" united="false" version="2" width="1">
@@ -356,6 +447,8 @@
                     <record path="31093"/>
                     <record path="31096"/>
                     <record path="31102"/>
+                    <record path="90034"/>
+                    <record path="90047"/>
                 </iPaths>
             </piece>
             <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="31063" inLayout="true" locked="false" mx="-339.288" my="33.6302" name="Cuello" seamAllowance="true" united="false" version="2" width="1">
