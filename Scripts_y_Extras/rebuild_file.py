@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import os
+
+file_path = r'c:\Users\Ricx18\Desktop\Maestros_IA\Chaleco_Halter_Dama_Maestro.val'
+
+original_content = """<?xml version="1.0" encoding="UTF-8"?>
 <pattern>
     <version>0.7.3</version>
     <unit>cm</unit>
@@ -53,9 +57,15 @@
             <line firstPoint="38" id="40" secondPoint="19"/>
             <line firstPoint="38" id="41" secondPoint="17"/>
             <!-- Pinza de sisa (Apertura de volumen tridimensional) -->
-            <point angle="AngleLine_D_Princesa_Sisa_Real_D_Costado_Sisa-3" basePoint="38" id="3800" length="2.5" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="10" my="15" name="D_Princesa_Sisa_Inf" showPointName="true" type="endLine"/>
+            <point angle="AngleLine_D_Princesa_Sisa_Real_D_Costado_Sisa" basePoint="38" id="3800" length="2.5" name="D_Princesa_Sisa_Inf" type="endLine"/>
             <line firstPoint="3800" id="3801" secondPoint="19"/>
             <line firstPoint="3800" id="3802" secondPoint="17"/>
+            <!-- COMPOSICIÓN DE SISA EN 2 SPLINES (Calibración Visual Definitiva del Taller) -->
+            <spline angle1="265" angle2="115" id="28" length1="Line_D_Cuello_Ext_D_Princesa_Sisa_Real * 0.3" length2="Line_D_Cuello_Ext_D_Princesa_Sisa_Real * 0.5" point1="12" point4="38" type="simpleInteractive"/>
+            <spline angle1="260" angle2="180" id="29" length1="Line_D_Princesa_Sisa_Inf_D_Costado_Sisa * 0.1" length2="(@S_ANCHO_ESPALDA / 10) + 1" point1="3800" point4="19" type="simpleInteractive"/>
+            <!-- Curva del Corte Princesa hacia el Busto -->
+            <spline angle1="AngleLine_D_Princesa_Sisa_Real_D_Punto_Pezon - 15" angle2="AngleLine_D_Punto_Pezon_D_Pinza_Izq - 180" id="42" length1="Line_D_Princesa_Sisa_Real_D_Punto_Pezon * 0.35" length2="Line_D_Princesa_Sisa_Real_D_Punto_Pezon * 0.35" point1="38" point4="17" type="simpleInteractive"/>
+            <spline angle1="AngleLine_D_Princesa_Sisa_Inf_D_Punto_Pezon + 15" angle2="AngleLine_D_Punto_Pezon_D_Pinza_Der - 180" id="420" length1="Line_D_Princesa_Sisa_Inf_D_Punto_Pezon * 0.35" length2="Line_D_Princesa_Sisa_Inf_D_Punto_Pezon * 0.35" point1="3800" point4="17" type="simpleInteractive"/>
             <!-- Pinza y PICO PRINCESA -->
             <point angle="270" basePoint="17" id="43" length="@S_TALLE_DELANTERO - @S_ALTO_BUSTO" name="D_Centro_Pinza" type="endLine"/>
             <point angle="180" basePoint="43" id="44" length="@D_PINZA_CINT_SUP / 2" name="D_Pinza_Izq" type="endLine"/>
@@ -65,12 +75,6 @@
             <line firstPoint="17" id="48" secondPoint="45"/>
             <line firstPoint="44" id="49" secondPoint="46"/>
             <line firstPoint="45" id="50" secondPoint="46"/>
-            <!-- COMPOSICIÓN DE SISA EN 2 SPLINES (Calibración Visual Definitiva del Taller) -->
-            <spline angle1="265" angle2="115" id="28" length1="Line_D_Cuello_Ext_D_Princesa_Sisa_Real * 0.3" length2="Line_D_Cuello_Ext_D_Princesa_Sisa_Real * 0.5" point1="12" point4="38" type="simpleInteractive"/>
-            <spline angle1="280" angle2="180" color="black" id="29" length1="Line_D_Princesa_Sisa_Inf_D_Costado_Sisa * 0.1" length2="(@S_ANCHO_ESPALDA / 10) + 1" lineWeight="0.35" penStyle="solidLine" point1="3800" point4="19" type="simpleInteractive"/>
-            <!-- Curva del Corte Princesa hacia el Busto -->
-            <spline angle1="AngleLine_D_Princesa_Sisa_Real_D_Punto_Pezon - 15" angle2="90" id="42" length1="Line_D_Princesa_Sisa_Real_D_Punto_Pezon * 0.35" length2="Line_D_Princesa_Sisa_Real_D_Punto_Pezon * 0.35" point1="38" point4="17" type="simpleInteractive"/>
-            <spline angle1="AngleLine_D_Princesa_Sisa_Inf_D_Punto_Pezon - 15" angle2="90" color="black" id="500" length1="Line_D_Princesa_Sisa_Inf_D_Punto_Pezon * 0.35" length2="Line_D_Princesa_Sisa_Inf_D_Punto_Pezon * 0.35" lineWeight="0.35" penStyle="solidLine" point1="3800" point4="17" type="simpleInteractive"/>
             <!-- UBICACIÓN BOLSILLO DELANTERO (Bolsillo de ribete) -->
             <!-- Anclado paramétricamente debajo de la cintura y escalado según el busto -->
             <point angle="270" basePoint="43" id="61" length="@S_TALLE_DELANTERO * 0.15" name="D_Bolsillo_Centro" type="endLine"/>
@@ -144,6 +148,15 @@
             <line firstPoint="139" id="145" secondPoint="141"/>
         </calculation>
         <modeling>
+            <point id="371" idObject="58" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="372" idObject="54" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="373" idObject="53" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="374" idObject="9" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
+            <spline id="375" idObject="15" inUse="false" type="modelingSpline"/>
+            <point id="376" idObject="12" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
+            <spline id="377" idObject="28" inUse="false" type="modelingSpline"/>
+            <spline id="378" idObject="29" inUse="false" type="modelingSpline"/>
+            <point id="379" idObject="22" inUse="false" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="380" idObject="54" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="381" idObject="53" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="382" idObject="9" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
@@ -158,7 +171,7 @@
             <point id="392" idObject="46" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="393" idObject="45" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="394" idObject="17" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <spline id="395" idObject="500" inUse="true" type="modelingSpline"/>
+            <spline id="395" idObject="420" inUse="true" type="modelingSpline"/>
             <spline id="396" idObject="29" inUse="true" type="modelingSpline"/>
             <point id="397" idObject="22" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
             <point id="399" idObject="7" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
@@ -321,3 +334,9 @@
         <groups/>
     </draftBlock>
 </pattern>
+"""
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(original_content)
+
+print("Recovered successfully!")
