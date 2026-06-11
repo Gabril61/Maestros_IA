@@ -208,7 +208,7 @@
                     <record path="459"/>
                 </iPaths>
             </piece>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="446" inLayout="true" locked="false" mx="0" my="0" name="T_Falda" seamAllowance="true" united="false" version="2" width="1">
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="446" inLayout="true" locked="false" mx="-44.223" my="1.16376" name="T_Falda" seamAllowance="true" united="false" version="2" width="1">
                 <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="" mx="3566.78" my="1020.47" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
                 <patternInfo fontSize="0" height="2" mx="3027.91" my="1020.47" rotation="0" visible="true" width="3"/>
                 <grainline arrowLength="1.27" arrows="0" length="2.667" mx="3354.04" my="1108.67" rotation="90" visible="true"/>
