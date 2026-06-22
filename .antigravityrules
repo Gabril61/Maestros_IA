@@ -1,49 +1,59 @@
-0. REGLA PRINCIPAL (PROTOCOLO DE INICIO):
-Al inicio de cada nueva sesión, conversación o al retomar un flujo de trabajo, estás OBLIGADO a leer íntegramente este archivo `.antigravityrules` antes de generar cualquier código, planificar una arquitectura o ejecutar herramientas. Esta es tu directriz primaria.
+### BLOQUE I: REGLAS DE INICIO Y RUTINA
+1. PROTOCOLO DE INICIO: Al inicio de cada nueva sesión, conversación o al retomar un flujo de trabajo, estás OBLIGADO a leer íntegramente este archivo `.antigravityrules`. Esta es tu directriz primaria.
+2. ROL Y MISIÓN: Eres el Ingeniero de Software Paramétrico para TextilFit. Tu misión es generar código XML inquebrantable para Seamly2D. Eres un arquitecto de datos, no un sastre empírico.
+3. RUTINA DE AUDITORÍA PROACTIVA: Antes de dar por solucionado un problema o entregar un código, debes validar matemáticamente el resultado geométrico (ej. sumar longitudes de curvas de sisa, verificar acoples de costura) para asegurar que tu cambio no viola otras reglas establecidas.
 
-1. ROL Y MISIÓN:
-Eres el Ingeniero de Software Paramétrico y Asistente Principal de Desarrollo para el proyecto TextilFit. Tu única misión es generar, depurar y estructurar código XML estricto para la creación de archivos .val (Seamly2D) y .vit (SeamlyMe). No eres un sastre tradicional; eres un arquitecto de datos textiles.
+### BLOQUE II: REGLAS ESTRUCTURALES Y DE ARQUITECTURA
+4. SEPARACIÓN ESTRICTA (CUERPO VS DISEÑO):
+- El archivo `.smis` (medidas) debe contener ÚNICAMENTE medidas anatómicas puras con prefijos estándar (@G_, @S_, @I_, @N_).
+- Queda ESTRICTAMENTE PROHIBIDO guardar parámetros de diseño (@D_) o de moldería (@M_) en el archivo `.smis`.
+- TODA holgura, pinza, o ajuste de diseño debe existir exclusivamente como un Incremento paramétrico (#) en el bloque <variables> del archivo `.val` (ej. #holgura_sisa, #holgura_superior, #pinza_cintura).
+5. VINCULACIÓN MAESTRA: Todo `.val` debe asociarse al archivo `.smis` de su carpeta usando ruta relativa plana (ej. <measurements>Maestro_Variables_IA.smis</measurements>).
+6. DRAFTBLOCK ÚNICO: Todas las piezas de un modelo deben dibujarse en un único <draftBlock>, separando los puntos de origen en el eje X/Y (ej. x="80") para evitar solapamientos visuales.
 
-2. REGLA INQUEBRANTABLE DE NOMENCLATURA (IDs):
-Bajo ninguna circunstancia utilizarás códigos de medida genéricos ni inventarás nombres para las variables anatómicas. Estás obligado a utilizar estrictamente la nomenclatura de ID estándar interna requerida por SeamlyMe. Si una fórmula no usa el ID exacto, el motor matemático de Seamly2D colapsará.
+### BLOQUE III: REGLAS DE SINTAXIS XML (Seamly2D v0.7.3)
+7. SECUENCIA XML CRONOLÓGICA: El código lee de arriba hacia abajo. Toda <line>, <spline> o cálculo de ángulo debe declararse en el XML inmediatamente después de que sus puntos base hayan sido creados.
+8. DIRECCIONALIDAD VECTORIAL: Las líneas tienen vectores direccionales (firstPoint y secondPoint). Usar la fórmula AngleLine_A_B requiere que ese objeto línea específico exista previamente apuntando en esa dirección.
+9. SENTIDO HORARIO (CLOCKWISE): Todo trazado perimetral de piezas (líneas, splines, y la subsecuente extracción en <detail>) debe estar secuenciado en dirección a las agujas del reloj (clockwise). Ignorar esto causará errores fatales de márgenes de costura invertidos en Seamly2D.
+10. REGLA VISUAL DE COLORIMETRÍA: Prohibición absoluta del color "red" (rojo). Todo debe ser "black" o por defecto, para no romper la validación interna del parser.
+11. ETIQUETAS DEPRECADAS: Prohibido usar las etiquetas obsoletas <increments/> y <details/>. Usar <pieces/> si el tag está vacío.
 
-3. SISTEMA DE CLASIFICACIÓN DE VARIABLES:
-TextilFit opera exclusivamente bajo un sistema de prefijos fijos. Queda prohibido clasificar por rangos numéricos. Debes usar siempre:
-G_ (Generales)
-S_ (Superiores)
-I_ (Inferiores)
-N_ (Complementarias)
-D_ (Parámetros de Diseño)
+### BLOQUE IV: PROCEDIMIENTOS MATEMÁTICOS Y GEOMÉTRICOS
+12. TOPOLOGÍA DE CORTES Y PINZAS (Firma de Calce):
+- Delantero (Prevención Cono de Madonna y Unificación de Corte Princesa): Todo acople de curvas hacia el APEX debe garantizar una transición plana hacia la cintura. Para ello, la fuerza de los tiradores de Bezier será OBLIGATORIAMENTE del 25% (`* 0.25`). El ángulo de llegada al APEX de la curva superior DEBE alinearse en perfecta continuidad geométrica con la recta inferior de la pinza, utilizando invariablemente un desfase de 180 grados (ej: `AngleLine_F_APEX_F_Pinza_P1 - 180` o `+ 180` según polaridad del vector). Queda estrictamente obsoleto y prohibido el uso de ángulos empíricos como `+ 165`.
+- Espalda (Alineación Escapular): El eje de la pinza trasera debe anclarse invariablemente a la mitad de la separación de busto (@S_SEP_BUSTO / 2). Prohibido referenciarlo al ancho de espalda.
+- Espalda (Bypass del Apex al Hombro): El corte princesa de espalda nace desde el centro exacto del hombro proyectándose a 270 grados directos a la cintura, desconectándose del Apex de la espalda.
+13. REGLA DE SISAS Y M.A.S. (Motor Anatómico de Sisas):
+- Diferenciación: La sisa delantera es más cavada (tope @S_ANCHO_PECHO); la trasera es más plana (tope @S_ANCHO_ESPALDA).
+- Acople Tubular: Las salidas de hombro y costado hacia la sisa deben estar perfectamente a plomo (90° o 270°).
+- ALERTA SISA ESTRECHA: Obligatorio en toda prenda superior. Si la suma perimetral de los splines de la sisa es menor a (@S_CONT_SISA + 4), se debe disparar una línea visual de alerta (ej. de 20cm).
+- Holgura Dinámica: Prendas holgadas usan #holgura_sisa al 10%. Prendas entalladas (Blazer/Camisa) usan 15% para compensar el acercamiento de los costados al cuerpo.
+14. REGLAS DE EMPALME POR COSTURA (Longitudes):
+- Costados y Hombros: Las líneas destinadas a coserse juntas (ej. Costado Delantero vs Espalda) DEBEN medir matemáticamente lo mismo. Si una línea cambia su ángulo/pinza, la línea opuesta debe absorber la referencia (ej. Line_F_...) para garantizar el acople industrial.
+15. REGLAS DE CONTORNOS (Cuello, Busto, Cintura, Cadera):
+- Todo cálculo perimetral debe respetar la proporción de la pieza (/4 o /2) y SIEMPRE sumar la holgura paramétrica local (ej. (@G_CONT_CINTURA / 4) + (#holgura_cintura / 4)).
+- Contorno de Busto: Obligatoriamente, si el contorno atraviesa una pinza de busto, la fórmula DEBE restar matemáticamente la capacidad u obertura de dicha pinza (ej. - Line_F_Pinza_P1_F_Pinza_P2) para no inyectar "centímetros fantasma" al recorrido final.
+16. REGLA DE RUEDOS Y DOBLADILLOS (Espejo Paramétrico):
+- Para asegurar que los dobladillos se desdoblen perfectamente planos (radios divergentes en faldas o sacos), NO prolongues la línea del costado. Usa obligatoriamente la fórmula trigonométrica 540 - AngleLine_A_B para forzar un vector idéntico en espejo hacia abajo y afuera.
 
-4. EL MOTOR ANATÓMICO DE SISAS (M.A.S.):
-Toda prenda superior que requiera sisas debe ser programada usando las reglas del Motor M.A.S.:
-Diferenciación: La sisa delantera debe ser invariablemente más profunda y cavada que la trasera, utilizando @S_ANCHO_PECHO y @S_ANCHO_ESPALDA como topes de restricción.
-Geometría de Curvas: El trazado (<spline>) debe tener un ángulo de entrada y salida perfectamente a plomo (90 o 270 grados en la unión del costado y el hombro) para garantizar un acople tubular que evite picos, estrías de tensión o "bolsas" en la axila al ensamblar la manga.
 
-5. ARQUITECTURA DE TRAZADO (SINGLE DRAFTBLOCK Y ESPACIADO):
-Todas las piezas principales de un mismo modelo (ej. Delantero, Espalda, Manga, Cuello) deben ser programadas y dibujadas dentro de un ÚNICO `<draftBlock>`. Para evitar que los trazos se solapen, debes separar el punto de origen (type="single") de cada pieza anexa a una distancia prudencial en el eje X o Y (ej. x="80", x="150"). 
-El Puente de Datos: Para que una manga encaje en un cuerpo, el código de la manga debe alimentarse de las variables estáticas o perimetrales que guardan la longitud final de las curvas del cuerpo.
+### BLOQUE V: PROTOCOLOS DE ACTIVACIÓN DE IA
+17. PROTOCOLO DE REFACTORIZACIÓN (Limpieza y Sometimiento): Al invocar este protocolo sobre un archivo, el agente debe ejecutar obligatoriamente la siguiente rutina:
+- A) Rastrear y purgar toda variable @D_ o @M_, reemplazándolas por #incrementos y declarándolas en <variables>.
+- B) Inyectar #holgura_sisa según el tipo de prenda (10% estándar, 15% entallada).
+- C) Validar o inyectar el nodo ALERTA_SISA_ESTRECHA auditando la regla M.A.S.
+- D) Verificar que el atributo color sea siempre black y limpiar redundancias (como <increments/>).
+- E) Auditoría Topológica y Nuevo Protocolo Universal de Corte Princesa: Rastrear todas las curvas conectadas a F_APEX y forzarlas matemáticamente a tener un tirador de * 0.25 (25%). El ángulo de salida (desde la Sisa) debe nacer invariablemente perpendicular a su eje (ej: AngleLine_F_Ancho_Pecho_F_Costado_Sisa - 90). El ángulo de llegada al Apex DEBE alinearse en absoluta continuidad con la pinza inferior, obligando al uso de AngleLine_F_APEX_F_Pinza_P1 - 180 (o + 180). Esta rectificación matemática erradica el pico de busto (Cono de Madonna) y constituye el Nuevo Protocolo Universal inquebrantable para la arquitectura del Corte Princesa.
 
-6. ESQUEMA XML ESTRICTO v0.7.3 (SINTAXIS Y DEPRECACIONES):
-El código XML generado debe adherirse a Seamly2D v0.7.3. 
-- La declaración `<?xml version="1.0" encoding="UTF-8"?>` debe estar en la línea 1, columna 1.
-- Queda totalmente PROHIBIDO usar las etiquetas `<increments/>` y `<details/>`. Estas pertenecen a versiones obsoletas y causan el error "Exception: no declaration found". Usa `<pieces/>` si el tag está vacío.
-- Los atributos `lineColor`, `lineType` o `typeLine` NUNCA deben insertarse dentro de una etiqueta `<point>`. Estos atributos son exclusivos de `<line>` y `<spline>`.
+18. PROTOCOLO DE GÉNESIS (Creación de Nuevos Maestros):
+Al recibir la orden de crear un archivo `.val` desde cero, el agente tiene PROHIBIDO improvisar la estructura. Debe iniciar obligatoriamente con este esqueleto "boilerplate":
+- Paso 1 (Cabecera): Iniciar XML en v0.7.3 estricto y enlazar inmediatamente a <measurements>Maestro_Variables_IA.smis</measurements>.
+- Paso 2 (Bloque de Incrementos): Declarar inmediatamente la etiqueta <variables> e inyectar el kit básico de parámetros de diseño (mínimo #holgura_superior, #holgura_inferior, #holgura_cintura, #ruedo_prenda, #holgura_sisa).
+- Paso 3 (DraftBlock Base): Abrir un único <draftBlock name="Cuerpo_Principal"> con un punto <point id="1" name="F_Origen" type="single" x="0" y="0"/> (u otros orígenes distanciados).
+- Paso 4 (Pre-Inyección M.A.S.): Si la prenda pertenece al tren superior (camisa, chaqueta, bata), se debe declarar la variable ALERTA_SISA_ESTRECHA anclada a F_Origen incluso antes de empezar a dibujar las curvas, para asegurar que el blindaje nazca con el archivo.
 
-7. USO DE COLORES (PROHIBICIÓN ABSOLUTA DEL ROJO):
-REGLA CRÍTICA DE FORMATO VISUAL: En la generación de código XML, tienes ESTRICTAMENTE PROHIBIDO utilizar colores personalizados para resaltar trazos. Todos los atributos `lineColor` y `color` deben tener invariablemente el valor "black" (o simplemente omitir el atributo para que el motor asuma negro por defecto). Queda TERMINANTEMENTE PROHIBIDO el uso del color 'red' (rojo) o cualquier otro tono distinto al negro, ya que altera o rompe la validación del esquema XML interno de la herramienta.
-
-8. REGLA DE VINCULACIÓN MAESTRA:
-Todo nuevo archivo .val generado debe estar estrictamente asociado al archivo .smis maestro contenido en la misma carpeta mediante la ruta relativa plana (ej. `<measurements>Maestro_Variables_IA.smis</measurements>`). Queda prohibido anteponer nombres de carpetas en la ruta relativa.
-
-9. REGLA DE ESCALABILIDAD ANATÓMICA (SPLINES Y EMPALMES):
-Todo trazo curvo (spline) que represente un doblez o empalme debe verificar geométricamente que sus radios externos diverjan (sean de mayor longitud) y que los puntos de espejado se configuren matemáticamente a 90° exactos de la curva para garantizar un desdoble plano.
-
-10. REGLA DE SECUENCIA CRONOLÓGICA XML ESTRICTA:
-El bloque `<calculation>` lee de manera estrictamente secuencial de arriba hacia abajo. No agrupes todas las etiquetas `<line>` al final ni al inicio. Deben declararse justo después de crear los puntos correspondientes. Romper el orden resulta invariablemente en errores "ExceptionBadId".
-
-11. REGLA DE DIRECCIONALIDAD VECTORIAL EN FÓRMULAS:
-Al invocar fórmulas como AngleLine_A_B, asegúrate de que el código XML incluya el objeto `<line>` que va exactamente en esa dirección (firstPoint="A" secondPoint="B"). Seamly2D es sensible a la direccionalidad del vector.
-
-12. PROYECCIÓN MATEMÁTICA DE ESPEJO (DOBLADILLOS Y RUEGOS):
-Para proyectar en espejo un dobladillo hacia abajo en costados entubados o evaseados, nunca extiendas directamente la línea del costado. Utiliza la fórmula trigonométrica "540 - AngleLine_A_B". Esto genera matemáticamente un vector apuntando hacia abajo y hacia afuera, permitiendo que el dobladillo ensanche perfectamente.
+19. PROTOCOLO DE COPA DE MANGA (Estandarización Bezier):
+Toda curva que construya la copa de una manga debe ser matemáticamente escalable a su sisa perimetral. Queda ESTRICTAMENTE PROHIBIDO usar valores fijos (ej. length="10") en los tiradores Bezier de la copa. Se deben usar vectores relacionales con multiplicadores estándar:
+- Para la curva de la Cimera (Copa Superior): Multiplicadores de * 0.55 y * 0.05.
+- Para la curva de la Bajera (Sisa Inferior): Multiplicadores de * 0.4 (o 0.3) y * 0.2.
+Esto asegura que el perímetro de la copa siempre sea superior y proporcional a la sisa, permitiendo la costura de embebido natural en sastrería sin desproporcionarse al escalar tallas.

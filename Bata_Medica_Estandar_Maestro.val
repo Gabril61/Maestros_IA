@@ -1,416 +1,430 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<pattern>
-    <version>0.7.3</version>
-    <unit>cm</unit>
-    <description>Bata Medica Elegante - Alta Costura M.A.S.</description>
-    <notes>Patron refactorizado con entalles, solapa, cruce y sisas tangenciales.</notes>
-    <measurements/>
-    <variables>
-        <variable description="Contorno de cuello" formula="36.5" name="@S_CONT_CUELLO"/>
-        <variable description="Ancho de espalda" formula="36" name="@S_ANCHO_ESPALDA"/>
-        <variable description="Talle delantero" formula="44" name="@S_TALLE_DELANTERO"/>
-        <variable description="Talle trasero" formula="42" name="@S_TALLE_TRASERO"/>
-        <variable description="Contorno de busto" formula="92" name="@S_CONT_BUSTO"/>
-        <variable description="Contorno de cadera baja" formula="98" name="@G_CONT_CADERA_BAJA"/>
-        <variable description="Largo total de la bata" formula="100" name="@G_LARGO_PRENDA"/>
-        <variable description="Contorno del brazo" formula="28" name="@S_CONT_BICEP"/>
-        <variable description="Largo de manga" formula="60" name="@S_LARGO_MANGA"/>
-        <variable description="Holgura industrial bata" formula="8" name="#holgura_bata"/>
-    </variables>
-    <draftBlock name="Bata_Elegante">
-        <calculation>
-            <point id="100" mx="0.1" my="0.1" name="F_Origen" type="single" x="0" y="0"/>
-            <point angle="270" basePoint="100" id="102" length="(@S_CONT_CUELLO/6) + 2" name="F_Escote_Alto" type="endLine"/>
-            <point angle="270" basePoint="100" id="107" length="(@S_ANCHO_ESPALDA/2) + 4" name="F_Nivel_Sisa" type="endLine"/>
-            <point angle="270" basePoint="100" id="109" length="((@S_ANCHO_ESPALDA/2)+4)/2" name="F_Nivel_Pecho" type="endLine"/>
-            <point angle="270" basePoint="100" id="116" length="@S_TALLE_DELANTERO" name="F_Nivel_Cintura" type="endLine"/>
-            <point angle="270" basePoint="100" id="118" length="@G_LARGO_PRENDA" name="F_Nivel_Largo" type="endLine"/>
-            <point angle="0" basePoint="100" id="101" length="(@S_CONT_CUELLO/6) + 1" name="F_Escote_Ancho" type="endLine"/>
-            <point angle="180" basePoint="102" id="152" length="1" name="F_Cruce_Pecho" type="endLine"/>
-            <point angle="180" basePoint="116" id="150" length="1" name="F_Cruce_Cintura" type="endLine"/>
-            <point angle="180" basePoint="118" id="151" length="1" name="F_Cruce_Ruedo" type="endLine"/>
-            <point angle="0" basePoint="100" id="104" length="(@S_ANCHO_ESPALDA/2)" name="F_Guia_Espalda" type="endLine"/>
-            <point angle="270" basePoint="104" id="105" length="4" name="F_Caida_Hombro" type="endLine"/>
-            <line firstPoint="101" id="106" secondPoint="105"/>
-            <point angle="0" basePoint="109" id="110" length="(@S_ANCHO_ESPALDA/2) - 1.5" name="F_Ancho_Pecho" type="endLine"/>
-            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="F_Costado_Sisa" type="endLine"/>
-            <line firstPoint="105" id="112" secondPoint="110"/>
-            <line firstPoint="110" id="113" secondPoint="111"/>
-            <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="black" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" point1="105" point4="110" type="simpleInteractive"/>
-            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="black" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" point1="110" point4="111" type="simpleInteractive"/>
-            <point angle="0" basePoint="116" id="119" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="F_Costado_Cintura" type="endLine"/>
-            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="F_Costado_Ruedo" type="endLine"/>
-            <line firstPoint="111" id="120" secondPoint="119"/>
-            <line firstPoint="119" id="122" secondPoint="121"/>
-            <spline angle1="270" angle2="90" color="black" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" point1="111" point4="119" type="simpleInteractive"/>
-            <spline angle1="270" angle2="90" color="black" id="131" length1="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" length2="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" point1="119" point4="121" type="simpleInteractive"/>
-            <line firstPoint="101" id="134" secondPoint="152"/>
-            <line firstPoint="152" id="133" secondPoint="151"/>
-            <line firstPoint="151" id="132" secondPoint="121"/>
-            <point angle="0" basePoint="116" id="140" length="((@S_CONT_BUSTO + #holgura_bata)/8)" name="F_Bolsillo_Centro_Top" type="endLine"/>
-            <point angle="270" basePoint="140" id="141" length="5" name="F_Bolsillo_Origen" type="endLine"/>
-            <point angle="180" basePoint="141" id="142" length="7" name="F_Bolsillo_TL" type="endLine"/>
-            <point angle="0" basePoint="141" id="143" length="7" name="F_Bolsillo_TR" type="endLine"/>
-            <point angle="270" basePoint="142" id="144" length="14" name="F_Bolsillo_BL" type="endLine"/>
-            <point angle="270" basePoint="143" id="145" length="14" name="F_Bolsillo_BR" type="endLine"/>
-            <point angle="270" basePoint="141" id="146" length="16" name="F_Bolsillo_BotCenter" type="endLine"/>
-            <line firstPoint="142" id="147" secondPoint="143"/>
-            <line firstPoint="143" id="148" secondPoint="145"/>
-            <line firstPoint="145" id="149" secondPoint="146"/>
-            <line firstPoint="146" id="160" secondPoint="144"/>
-            <line firstPoint="144" id="161" secondPoint="142"/>
-            <point id="200" mx="0.1" my="0.1" name="T_Origen" type="single" x="80" y="0"/>
-            <point angle="270" basePoint="200" id="216" length="@S_TALLE_TRASERO" name="T_Nivel_Cintura" type="endLine"/>
-            <point angle="270" basePoint="200" id="218" length="@G_LARGO_PRENDA" name="T_Nivel_Largo" type="endLine"/>
-            <point angle="180" basePoint="216" id="250" length="2.5" name="T_Centro_Cintura" type="endLine"/>
-            <spline angle1="270" angle2="90" color="black" id="247" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="200" point4="250" type="simpleInteractive"/>
-            <point angle="90" basePoint="218" id="230" length="20" name="T_Abertura_Top" type="endLine"/>
-            <point angle="0" basePoint="230" id="231" length="5" name="T_Aletilla_Top" type="endLine"/>
-            <line firstPoint="250" id="246" secondPoint="230"/>
-            <line firstPoint="230" id="245" secondPoint="231"/>
-            <point angle="180" basePoint="200" id="201" length="(@S_CONT_CUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine"/>
-            <point angle="180" basePoint="200" id="204" length="(@S_ANCHO_ESPALDA/2)" name="T_Guia_Espalda" type="endLine"/>
-            <point angle="270" basePoint="204" id="205" length="3" name="T_Caida_Hombro" type="endLine"/>
-            <line firstPoint="201" id="206" secondPoint="205"/>
-            <point angle="270" basePoint="200" id="207" length="(@S_ANCHO_ESPALDA/2) + 4" name="T_Nivel_Sisa" type="endLine"/>
-            <point angle="270" basePoint="200" id="209" length="((@S_ANCHO_ESPALDA/2)+4)/2" name="T_Nivel_Pecho" type="endLine"/>
-            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine"/>
-            <line firstPoint="200" id="20000" secondPoint="202"/>
-            <spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive"/>
-            <spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive"/>
-            <point angle="180" basePoint="209" curve="20002" id="90005" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Pecho" showPointName="false" type="curveIntersectAxis"/>
-            <point angle="180" basePoint="90005" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
-            <point angle="180" basePoint="207" curve="20002" id="90006" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Sisa" showPointName="false" type="curveIntersectAxis"/>
-            <point angle="180" basePoint="90006" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="T_Costado_Sisa" type="endLine"/>
-            <line firstPoint="205" id="212" secondPoint="210"/>
-            <line firstPoint="210" id="213" secondPoint="211"/>
-            <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro + 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
-            <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive"/>
-            <point angle="180" basePoint="250" id="219" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
-            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="T_Costado_Ruedo" type="endLine"/>
-            <line firstPoint="211" id="220" secondPoint="219"/>
-            <line firstPoint="219" id="222" secondPoint="221"/>
-            <spline angle1="270" angle2="90" color="black" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" point1="211" point4="219" type="simpleInteractive"/>
-            <spline angle1="270" angle2="90" color="black" id="242" length1="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" length2="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" point1="219" point4="221" type="simpleInteractive"/>
-            <point angle="270" basePoint="219" id="228" length="5" name="T_Pasamanos_Top" type="endLine"/>
-            <point angle="270" basePoint="228" id="223" length="20" name="T_Pasamanos_Bot" type="endLine"/>
-            <point angle="0" basePoint="228" id="224" length="4" name="T_Aletilla_P_Top" type="endLine"/>
-            <point angle="0" basePoint="223" id="225" length="4" name="T_Aletilla_P_Bot" type="endLine"/>
-            <line firstPoint="228" id="260" secondPoint="224"/>
-            <line firstPoint="224" id="261" secondPoint="225"/>
-            <line firstPoint="225" id="262" secondPoint="223"/>
-            <line firstPoint="101" id="20003" secondPoint="102"/>
-            <spline angle1="270" angle2="0" color="black" id="20004" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" point1="101" point4="102" type="simpleInteractive"/>
-            <point angle="180" basePoint="102" id="10001" length="1" mx="-8.47139" my="1.09785" name="F_Solapa_Top" type="endLine"/>
-            <point angle="180" basePoint="118" id="10002" length="1" mx="-7.402" my="-6.87402" name="F_Solapa_Bot" type="endLine"/>
-            <line firstPoint="10001" id="20005" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="10002"/>
-            <line firstPoint="102" id="20006" secondPoint="10001"/>
-            <line firstPoint="118" id="20007" secondPoint="10002"/>
-            <point angle="180" basePoint="100" id="3002" length="(@S_CONT_CUELLO/6) + 1" mx="-7.49921" my="3.62551" name="V_Cuello_Espejo" type="endLine"/>
-            <point angle="180" basePoint="100" id="3003" length="(@S_ANCHO_ESPALDA / 2)" mx="1.25039" my="0.806194" name="V_Top_Extremo" type="endLine"/>
-            <point angle="180" basePoint="118" id="3004" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.569869" my="-2.79087" name="V_Bot_Extremo" type="endLine"/>
-            <point angle="180" basePoint="116" id="3005" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.180997" my="-1.72147" name="V_Cintura_Extremo" type="endLine"/>
-            <line firstPoint="3002" id="20008" secondPoint="102"/>
-            <line firstPoint="3005" id="20009" secondPoint="3003"/>
-            <spline angle1="270" angle2="180" color="darkBlue" id="20010" length1="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" length2="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" lineWeight="0.35" penStyle="solidLine" point1="3002" point4="10001" type="simpleInteractive"/>
-            <spline angle1="90" angle2="290" color="darkBlue" id="20011" length1="Line_V_Cintura_Extremo_V_Top_Extremo * 0.3" length2="Line_V_Cintura_Extremo_V_Top_Extremo * 0.3" lineWeight="0.35" penStyle="solidLine" point1="3005" point4="3003" type="simpleInteractive"/>
-            <line firstPoint="3003" id="20012" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="3002"/>
-            <line firstPoint="3004" id="20013" secondPoint="118"/>
-            <line firstPoint="3004" id="20014" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="3005"/>
-            <point id="1000" mx="-3.01097" my="3.8915" name="M_Origen" type="single" x="150" y="0"/>
-            <point angle="270" basePoint="1000" id="1001" length="@S_LARGO_MANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine"/>
-            <point angle="270" basePoint="1000" id="1002" length="(@S_CONT_BUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine"/>
-            <point angle="180" basePoint="1002" id="1003" length="(@S_CONT_BICEP/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine"/>
-            <point angle="0" basePoint="1002" id="1004" length="(@S_CONT_BICEP/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine"/>
-            <point angle="180" basePoint="1001" id="1005" length="14" mx="0.861522" my="-3.95748" name="M_Puno_Izq" type="endLine"/>
-            <point angle="0" basePoint="1001" id="1006" length="14" mx="-6.91591" my="-3.95748" name="M_Puno_Der" type="endLine"/>
-            <line firstPoint="1000" id="20015" secondPoint="1003"/>
-            <line firstPoint="1000" id="20016" secondPoint="1004"/>
-            <point firstPoint="1000" id="1020" length="Line_M_Origen_M_Ancho_Izq / 2" mx="0.278215" my="1.68115" name="M_Guia_Izq" secondPoint="1003" type="alongLine"/>
-            <point firstPoint="1000" id="1021" length="Line_M_Origen_M_Ancho_Der / 2" mx="-3.90215" my="3.72273" name="M_Guia_Der" secondPoint="1004" type="alongLine"/>
-            <spline angle1="180" angle2="AngleLine_M_Origen_M_Ancho_Izq - 180" color="black" id="20017" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.05" point1="1000" point4="1020" type="simpleInteractive"/>
-            <spline angle1="AngleLine_M_Origen_M_Ancho_Izq + 20" angle2="0" color="black" id="20018" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.4" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.2" point1="1020" point4="1003" type="simpleInteractive"/>
-            <spline angle1="0" angle2="AngleLine_M_Origen_M_Ancho_Der - 220" color="black" id="20019" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.05" point1="1000" point4="1021" type="simpleInteractive"/>
-            <spline angle1="AngleLine_M_Origen_M_Ancho_Der - 20" angle2="180" color="black" id="20020" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.3" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.2" point1="1021" point4="1004" type="simpleInteractive"/>
-            <line firstPoint="1003" id="20021" secondPoint="1005"/>
-            <line firstPoint="1004" id="20022" secondPoint="1006"/>
-            <spline angle1="AngleLine_M_Ancho_Izq_M_Puno_Izq + 10" angle2="AngleLine_M_Ancho_Izq_M_Puno_Izq + 177" color="black" id="20023" length1="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" length2="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" lineWeight="0.35" penStyle="solidLine" point1="1003" point4="1005" type="simpleInteractive"/>
-            <spline angle1="AngleLine_M_Ancho_Der_M_Puno_Der - 10" angle2="AngleLine_M_Ancho_Der_M_Puno_Der + 183" color="black" id="20024" length1="Line_M_Ancho_Der_M_Puno_Der * 0.3" length2="Line_M_Ancho_Der_M_Puno_Der * 0.3" lineWeight="0.35" penStyle="solidLine" point1="1004" point4="1006" type="simpleInteractive"/>
-            <line firstPoint="1005" id="20025" secondPoint="1006"/>
-            <point id="2000" mx="1.55827" my="-2.81654" name="C_Origen" type="single" x="200" y="0"/>
-            <point angle="90" basePoint="2000" id="2001" length="10" mx="1.3305" my="0.73941" name="C_Alto" type="endLine"/>
-            <point angle="0" basePoint="2000" id="2002" length="(@S_CONT_CUELLO/2) + 4.5" mx="-17.0266" my="-5.90184" name="C_Ancho" type="endLine"/>
-            <point angle="90" basePoint="2002" id="2003" length="Line_C_Origen_C_Alto - 1.5" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="-8.2768" my="0.484928" name="C_Top_Ancho" showPointName="true" type="endLine"/>
-            <point angle="0" basePoint="2000" id="2004" length="Line_C_Origen_C_Ancho - 7" mx="-5.36042" my="-3.17974" name="C_Equi" type="endLine"/>
-            <point angle="180" basePoint="2002" id="2005" length="2" mx="-6.04095" my="-2.79087" name="C_Entrada" type="endLine"/>
-            <line firstPoint="2005" id="20026" secondPoint="2003"/>
-            <line firstPoint="2001" id="20027" secondPoint="2003"/>
-            <point firstPoint="2005" id="2008" length="1" mx="-8.17974" my="-4.24913" name="C_Lateral_Base" secondPoint="2003" type="alongLine"/>
-            <line firstPoint="2004" id="20028" secondPoint="2008"/>
-            <line firstPoint="2000" id="20029" secondPoint="2001"/>
-            <line firstPoint="2000" id="20030" secondPoint="2004"/>
-            <line firstPoint="2008" id="20031" secondPoint="2003"/>
-            <spline angle1="0" angle2="170" color="black" id="20032" length1="Line_C_Alto_C_Top_Ancho * 0.5" length2="Line_C_Alto_C_Top_Ancho * 0.3" lineWeight="0.35" penStyle="solidLine" point1="2001" point4="2003" type="simpleInteractive"/>
-            <spline angle1="0" angle2="AngleLine_C_Equi_C_Lateral_Base - 170" color="black" id="20033" length1="Line_C_Equi_C_Lateral_Base * 0.4" length2="Line_C_Equi_C_Lateral_Base * 0.1" point1="2004" point4="2008" type="simpleInteractive"/>
-            <line firstPoint="2003" id="20034" secondPoint="2002"/>
-            <point angle="270" basePoint="118" id="30030" length="3" lineColor="black" lineType="none" name="F_Nivel_Doblez" type="endLine"/>
-            <point angle="270" basePoint="10002" id="30031" length="3" lineColor="black" lineType="none" name="F_Solapa_Doblez_Bot" type="endLine"/>
-            <point angle="270" basePoint="3004" id="30032" length="3" lineColor="black" lineType="none" name="V_Doblez_Bot_Doblez_Extremo" type="endLine"/>
-            <point angle="270" basePoint="151" id="30033" length="3" lineColor="black" lineType="none" name="F_Cruce_Doblez" type="endLine"/>
-            <point angle="540 - AngleLine_F_Costado_Cintura_F_Costado_Ruedo" basePoint="121" id="30034" length="3" lineColor="black" lineType="none" name="F_Costado_Doblez" type="endLine"/>
-            <point angle="270" basePoint="218" id="30035" length="3" lineColor="black" lineType="none" name="T_Nivel_Doblez" type="endLine"/>
-            <point angle="540 - AngleLine_T_Costado_Cintura_T_Costado_Ruedo" basePoint="221" id="30036" length="3" lineColor="black" lineType="none" name="T_Costado_Doblez" type="endLine"/>
-            <line firstPoint="118" id="30037" lineColor="blue" lineType="solidLine" secondPoint="30030"/>
-            <line firstPoint="10002" id="30038" lineColor="blue" lineType="solidLine" secondPoint="30031"/>
-            <line firstPoint="3004" id="30039" lineColor="blue" lineType="solidLine" secondPoint="30032"/>
-            <line firstPoint="151" id="30040" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="30033"/>
-            <line firstPoint="121" id="30041" lineColor="blue" lineType="solidLine" secondPoint="30034"/>
-            <line firstPoint="218" id="30042" lineColor="blue" lineType="solidLine" secondPoint="30035"/>
-            <line firstPoint="221" id="30043" lineColor="blue" lineType="solidLine" secondPoint="30036"/>
-            <line firstPoint="30033" id="30044" lineColor="blue" lineType="solidLine" secondPoint="30034"/>
-            <line firstPoint="30030" id="30045" lineColor="blue" lineType="solidLine" secondPoint="30031"/>
-            <line firstPoint="30032" id="30046" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="30030"/>
-            <point angle="0" basePoint="30035" id="232" length="5" name="T_Aletilla_Bot" type="endLine"/>
-            <line firstPoint="231" id="244" secondPoint="232"/>
-            <line firstPoint="30036" id="243" secondPoint="232"/>
-        </calculation>
-        <modeling>
-            <point id="30055" idObject="10001" inUse="true" mx="-8.47139" my="1.09785" showPointName="false" type="modeling"/>
-            <point id="30056" idObject="30033" inUse="true" mx="-7.81084" my="-4.45027" showPointName="false" type="modeling"/>
-            <point id="30057" idObject="30032" inUse="true" mx="-14.9437" my="-2.85744" showPointName="false" type="modeling"/>
-            <point id="30058" idObject="3005" inUse="true" mx="0.180997" my="-1.72147" showPointName="false" type="modeling"/>
-            <spline id="30059" idObject="20011" inUse="true" type="modelingSpline"/>
-            <point id="30060" idObject="3002" inUse="true" mx="-7.49921" my="3.62551" showPointName="false" type="modeling"/>
-            <spline id="30061" idObject="20010" inUse="true" type="modelingSpline"/>
-            <point id="30063" idObject="10001" inUse="true" mx="-4.87407" my="2.7649" showPointName="false" type="modeling"/>
-            <point id="30064" idObject="102" inUse="true" mx="1.75854" my="5.61389" showPointName="false" type="modeling"/>
-            <spline id="30065" idObject="20004" inUse="true" type="modelingSpline"/>
-            <point id="30066" idObject="105" inUse="true" mx="10" my="15" showPointName="false" type="modeling"/>
-            <spline id="30067" idObject="114" inUse="true" type="modelingSpline"/>
-            <spline id="30068" idObject="115" inUse="true" type="modelingSpline"/>
-            <spline id="30069" idObject="130" inUse="true" type="modelingSpline"/>
-            <spline id="30070" idObject="131" inUse="true" type="modelingSpline"/>
-            <point id="30071" idObject="30034" inUse="true" mx="-9.39044" my="-3.51305" showPointName="false" type="modeling"/>
-            <point id="30072" idObject="30033" inUse="true" mx="0.962826" my="-2.81113" showPointName="false" type="modeling"/>
-            <point id="30074" idObject="231" inUse="true" mx="-8.24983" my="3.85708" showPointName="false" type="modeling"/>
-            <point id="30075" idObject="232" inUse="true" mx="-9.82914" my="-3.864" showPointName="false" type="modeling"/>
-            <point id="30076" idObject="30036" inUse="true" mx="1.22605" my="-2.46017" showPointName="false" type="modeling"/>
-            <point id="30077" idObject="221" inUse="true" mx="0.875087" my="-2.72339" showPointName="false" type="modeling"/>
-            <spline id="30078" idObject="242" inUse="true" type="modelingSpline"/>
-            <spline id="30079" idObject="241" inUse="true" type="modelingSpline"/>
-            <spline id="30080" idObject="215" inUse="true" type="modelingSpline"/>
-            <spline id="30081" idObject="214" inUse="true" type="modelingSpline"/>
-            <point id="30082" idObject="201" inUse="true" mx="10" my="15" showPointName="false" type="modeling"/>
-            <spline id="30083" idObject="20001" inUse="true" type="modelingSpline"/>
-            <spline id="30084" idObject="20002" inUse="true" type="modelingSpline"/>
-            <point id="30085" idObject="230" inUse="true" mx="-10.9698" my="1.13715" showPointName="false" type="modeling"/>
-            <point id="30087" idObject="1006" inUse="true" mx="-6.91591" my="-3.95748" showPointName="false" type="modeling"/>
-            <spline id="30088" idObject="20023" inUse="true" type="modelingSpline"/>
-            <spline id="30089" idObject="20018" inUse="true" type="modelingSpline"/>
-            <spline id="30090" idObject="20017" inUse="true" type="modelingSpline"/>
-            <spline id="30091" idObject="20019" inUse="true" type="modelingSpline"/>
-            <spline id="30092" idObject="20020" inUse="true" type="modelingSpline"/>
-            <spline id="30093" idObject="20024" inUse="true" type="modelingSpline"/>
-            <point id="30095" idObject="2004" inUse="true" mx="-5.36042" my="-3.17974" showPointName="false" type="modeling"/>
-            <point id="30096" idObject="2000" inUse="true" mx="1.55827" my="-2.81654" showPointName="false" type="modeling"/>
-            <point id="30097" idObject="2001" inUse="true" mx="1.3305" my="0.73941" showPointName="false" type="modeling"/>
-            <spline id="30098" idObject="20032" inUse="true" type="modelingSpline"/>
-            <point id="30099" idObject="2008" inUse="true" mx="-8.17974" my="-4.24913" showPointName="false" type="modeling"/>
-            <spline id="30100" idObject="20033" inUse="true" type="modelingSpline"/>
-            <point id="30102" idObject="3005" inUse="true" mx="0.180997" my="-1.72147" showPointName="true" type="modeling"/>
-            <point id="30103" idObject="150" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30104" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="L_Cintura" type="2">
-                <nodes>
-                    <node idObject="30102" type="NodePoint"/>
-                    <node idObject="30103" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30105" idObject="3004" inUse="true" mx="0.569869" my="-2.79087" showPointName="true" type="modeling"/>
-            <point id="30106" idObject="10002" inUse="true" mx="-7.402" my="-6.87402" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30107" inUse="true" lineColor="black" lineType="solidLine" lineWeight="0.35" name="L_Largo" type="2">
-                <nodes>
-                    <node idObject="30105" type="NodePoint"/>
-                    <node idObject="30106" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30108" idObject="150" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30109" idObject="119" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30110" inUse="true" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" name="L_Cintura" type="2">
-                <nodes>
-                    <node idObject="30108" type="NodePoint"/>
-                    <node idObject="30109" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30111" idObject="10002" inUse="true" mx="-7.402" my="-6.87402" showPointName="true" type="modeling"/>
-            <point id="30112" idObject="121" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30113" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Largo" type="2">
-                <nodes>
-                    <node idObject="30111" type="NodePoint"/>
-                    <node idObject="30112" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30114" idObject="142" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30115" idObject="143" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30116" idObject="145" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30117" idObject="146" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30118" idObject="144" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30119" idObject="142" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30120" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Bolsillo" type="2">
-                <nodes>
-                    <node idObject="30114" type="NodePoint"/>
-                    <node idObject="30115" type="NodePoint"/>
-                    <node idObject="30116" type="NodePoint"/>
-                    <node idObject="30117" type="NodePoint"/>
-                    <node idObject="30118" type="NodePoint"/>
-                    <node idObject="30119" type="NodePoint"/>
-                </nodes>
-            </path>
-            <spline id="30121" idObject="241" inUse="true" type="modelingSpline"/>
-            <point id="30122" idObject="250" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30123" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Cintura" type="2">
-                <nodes>
-                    <node idObject="30121" reverse="0" type="NodeSpline"/>
-                    <node idObject="30122" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30124" idObject="221" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30125" idObject="218" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30126" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Largo" type="2">
-                <nodes>
-                    <node idObject="30124" type="NodePoint"/>
-                    <node idObject="30125" type="NodePoint"/>
-                </nodes>
-            </path>
-            <point id="30127" idObject="228" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30128" idObject="224" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30129" idObject="225" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30130" idObject="223" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <point id="30131" idObject="228" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
-            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30132" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Pasamanos" type="2">
-                <nodes>
-                    <node idObject="30127" type="NodePoint"/>
-                    <node idObject="30128" type="NodePoint"/>
-                    <node idObject="30129" type="NodePoint"/>
-                    <node idObject="30130" type="NodePoint"/>
-                    <node idObject="30131" type="NodePoint"/>
-                </nodes>
-            </path>
-        </modeling>
-        <pieces>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30062" inLayout="true" locked="false" mx="0" my="0" name="Solapa" seamAllowance="true" united="false" version="2" width="1">
-                <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="S" mx="-255.118" my="1908.66" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
-                <patternInfo fontSize="0" height="2" mx="-576.378" my="1908.66" rotation="0" visible="true" width="3"/>
-                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="-359.055" my="1996.86" rotation="90" visible="true"/>
-                <nodes>
-                    <node after="0" idObject="30055" type="NodePoint"/>
-                    <node after="0" before="0" idObject="30056" type="NodePoint"/>
-                    <node after="0" before="0" idObject="30057" type="NodePoint"/>
-                    <node after="0" before="0" idObject="30058" type="NodePoint"/>
-                    <node idObject="30059" reverse="0" type="NodeSpline"/>
-                    <node idObject="30060" type="NodePoint"/>
-                    <node idObject="30061" reverse="0" type="NodeSpline"/>
-                </nodes>
-                <iPaths>
-                    <record path="30104"/>
-                    <record path="30107"/>
-                </iPaths>
-            </piece>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30073" inLayout="true" locked="false" mx="5.76459" my="-0.648466" name="Frente" seamAllowance="true" united="false" version="2" width="1">
-                <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="F" mx="798.425" my="1908.66" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
-                <patternInfo fontSize="0" height="2" mx="203.15" my="1908.66" rotation="0" visible="true" width="3"/>
-                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="557.48" my="1996.86" rotation="90" visible="true"/>
-                <nodes>
-                    <node before="0" idObject="30063" type="NodePoint"/>
-                    <node idObject="30064" type="NodePoint"/>
-                    <node idObject="30065" reverse="1" type="NodeSpline"/>
-                    <node idObject="30066" type="NodePoint"/>
-                    <node idObject="30067" reverse="0" type="NodeSpline"/>
-                    <node idObject="30068" reverse="0" type="NodeSpline"/>
-                    <node idObject="30069" reverse="0" type="NodeSpline"/>
-                    <node idObject="30070" reverse="0" type="NodeSpline"/>
-                    <node after="0" idObject="30071" type="NodePoint"/>
-                    <node after="0" before="0" idObject="30072" type="NodePoint"/>
-                </nodes>
-                <iPaths>
-                    <record path="30110"/>
-                    <record path="30113"/>
-                    <record path="30120"/>
-                </iPaths>
-            </piece>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30086" inLayout="true" locked="false" mx="-8.69591" my="-0.190748" name="Posterior" seamAllowance="true" united="false" version="2" width="1">
-                <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="T" mx="2820.47" my="1908.66" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
-                <patternInfo fontSize="0" height="2" mx="2149.61" my="1908.66" rotation="0" visible="true" width="3"/>
-                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="2541.73" my="1996.86" rotation="90" visible="true"/>
-                <nodes>
-                    <node after="0" idObject="30074" type="NodePoint"/>
-                    <node after="0" before="0" idObject="30075" type="NodePoint"/>
-                    <node before="0" idObject="30076" type="NodePoint"/>
-                    <node idObject="30077" type="NodePoint"/>
-                    <node idObject="30078" reverse="1" type="NodeSpline"/>
-                    <node idObject="30079" reverse="1" type="NodeSpline"/>
-                    <node idObject="30080" reverse="1" type="NodeSpline"/>
-                    <node idObject="30081" reverse="1" type="NodeSpline"/>
-                    <node idObject="30082" type="NodePoint"/>
-                    <node idObject="30083" reverse="1" type="NodeSpline"/>
-                    <node idObject="30084" reverse="0" type="NodeSpline"/>
-                    <node idObject="30085" type="NodePoint"/>
-                </nodes>
-                <iPaths>
-                    <record path="30123"/>
-                    <record path="30126"/>
-                    <record path="30132"/>
-                </iPaths>
-            </piece>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30094" inLayout="true" locked="false" mx="-60.1619" my="15.1305" name="Manga" seamAllowance="true" united="false" version="2" width="1">
-                <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="M" mx="5914.96" my="1096.06" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
-                <patternInfo fontSize="0" height="2" mx="5310.24" my="1096.06" rotation="0" visible="true" width="3"/>
-                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="5669.29" my="1184.26" rotation="90" visible="true"/>
-                <nodes>
-                    <node idObject="30087" type="NodePoint"/>
-                    <node idObject="30088" reverse="1" type="NodeSpline"/>
-                    <node idObject="30089" reverse="1" type="NodeSpline"/>
-                    <node idObject="30090" reverse="1" type="NodeSpline"/>
-                    <node idObject="30091" reverse="0" type="NodeSpline"/>
-                    <node idObject="30092" reverse="0" type="NodeSpline"/>
-                    <node idObject="30093" reverse="0" type="NodeSpline"/>
-                </nodes>
-            </piece>
-            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30101" inLayout="true" locked="false" mx="-121.585" my="11.8883" name="Cuello" seamAllowance="true" united="false" version="2" width="1">
-                <data annotation="" foldPosition="Indefinido" fontSize="0" height="2" letter="C" mx="8147.24" my="-226.772" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="3"/>
-                <patternInfo fontSize="0" height="2" mx="7717.32" my="-226.772" rotation="0" visible="true" width="3"/>
-                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="7988.98" my="-138.576" rotation="90" visible="true"/>
-                <nodes>
-                    <node idObject="30095" type="NodePoint"/>
-                    <node idObject="30096" type="NodePoint"/>
-                    <node idObject="30097" type="NodePoint"/>
-                    <node idObject="30098" reverse="0" type="NodeSpline"/>
-                    <node idObject="30099" type="NodePoint"/>
-                    <node idObject="30100" reverse="1" type="NodeSpline"/>
-                </nodes>
-            </piece>
-        </pieces>
-        <groups>
-            <group groupColor="black" id="30047" lineType="solidLine" lineWeight="0" locked="false" name="Trazos_De_Construcción" visible="false">
-                <item object="20009" tool="20009"/>
-                <item object="20008" tool="20008"/>
-                <item object="134" tool="134"/>
-                <item object="112" tool="112"/>
-                <item object="113" tool="113"/>
-                <item object="122" tool="122"/>
-                <item object="120" tool="120"/>
-                <item object="213" tool="213"/>
-                <item object="212" tool="212"/>
-                <item object="222" tool="222"/>
-                <item object="220" tool="220"/>
-                <item object="20000" tool="20000"/>
-                <item object="20015" tool="20015"/>
-                <item object="20016" tool="20016"/>
-                <item object="20022" tool="20022"/>
-                <item object="20021" tool="20021"/>
-                <item object="20027" tool="20027"/>
-                <item object="20034" tool="20034"/>
-                <item object="20028" tool="20028"/>
-            </group>
-        </groups>
-    </draftBlock>
-</pattern>
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <version>0.7.3</version>
+    <unit>cm</unit>
+    <description>Bata Medica Elegante - Alta Costura M.A.S.</description>
+    <notes>Patron refactorizado con entalles, solapa, cruce y sisas tangenciales.</notes>
+    <measurements/>
+    <variables>
+
+        <variable description="Contorno de cuello" formula="36.5" name="@S_CONT_CUELLO"/>
+        <variable description="Ancho de espalda" formula="36" name="@S_ANCHO_ESPALDA"/>
+        <variable description="Talle delantero" formula="44" name="@S_TALLE_DELANTERO"/>
+        <variable description="Talle trasero" formula="42" name="@S_TALLE_TRASERO"/>
+        <variable description="Contorno de busto" formula="92" name="@S_CONT_BUSTO"/>
+        <variable description="Contorno de cadera baja" formula="98" name="@G_CONT_CADERA_BAJA"/>
+        <variable description="Largo total de la bata" formula="100" name="@G_LARGO_PRENDA"/>
+        <variable description="Contorno del brazo" formula="28" name="@S_CONT_BICEP"/>
+        <variable description="Contorno de sisa" formula="45" name="@S_CONT_SISA"/>
+        <variable description="Largo de manga" formula="60" name="@S_LARGO_MANGA"/>
+        <variable description="Holgura industrial bata" formula="8" name="#holgura_bata"/>
+        <variable description="Holgura dinámica y escalable de sisa (10%)" formula="@S_CONT_SISA * 0.1" name="#holgura_sisa"/>
+    </variables>
+    <draftBlock name="Bata_Elegante">
+        <calculation>
+            <point id="100" mx="0.1" my="0.1" name="F_Origen" type="single" x="0" y="0"/>
+            <point angle="270" basePoint="100" id="102" length="(@S_CONT_CUELLO/6) + 2" name="F_Escote_Alto" type="endLine"/>
+            <point angle="270" basePoint="100" id="107" length="(@S_CONT_SISA / 2) + #holgura_sisa" name="F_Nivel_Sisa" type="endLine"/>
+            <point angle="270" basePoint="100" id="109" length="Line_F_Origen_F_Nivel_Sisa / 2" name="F_Nivel_Pecho" type="endLine"/>
+            <point angle="270" basePoint="100" id="116" length="@S_TALLE_DELANTERO" name="F_Nivel_Cintura" type="endLine"/>
+            <point angle="270" basePoint="100" id="118" length="@G_LARGO_PRENDA" name="F_Nivel_Largo" type="endLine"/>
+            <point angle="0" basePoint="100" id="101" length="(@S_CONT_CUELLO/6) + 1" name="F_Escote_Ancho" type="endLine"/>
+            <point angle="180" basePoint="102" id="152" length="1" name="F_Cruce_Pecho" type="endLine"/>
+            <point angle="180" basePoint="116" id="150" length="1" name="F_Cruce_Cintura" type="endLine"/>
+            <point angle="180" basePoint="118" id="151" length="1" name="F_Cruce_Ruedo" type="endLine"/>
+            <point angle="0" basePoint="100" id="104" length="(@S_ANCHO_ESPALDA/2)" name="F_Guia_Espalda" type="endLine"/>
+            <point angle="270" basePoint="104" id="105" length="4" name="F_Caida_Hombro" type="endLine"/>
+            <line firstPoint="101" id="106" secondPoint="105"/>
+            <point angle="0" basePoint="109" id="110" length="(@S_ANCHO_ESPALDA/2) - 1.5" name="F_Ancho_Pecho" type="endLine"/>
+            <point angle="0" basePoint="107" id="111" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="F_Costado_Sisa" type="endLine"/>
+            <line firstPoint="105" id="112" secondPoint="110"/>
+            <line firstPoint="110" id="113" secondPoint="111"/>
+            <spline angle1="AngleLine_F_Escote_Ancho_F_Caida_Hombro - 90" angle2="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 200" color="black" id="114" length1="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" length2="Line_F_Caida_Hombro_F_Ancho_Pecho * 0.4" point1="105" point4="110" type="simpleInteractive"/>
+            <spline angle1="AngleLine_F_Caida_Hombro_F_Ancho_Pecho + 20" angle2="180" color="black" id="115" length1="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.4" length2="Line_F_Ancho_Pecho_F_Costado_Sisa * 0.3" point1="110" point4="111" type="simpleInteractive"/>
+            <point angle="0" basePoint="116" id="119" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="F_Costado_Cintura" type="endLine"/>
+            <point angle="0" basePoint="118" id="121" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="F_Costado_Ruedo" type="endLine"/>
+            <line firstPoint="111" id="120" secondPoint="119"/>
+            <line firstPoint="119" id="122" secondPoint="121"/>
+            <spline angle1="270" angle2="90" color="black" id="130" length1="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" length2="Line_F_Costado_Sisa_F_Costado_Cintura * 0.5" point1="111" point4="119" type="simpleInteractive"/>
+            <spline angle1="270" angle2="90" color="black" id="131" length1="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" length2="Line_F_Costado_Cintura_F_Costado_Ruedo * 0.5" point1="119" point4="121" type="simpleInteractive"/>
+            <line firstPoint="101" id="134" secondPoint="152"/>
+            <line firstPoint="152" id="133" secondPoint="151"/>
+            <line firstPoint="151" id="132" secondPoint="121"/>
+            <point angle="0" basePoint="116" id="140" length="((@S_CONT_BUSTO + #holgura_bata)/8)" name="F_Bolsillo_Centro_Top" type="endLine"/>
+            <point angle="270" basePoint="140" id="141" length="5" name="F_Bolsillo_Origen" type="endLine"/>
+            <point angle="180" basePoint="141" id="142" length="7" name="F_Bolsillo_TL" type="endLine"/>
+            <point angle="0" basePoint="141" id="143" length="7" name="F_Bolsillo_TR" type="endLine"/>
+            <point angle="270" basePoint="142" id="144" length="14" name="F_Bolsillo_BL" type="endLine"/>
+            <point angle="270" basePoint="143" id="145" length="14" name="F_Bolsillo_BR" type="endLine"/>
+            <point angle="270" basePoint="141" id="146" length="16" name="F_Bolsillo_BotCenter" type="endLine"/>
+            <line firstPoint="142" id="147" secondPoint="143"/>
+            <line firstPoint="143" id="148" secondPoint="145"/>
+            <line firstPoint="145" id="149" secondPoint="146"/>
+            <line firstPoint="146" id="160" secondPoint="144"/>
+            <line firstPoint="144" id="161" secondPoint="142"/>
+            <point id="200" mx="0.1" my="0.1" name="T_Origen" type="single" x="80" y="0"/>
+            <point angle="270" basePoint="200" id="216" length="@S_TALLE_TRASERO" name="T_Nivel_Cintura" type="endLine"/>
+            <point angle="270" basePoint="200" id="218" length="@G_LARGO_PRENDA" name="T_Nivel_Largo" type="endLine"/>
+            <point angle="180" basePoint="216" id="250" length="2.5" name="T_Centro_Cintura" type="endLine"/>
+            <spline angle1="270" angle2="90" color="black" id="247" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="200" point4="250" type="simpleInteractive"/>
+            <point angle="90" basePoint="218" id="230" length="20" name="T_Abertura_Top" type="endLine"/>
+            <point angle="0" basePoint="230" id="231" length="5" name="T_Aletilla_Top" type="endLine"/>
+            <line firstPoint="250" id="246" secondPoint="230"/>
+            <line firstPoint="230" id="245" secondPoint="231"/>
+            <point angle="180" basePoint="200" id="201" length="(@S_CONT_CUELLO/6) + 1.5" name="T_Escote_Ancho" type="endLine"/>
+            <point angle="180" basePoint="200" id="204" length="(@S_ANCHO_ESPALDA/2)" name="T_Guia_Espalda" type="endLine"/>
+            <point angle="270" basePoint="204" id="205" length="3" name="T_Caida_Hombro" type="endLine"/>
+            <line firstPoint="201" id="206" secondPoint="205"/>
+            <point angle="270" basePoint="200" id="207" length="(@S_CONT_SISA / 2) + #holgura_sisa" name="T_Nivel_Sisa" type="endLine"/>
+            <point angle="270" basePoint="200" id="209" length="Line_T_Origen_T_Nivel_Sisa / 2" name="T_Nivel_Pecho" type="endLine"/>
+            <point angle="270" basePoint="200" id="202" length="2.5" mx="-11.874" my="2.07003" name="T_Escote_Profundidad" type="endLine"/>
+            <line firstPoint="200" id="20000" secondPoint="202"/>
+            <spline angle1="180" angle2="270" color="black" id="20001" length1="Line_T_Origen_T_Escote_Profundidad * 0.6" length2="Line_T_Origen_T_Escote_Ancho * 0.4" point1="202" point4="201" type="simpleInteractive"/>
+            <spline angle1="270" angle2="90" color="black" id="20002" length1="Line_T_Origen_T_Nivel_Cintura * 0.5" length2="Line_T_Origen_T_Nivel_Cintura * 0.5" point1="202" point4="250" type="simpleInteractive"/>
+            <point angle="180" basePoint="209" curve="20002" id="90005" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Pecho" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90005" id="210" length="(@S_ANCHO_ESPALDA/2) - 0.5" name="T_Ancho_Espalda" type="endLine"/>
+            <point angle="180" basePoint="207" curve="20002" id="90006" lineColor="black" lineType="none" lineWeight="0.35" mx="0.1" my="0.1" name="T_Inter_Sisa" showPointName="false" type="curveIntersectAxis"/>
+            <point angle="180" basePoint="90006" id="211" length="((@S_CONT_BUSTO + #holgura_bata)/4)" name="T_Costado_Sisa" type="endLine"/>
+            <line firstPoint="205" id="212" secondPoint="210"/>
+            <line firstPoint="210" id="213" secondPoint="211"/>
+            <spline angle1="AngleLine_T_Escote_Ancho_T_Caida_Hombro + 90" angle2="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 165" color="black" id="214" length1="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" length2="Line_T_Caida_Hombro_T_Ancho_Espalda * 0.4" lineWeight="0.35" penStyle="solidLine" point1="205" point4="210" type="simpleInteractive"/>
+            <spline angle1="AngleLine_T_Caida_Hombro_T_Ancho_Espalda + 345" angle2="0" color="black" id="215" length1="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.4" length2="Line_T_Ancho_Espalda_T_Costado_Sisa * 0.3" point1="210" point4="211" type="simpleInteractive"/>
+            <point angle="180" basePoint="250" id="219" length="((@S_CONT_BUSTO + #holgura_bata)/4) - 2" name="T_Costado_Cintura" type="endLine"/>
+            <point angle="180" basePoint="218" id="221" length="((@G_CONT_CADERA_BAJA + #holgura_bata)/4) + 4" name="T_Costado_Ruedo" type="endLine"/>
+            <line firstPoint="211" id="220" secondPoint="219"/>
+            <line firstPoint="219" id="222" secondPoint="221"/>
+            <spline angle1="270" angle2="90" color="black" id="241" length1="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" length2="Line_T_Costado_Sisa_T_Costado_Cintura * 0.5" point1="211" point4="219" type="simpleInteractive"/>
+            <spline angle1="270" angle2="90" color="black" id="242" length1="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" length2="Line_T_Costado_Cintura_T_Costado_Ruedo * 0.5" point1="219" point4="221" type="simpleInteractive"/>
+            <point angle="270" basePoint="219" id="228" length="5" name="T_Pasamanos_Top" type="endLine"/>
+            <point angle="270" basePoint="228" id="223" length="20" name="T_Pasamanos_Bot" type="endLine"/>
+            <point angle="0" basePoint="228" id="224" length="4" name="T_Aletilla_P_Top" type="endLine"/>
+            <point angle="0" basePoint="223" id="225" length="4" name="T_Aletilla_P_Bot" type="endLine"/>
+            <line firstPoint="228" id="260" secondPoint="224"/>
+            <line firstPoint="224" id="261" secondPoint="225"/>
+            <line firstPoint="225" id="262" secondPoint="223"/>
+            <line firstPoint="101" id="20003" secondPoint="102"/>
+            <spline angle1="270" angle2="0" color="black" id="20004" length1="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" length2="Line_F_Escote_Ancho_F_Escote_Alto * 0.4" point1="101" point4="102" type="simpleInteractive"/>
+            <point angle="180" basePoint="102" id="10001" length="1" mx="-8.47139" my="1.09785" name="F_Solapa_Top" type="endLine"/>
+            <point angle="180" basePoint="118" id="10002" length="1" mx="-7.402" my="-6.87402" name="F_Solapa_Bot" type="endLine"/>
+            <line firstPoint="10001" id="20005" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="10002"/>
+            <line firstPoint="102" id="20006" secondPoint="10001"/>
+            <line firstPoint="118" id="20007" secondPoint="10002"/>
+            <point angle="180" basePoint="100" id="3002" length="(@S_CONT_CUELLO/6) + 1" mx="-7.49921" my="3.62551" name="V_Cuello_Espejo" type="endLine"/>
+            <point angle="180" basePoint="100" id="3003" length="(@S_ANCHO_ESPALDA / 2)" mx="1.25039" my="0.806194" name="V_Top_Extremo" type="endLine"/>
+            <point angle="180" basePoint="118" id="3004" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.569869" my="-2.79087" name="V_Bot_Extremo" type="endLine"/>
+            <point angle="180" basePoint="116" id="3005" length="(@S_CONT_BUSTO / 10) + 0.8" mx="0.180997" my="-1.72147" name="V_Cintura_Extremo" type="endLine"/>
+            <line firstPoint="3002" id="20008" secondPoint="102"/>
+            <line firstPoint="3005" id="20009" secondPoint="3003"/>
+            <spline angle1="270" angle2="180" color="darkBlue" id="20010" length1="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" length2="Line_V_Cuello_Espejo_F_Escote_Alto * 0.4" lineWeight="0.35" penStyle="solidLine" point1="3002" point4="10001" type="simpleInteractive"/>
+            <spline angle1="90" angle2="290" color="darkBlue" id="20011" length1="Line_V_Cintura_Extremo_V_Top_Extremo * 0.3" length2="Line_V_Cintura_Extremo_V_Top_Extremo * 0.3" lineWeight="0.35" penStyle="solidLine" point1="3005" point4="3003" type="simpleInteractive"/>
+            <line firstPoint="3003" id="20012" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="3002"/>
+            <line firstPoint="3004" id="20013" secondPoint="118"/>
+            <line firstPoint="3004" id="20014" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="3005"/>
+            <point id="1000" mx="-3.01097" my="3.8915" name="M_Origen" type="single" x="150" y="0"/>
+            <point angle="270" basePoint="1000" id="1001" length="@S_LARGO_MANGA" mx="0.861522" my="-3.08252" name="M_Largo" type="endLine"/>
+            <point angle="270" basePoint="1000" id="1002" length="(@S_CONT_BUSTO/10)+3" mx="0.667086" my="-3.47139" name="M_Copa" type="endLine"/>
+            <point angle="180" basePoint="1002" id="1003" length="(@S_CONT_BICEP/2)+2" mx="1.93092" my="2.26446" name="M_Ancho_Izq" type="endLine"/>
+            <point angle="0" basePoint="1002" id="1004" length="(@S_CONT_BICEP/2)+2" mx="-10.3185" my="2.75055" name="M_Ancho_Der" type="endLine"/>
+            <point angle="180" basePoint="1001" id="1005" length="14" mx="0.861522" my="-3.95748" name="M_Puno_Izq" type="endLine"/>
+            <point angle="0" basePoint="1001" id="1006" length="14" mx="-6.91591" my="-3.95748" name="M_Puno_Der" type="endLine"/>
+            <line firstPoint="1000" id="20015" secondPoint="1003"/>
+            <line firstPoint="1000" id="20016" secondPoint="1004"/>
+            <point firstPoint="1000" id="1020" length="Line_M_Origen_M_Ancho_Izq / 2" mx="0.278215" my="1.68115" name="M_Guia_Izq" secondPoint="1003" type="alongLine"/>
+            <point firstPoint="1000" id="1021" length="Line_M_Origen_M_Ancho_Der / 2" mx="-3.90215" my="3.72273" name="M_Guia_Der" secondPoint="1004" type="alongLine"/>
+            <spline angle1="180" angle2="AngleLine_M_Origen_M_Ancho_Izq - 180" color="black" id="20017" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.05" point1="1000" point4="1020" type="simpleInteractive"/>
+            <spline angle1="AngleLine_M_Origen_M_Ancho_Izq + 20" angle2="0" color="black" id="20018" length1="(Line_M_Origen_M_Ancho_Izq / 2) * 0.4" length2="(Line_M_Origen_M_Ancho_Izq / 2) * 0.2" point1="1020" point4="1003" type="simpleInteractive"/>
+            <spline angle1="0" angle2="AngleLine_M_Origen_M_Ancho_Der - 220" color="black" id="20019" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.55" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.05" point1="1000" point4="1021" type="simpleInteractive"/>
+            <spline angle1="AngleLine_M_Origen_M_Ancho_Der - 20" angle2="180" color="black" id="20020" length1="(Line_M_Origen_M_Ancho_Der / 2) * 0.3" length2="(Line_M_Origen_M_Ancho_Der / 2) * 0.2" point1="1021" point4="1004" type="simpleInteractive"/>
+            <line firstPoint="1003" id="20021" secondPoint="1005"/>
+            <line firstPoint="1004" id="20022" secondPoint="1006"/>
+            <spline angle1="AngleLine_M_Ancho_Izq_M_Puno_Izq + 10" angle2="AngleLine_M_Ancho_Izq_M_Puno_Izq + 177" color="black" id="20023" length1="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" length2="Line_M_Ancho_Izq_M_Puno_Izq * 0.3" lineWeight="0.35" penStyle="solidLine" point1="1003" point4="1005" type="simpleInteractive"/>
+            <spline angle1="AngleLine_M_Ancho_Der_M_Puno_Der - 10" angle2="AngleLine_M_Ancho_Der_M_Puno_Der + 183" color="black" id="20024" length1="Line_M_Ancho_Der_M_Puno_Der * 0.3" length2="Line_M_Ancho_Der_M_Puno_Der * 0.3" lineWeight="0.35" penStyle="solidLine" point1="1004" point4="1006" type="simpleInteractive"/>
+            <line firstPoint="1005" id="20025" secondPoint="1006"/>
+            <point id="2000" mx="1.55827" my="-2.81654" name="C_Origen" type="single" x="200" y="0"/>
+            <point angle="90" basePoint="2000" id="2001" length="10" mx="1.3305" my="0.73941" name="C_Alto" type="endLine"/>
+            <point angle="0" basePoint="2000" id="2002" length="(@S_CONT_CUELLO/2) + 4.5" mx="-17.0266" my="-5.90184" name="C_Ancho" type="endLine"/>
+            <point angle="90" basePoint="2002" id="2003" length="Line_C_Origen_C_Alto - 1.5" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="-8.2768" my="0.484928" name="C_Top_Ancho" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="2000" id="2004" length="Line_C_Origen_C_Ancho - 7" mx="-5.36042" my="-3.17974" name="C_Equi" type="endLine"/>
+            <point angle="180" basePoint="2002" id="2005" length="2" mx="-6.04095" my="-2.79087" name="C_Entrada" type="endLine"/>
+            <line firstPoint="2005" id="20026" secondPoint="2003"/>
+            <line firstPoint="2001" id="20027" secondPoint="2003"/>
+            <point firstPoint="2005" id="2008" length="1" mx="-8.17974" my="-4.24913" name="C_Lateral_Base" secondPoint="2003" type="alongLine"/>
+            <line firstPoint="2004" id="20028" secondPoint="2008"/>
+            <line firstPoint="2000" id="20029" secondPoint="2001"/>
+            <line firstPoint="2000" id="20030" secondPoint="2004"/>
+            <line firstPoint="2008" id="20031" secondPoint="2003"/>
+            <spline angle1="0" angle2="170" color="black" id="20032" length1="Line_C_Alto_C_Top_Ancho * 0.5" length2="Line_C_Alto_C_Top_Ancho * 0.3" lineWeight="0.35" penStyle="solidLine" point1="2001" point4="2003" type="simpleInteractive"/>
+            <spline angle1="0" angle2="AngleLine_C_Equi_C_Lateral_Base - 170" color="black" id="20033" length1="Line_C_Equi_C_Lateral_Base * 0.4" length2="Line_C_Equi_C_Lateral_Base * 0.1" point1="2004" point4="2008" type="simpleInteractive"/>
+            <line firstPoint="2003" id="20034" secondPoint="2002"/>
+            <point angle="270" basePoint="118" id="30030" length="3" lineColor="black" lineType="none" name="F_Nivel_Doblez" type="endLine"/>
+            <point angle="270" basePoint="10002" id="30031" length="3" lineColor="black" lineType="none" name="F_Solapa_Doblez_Bot" type="endLine"/>
+            <point angle="270" basePoint="3004" id="30032" length="3" lineColor="black" lineType="none" name="V_Doblez_Bot_Doblez_Extremo" type="endLine"/>
+            <point angle="270" basePoint="151" id="30033" length="3" lineColor="black" lineType="none" name="F_Cruce_Doblez" type="endLine"/>
+            <point angle="540 - AngleLine_F_Costado_Cintura_F_Costado_Ruedo" basePoint="121" id="30034" length="3" lineColor="black" lineType="none" name="F_Costado_Doblez" type="endLine"/>
+            <point angle="270" basePoint="218" id="30035" length="3" lineColor="black" lineType="none" name="T_Nivel_Doblez" type="endLine"/>
+            <point angle="540 - AngleLine_T_Costado_Cintura_T_Costado_Ruedo" basePoint="221" id="30036" length="3" lineColor="black" lineType="none" name="T_Costado_Doblez" type="endLine"/>
+            <line firstPoint="118" id="30037" lineColor="blue" lineType="solidLine" secondPoint="30030"/>
+            <line firstPoint="10002" id="30038" lineColor="blue" lineType="solidLine" secondPoint="30031"/>
+            <line firstPoint="3004" id="30039" lineColor="blue" lineType="solidLine" secondPoint="30032"/>
+            <line firstPoint="151" id="30040" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="30033"/>
+            <line firstPoint="121" id="30041" lineColor="blue" lineType="solidLine" secondPoint="30034"/>
+            <line firstPoint="218" id="30042" lineColor="blue" lineType="solidLine" secondPoint="30035"/>
+            <line firstPoint="221" id="30043" lineColor="blue" lineType="solidLine" secondPoint="30036"/>
+            <line firstPoint="30033" id="30044" lineColor="blue" lineType="solidLine" secondPoint="30034"/>
+            <line firstPoint="30030" id="30045" lineColor="blue" lineType="solidLine" secondPoint="30031"/>
+            <line firstPoint="30032" id="30046" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" secondPoint="30030"/>
+            <point angle="0" basePoint="30035" id="232" length="5" name="T_Aletilla_Bot" type="endLine"/>
+            <line firstPoint="231" id="244" secondPoint="232"/>
+            <line firstPoint="30036" id="243" secondPoint="232"/>
+            <point angle="0" basePoint="100" id="999" length="((@S_CONT_SISA + 4) &gt; (Spl_F_Caida_Hombro_F_Ancho_Pecho + Spl_F_Ancho_Pecho_F_Costado_Sisa + Spl_T_Caida_Hombro_T_Ancho_Espalda + Spl_T_Ancho_Espalda_T_Costado_Sisa)) ? 20 : 0" lineColor="black" lineType="solidLine" lineWeight="0.7" mx="5" my="5" name="ALERTA_SISA_ESTRECHA" showPointName="false" type="endLine"/>
+        </calculation>
+        <modeling>
+            <point id="30055" idObject="10001" inUse="true" mx="-8.47139" my="1.09785" showPointName="false" type="modeling"/>
+            <point id="30056" idObject="30033" inUse="true" mx="-7.81084" my="-4.45027" showPointName="false" type="modeling"/>
+            <point id="30057" idObject="30032" inUse="true" mx="-14.9437" my="-2.85744" showPointName="false" type="modeling"/>
+            <point id="30058" idObject="3005" inUse="true" mx="0.180997" my="-1.72147" showPointName="false" type="modeling"/>
+            <spline id="30059" idObject="20011" inUse="true" type="modelingSpline"/>
+            <point id="30060" idObject="3002" inUse="true" mx="-7.49921" my="3.62551" showPointName="false" type="modeling"/>
+            <spline id="30061" idObject="20010" inUse="true" type="modelingSpline"/>
+            <point id="30063" idObject="10001" inUse="true" mx="-4.87407" my="2.7649" showPointName="false" type="modeling"/>
+            <point id="30064" idObject="102" inUse="true" mx="1.75854" my="5.61389" showPointName="false" type="modeling"/>
+            <spline id="30065" idObject="20004" inUse="true" type="modelingSpline"/>
+            <point id="30066" idObject="105" inUse="true" mx="10" my="15" showPointName="false" type="modeling"/>
+            <spline id="30067" idObject="114" inUse="true" type="modelingSpline"/>
+            <spline id="30068" idObject="115" inUse="true" type="modelingSpline"/>
+            <spline id="30069" idObject="130" inUse="true" type="modelingSpline"/>
+            <spline id="30070" idObject="131" inUse="true" type="modelingSpline"/>
+            <point id="30071" idObject="30034" inUse="true" mx="-9.39044" my="-3.51305" showPointName="false" type="modeling"/>
+            <point id="30072" idObject="30033" inUse="true" mx="0.962826" my="-2.81113" showPointName="false" type="modeling"/>
+            <point id="30074" idObject="231" inUse="true" mx="-8.24983" my="3.85708" showPointName="false" type="modeling"/>
+            <point id="30075" idObject="232" inUse="true" mx="-9.82914" my="-3.864" showPointName="false" type="modeling"/>
+            <point id="30076" idObject="30036" inUse="true" mx="1.22605" my="-2.46017" showPointName="false" type="modeling"/>
+            <point id="30077" idObject="221" inUse="true" mx="0.875087" my="-2.72339" showPointName="false" type="modeling"/>
+            <spline id="30078" idObject="242" inUse="true" type="modelingSpline"/>
+            <spline id="30079" idObject="241" inUse="true" type="modelingSpline"/>
+            <spline id="30080" idObject="215" inUse="true" type="modelingSpline"/>
+            <spline id="30081" idObject="214" inUse="true" type="modelingSpline"/>
+            <point id="30082" idObject="201" inUse="true" mx="10" my="15" showPointName="false" type="modeling"/>
+            <spline id="30083" idObject="20001" inUse="true" type="modelingSpline"/>
+            <spline id="30084" idObject="20002" inUse="true" type="modelingSpline"/>
+            <point id="30085" idObject="230" inUse="true" mx="-10.9698" my="1.13715" showPointName="false" type="modeling"/>
+            <point id="30087" idObject="1006" inUse="true" mx="-6.91591" my="-3.95748" showPointName="false" type="modeling"/>
+            <spline id="30088" idObject="20023" inUse="true" type="modelingSpline"/>
+            <spline id="30089" idObject="20018" inUse="true" type="modelingSpline"/>
+            <spline id="30090" idObject="20017" inUse="true" type="modelingSpline"/>
+            <spline id="30091" idObject="20019" inUse="true" type="modelingSpline"/>
+            <spline id="30092" idObject="20020" inUse="true" type="modelingSpline"/>
+            <spline id="30093" idObject="20024" inUse="true" type="modelingSpline"/>
+            <point id="30095" idObject="2004" inUse="true" mx="-5.36042" my="-3.17974" showPointName="false" type="modeling"/>
+            <point id="30096" idObject="2000" inUse="true" mx="1.55827" my="-2.81654" showPointName="false" type="modeling"/>
+            <point id="30097" idObject="2001" inUse="true" mx="1.3305" my="0.73941" showPointName="false" type="modeling"/>
+            <spline id="30098" idObject="20032" inUse="true" type="modelingSpline"/>
+            <point id="30099" idObject="2008" inUse="true" mx="-8.17974" my="-4.24913" showPointName="false" type="modeling"/>
+            <spline id="30100" idObject="20033" inUse="true" type="modelingSpline"/>
+            <point id="30102" idObject="3005" inUse="true" mx="0.180997" my="-1.72147" showPointName="true" type="modeling"/>
+            <point id="30103" idObject="150" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30104" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="L_Cintura" type="2">
+                <nodes>
+                    <node idObject="30102" type="NodePoint"/>
+                    <node idObject="30103" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30105" idObject="3004" inUse="true" mx="0.569869" my="-2.79087" showPointName="true" type="modeling"/>
+            <point id="30106" idObject="10002" inUse="true" mx="-7.402" my="-6.87402" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30107" inUse="true" lineColor="black" lineType="solidLine" lineWeight="0.35" name="L_Largo" type="2">
+                <nodes>
+                    <node idObject="30105" type="NodePoint"/>
+                    <node idObject="30106" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30108" idObject="150" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30109" idObject="119" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30110" inUse="true" lineColor="darkBlue" lineType="solidLine" lineWeight="0.35" name="L_Cintura" type="2">
+                <nodes>
+                    <node idObject="30108" type="NodePoint"/>
+                    <node idObject="30109" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30111" idObject="10002" inUse="true" mx="-7.402" my="-6.87402" showPointName="true" type="modeling"/>
+            <point id="30112" idObject="121" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30113" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Largo" type="2">
+                <nodes>
+                    <node idObject="30111" type="NodePoint"/>
+                    <node idObject="30112" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30114" idObject="142" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30115" idObject="143" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30116" idObject="145" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30117" idObject="146" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30118" idObject="144" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30119" idObject="142" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30120" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Bolsillo" type="2">
+                <nodes>
+                    <node idObject="30114" type="NodePoint"/>
+                    <node idObject="30115" type="NodePoint"/>
+                    <node idObject="30116" type="NodePoint"/>
+                    <node idObject="30117" type="NodePoint"/>
+                    <node idObject="30118" type="NodePoint"/>
+                    <node idObject="30119" type="NodePoint"/>
+                </nodes>
+            </path>
+            <spline id="30121" idObject="241" inUse="true" type="modelingSpline"/>
+            <point id="30122" idObject="250" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30123" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Cintura" type="2">
+                <nodes>
+                    <node idObject="30121" reverse="0" type="NodeSpline"/>
+                    <node idObject="30122" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30124" idObject="221" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30125" idObject="218" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30126" inUse="true" lineColor="darkBlue" lineType="dashDotLine" lineWeight="0.35" name="L_Largo" type="2">
+                <nodes>
+                    <node idObject="30124" type="NodePoint"/>
+                    <node idObject="30125" type="NodePoint"/>
+                </nodes>
+            </path>
+            <point id="30127" idObject="228" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30128" idObject="224" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30129" idObject="225" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30130" idObject="223" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <point id="30131" idObject="228" inUse="true" mx="10" my="15" showPointName="true" type="modeling"/>
+            <path cut="false" extendEndPoint="false" extendStartPoint="false" id="30132" inUse="true" lineColor="darkBlue" lineType="dashLine" lineWeight="0.35" name="Pasamanos" type="2">
+                <nodes>
+                    <node idObject="30127" type="NodePoint"/>
+                    <node idObject="30128" type="NodePoint"/>
+                    <node idObject="30129" type="NodePoint"/>
+                    <node idObject="30130" type="NodePoint"/>
+                    <node idObject="30131" type="NodePoint"/>
+                </nodes>
+            </path>
+        </modeling>
+        <pieces>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="30062" inLayout="true" locked="false" mx="0" my="0" name="Vista Delantero" seamAllowance="true" united="false" version="2" width="1">
+                <data annotation="" foldPosition="Indefinido" fontSize="0" height="4" letter="S" mx="-511.539" my="1036.33" onFold="false" orientation="Indefinido" quantity="1" rotation="90" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="15">
+                    <line alignment="0" bold="false" italic="false" sfIncrement="18" text="%pName%"/>
+                </data>
+                <patternInfo fontSize="0" height="2" mx="-576.378" my="1908.66" rotation="0" visible="true" width="3"/>
+                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="-359.055" my="1996.86" rotation="90" visible="true"/>
+                <nodes>
+                    <node after="0" idObject="30055" type="NodePoint"/>
+                    <node after="0" before="0" idObject="30056" type="NodePoint"/>
+                    <node after="0" before="0" idObject="30057" type="NodePoint"/>
+                    <node after="0" before="0" idObject="30058" type="NodePoint"/>
+                    <node idObject="30059" reverse="0" type="NodeSpline"/>
+                    <node idObject="30060" type="NodePoint"/>
+                    <node idObject="30061" reverse="0" type="NodeSpline"/>
+                </nodes>
+                <iPaths>
+                    <record path="30104"/>
+                    <record path="30107"/>
+                </iPaths>
+            </piece>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="30073" inLayout="true" locked="false" mx="5.95534" my="-0.26697" name="Delantero" seamAllowance="true" united="false" version="2" width="1">
+                <data annotation="" foldPosition="Indefinido" fontSize="0" height="5" letter="F" mx="149.582" my="1094" onFold="false" orientation="Indefinido" quantity="1" rotation="90" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="15">
+                    <line alignment="0" bold="false" italic="false" sfIncrement="18" text="%pName%"/>
+                </data>
+                <patternInfo fontSize="0" height="2" mx="203.15" my="1908.66" rotation="0" visible="true" width="3"/>
+                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="557.48" my="1996.86" rotation="90" visible="true"/>
+                <nodes>
+                    <node before="0" idObject="30063" type="NodePoint"/>
+                    <node idObject="30064" type="NodePoint"/>
+                    <node idObject="30065" reverse="1" type="NodeSpline"/>
+                    <node idObject="30066" type="NodePoint"/>
+                    <node idObject="30067" reverse="0" type="NodeSpline"/>
+                    <node idObject="30068" reverse="0" type="NodeSpline"/>
+                    <node idObject="30069" reverse="0" type="NodeSpline"/>
+                    <node idObject="30070" reverse="0" type="NodeSpline"/>
+                    <node after="0" idObject="30071" type="NodePoint"/>
+                    <node after="0" before="0" idObject="30072" type="NodePoint"/>
+                </nodes>
+                <iPaths>
+                    <record path="30110"/>
+                    <record path="30113"/>
+                    <record path="30120"/>
+                </iPaths>
+            </piece>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="30086" inLayout="true" locked="false" mx="-9.26815" my="-0.762992" name="Espalda" seamAllowance="true" united="false" version="2" width="1">
+                <data annotation="" foldPosition="Indefinido" fontSize="0" height="5" letter="T" mx="2170.51" my="1807.73" onFold="false" orientation="Indefinido" quantity="1" rotation="90" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="15">
+                    <line alignment="0" bold="false" italic="false" sfIncrement="0" text="%pName%"/>
+                </data>
+                <patternInfo fontSize="0" height="2" mx="2149.61" my="1908.66" rotation="0" visible="true" width="3"/>
+                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="2541.73" my="1996.86" rotation="90" visible="true"/>
+                <nodes>
+                    <node after="0" idObject="30074" type="NodePoint"/>
+                    <node after="0" before="0" idObject="30075" type="NodePoint"/>
+                    <node before="0" idObject="30076" type="NodePoint"/>
+                    <node idObject="30077" type="NodePoint"/>
+                    <node idObject="30078" reverse="1" type="NodeSpline"/>
+                    <node idObject="30079" reverse="1" type="NodeSpline"/>
+                    <node idObject="30080" reverse="1" type="NodeSpline"/>
+                    <node idObject="30081" reverse="1" type="NodeSpline"/>
+                    <node idObject="30082" type="NodePoint"/>
+                    <node idObject="30083" reverse="1" type="NodeSpline"/>
+                    <node idObject="30084" reverse="0" type="NodeSpline"/>
+                    <node idObject="30085" type="NodePoint"/>
+                </nodes>
+                <iPaths>
+                    <record path="30123"/>
+                    <record path="30126"/>
+                    <record path="30132"/>
+                </iPaths>
+            </piece>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="true" hideMainPath="false" id="30094" inLayout="true" locked="false" mx="-60.3526" my="15.1305" name="Manga" seamAllowance="true" united="false" version="2" width="1">
+                <data annotation="" foldPosition="Indefinido" fontSize="0" height="5" letter="M" mx="5251.7" my="923.035" onFold="false" orientation="Indefinido" quantity="1" rotation="90" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="15">
+                    <line alignment="0" bold="false" italic="false" sfIncrement="0" text="%pName%"/>
+                </data>
+                <patternInfo fontSize="0" height="2" mx="5310.24" my="1096.06" rotation="0" visible="true" width="3"/>
+                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="5669.29" my="1184.26" rotation="90" visible="true"/>
+                <nodes>
+                    <node idObject="30087" type="NodePoint"/>
+                    <node idObject="30088" reverse="1" type="NodeSpline"/>
+                    <node idObject="30089" reverse="1" type="NodeSpline"/>
+                    <node idObject="30090" reverse="1" type="NodeSpline"/>
+                    <node idObject="30091" reverse="0" type="NodeSpline"/>
+                    <node idObject="30092" reverse="0" type="NodeSpline"/>
+                    <node idObject="30093" reverse="0" type="NodeSpline"/>
+                </nodes>
+            </piece>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="30101" inLayout="true" locked="false" mx="-121.585" my="11.8883" name="Cuello" seamAllowance="true" united="false" version="2" width="1">
+                <data annotation="" foldPosition="Indefinido" fontSize="0" height="4" letter="C" mx="7734.31" my="-378.169" onFold="false" orientation="Indefinido" quantity="1" rotation="0" rotationWay="Ninguno" tilt="Ninguno" visible="true" width="10">
+                    <line alignment="0" bold="false" italic="false" sfIncrement="0" text="%pName%"/>
+                </data>
+                <patternInfo fontSize="0" height="2" mx="7717.32" my="-226.772" rotation="0" visible="true" width="3"/>
+                <grainline arrowLength="1.27" arrows="0" length="2.667" mx="7988.98" my="-138.576" rotation="90" visible="true"/>
+                <nodes>
+                    <node idObject="30095" type="NodePoint"/>
+                    <node after="0" idObject="30096" type="NodePoint"/>
+                    <node before="0" idObject="30097" type="NodePoint"/>
+                    <node idObject="30098" reverse="0" type="NodeSpline"/>
+                    <node idObject="30099" type="NodePoint"/>
+                    <node idObject="30100" reverse="1" type="NodeSpline"/>
+                </nodes>
+            </piece>
+        </pieces>
+        <groups>
+            <group groupColor="black" id="30047" lineType="solidLine" lineWeight="0" locked="false" name="Trazos_De_Construcción" visible="false">
+                <item object="20009" tool="20009"/>
+                <item object="20008" tool="20008"/>
+                <item object="134" tool="134"/>
+                <item object="112" tool="112"/>
+                <item object="113" tool="113"/>
+                <item object="122" tool="122"/>
+                <item object="120" tool="120"/>
+                <item object="213" tool="213"/>
+                <item object="212" tool="212"/>
+                <item object="222" tool="222"/>
+                <item object="220" tool="220"/>
+                <item object="20000" tool="20000"/>
+                <item object="20015" tool="20015"/>
+                <item object="20016" tool="20016"/>
+                <item object="20022" tool="20022"/>
+                <item object="20021" tool="20021"/>
+                <item object="20027" tool="20027"/>
+                <item object="20034" tool="20034"/>
+                <item object="20028" tool="20028"/>
+            </group>
+        </groups>
+    </draftBlock>
+</pattern>
