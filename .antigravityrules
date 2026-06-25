@@ -26,6 +26,7 @@
 13. REGLA DE SISAS Y M.A.S. (Motor Anatómico de Sisas):
 - Diferenciación: La sisa delantera es más cavada (tope @S_ANCHO_PECHO); la trasera es más plana (tope @S_ANCHO_ESPALDA).
 - Acople Tubular: Las salidas de hombro y costado hacia la sisa deben estar perfectamente a plomo (90° o 270°).
+- Cálculo de Profundidad (Nivel de Sisa): El nivel de profundidad de la sisa debe establecerse invariablemente mediante la fórmula universal (@S_CONT_SISA / 2) + (#holgura_sisa / 2). Queda terminantemente prohibido anclar esta profundidad al ancho de espalda u otras variables que no reflejen el contorno anatómico real del brazo.
 - ALERTA SISA ESTRECHA: Obligatorio en toda prenda superior. Si la suma perimetral de los splines de la sisa es menor a (@S_CONT_SISA + 4), se debe disparar una línea visual de alerta (ej. de 20cm).
 - Holgura Dinámica: Prendas holgadas usan #holgura_sisa al 10%. Prendas entalladas (Blazer/Camisa) usan 15% para compensar el acercamiento de los costados al cuerpo.
 14. REGLAS DE EMPALME POR COSTURA (Longitudes):
@@ -33,8 +34,13 @@
 15. REGLAS DE CONTORNOS (Cuello, Busto, Cintura, Cadera):
 - Todo cálculo perimetral debe respetar la proporción de la pieza (/4 o /2) y SIEMPRE sumar la holgura paramétrica local (ej. (@G_CONT_CINTURA / 4) + (#holgura_cintura / 4)).
 - Contorno de Busto: Obligatoriamente, si el contorno atraviesa una pinza de busto, la fórmula DEBE restar matemáticamente la capacidad u obertura de dicha pinza (ej. - Line_F_Pinza_P1_F_Pinza_P2) para no inyectar "centímetros fantasma" al recorrido final.
-16. REGLA DE RUEDOS Y DOBLADILLOS (Espejo Paramétrico):
-- Para asegurar que los dobladillos se desdoblen perfectamente planos (radios divergentes en faldas o sacos), NO prolongues la línea del costado. Usa obligatoriamente la fórmula trigonométrica 540 - AngleLine_A_B para forzar un vector idéntico en espejo hacia abajo y afuera.
+- Entalle Automático de Costado (Bloques Base Superiores): Todo bloque superior donde la sisa caiga a la cintura debe aplicar un entalle paramétrico en el costado absorbiendo el 40% de la diferencia total entre Busto y Cintura. La fórmula inquebrantable a deducir en los puntos de cintura lateral es: `- ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)`. Esto garantiza un ajuste anatómico escalable sin variables manuales.
+16. PROTOCOLO DE RUEDOS Y LARGOS PARAMÉTRICOS (Diferenciación y Espejo):
+- Todo molde maestro debe obligatoriamente trazar el "Largo Estándar" (construcción base talla M, ej. F_Nivel_Largo) anclado a fórmulas anatómicas.
+- El "Largo Cliente" se debe trazar utilizando variables reguladoras (ej. #ajuste_largo_prenda).
+- Proyección de Costados: Para determinar el ancho preciso en el nivel del cliente, los puntos de los costados NO pueden caer a plomo. DEBEN trazarse usando intersección matemática (lineIntersect) entre el Nivel de Largo del Cliente y la prolongación de la línea de costado estándar, respetando el recorrido y pendiente de la base Talla M.
+- Extensión de Dobladillo (Espejo): Desde el punto del "Largo Cliente", la extensión para el dobladillo NO DEBE prolongar la línea a 270 grados si es un costado angulado. Se debe usar OBLIGATORIAMENTE la fórmula trigonométrica 540 - AngleLine_A_B para forzar un vector idéntico en espejo hacia abajo y afuera, garantizando un doblez que encaja milimétricamente al subir la tela.
+- Puntos de Extensión Únicos (No Redundancia): Es estrictamente redundante y está PROHIBIDO crear puntos de extensión de dobladillo específicos para la 'Talla M' o 'Largo Estándar'. El dobladillo (#ruedo_prenda) SIEMPRE debe nacer y proyectarse única y exclusivamente desde los puntos del 'Largo Cliente' (#ajuste_largo_prenda). Si la prenda requerida equivale a la Talla M, el único punto de extensión del cliente asume el dobladillo sin generar duplicidad geométrica.
 
 
 ### BLOQUE V: PROTOCOLOS DE ACTIVACIÓN DE IA
@@ -52,8 +58,8 @@ Al recibir la orden de crear un archivo `.val` desde cero, el agente tiene PROHI
 - Paso 3 (DraftBlock Base): Abrir un único <draftBlock name="Cuerpo_Principal"> con un punto <point id="1" name="F_Origen" type="single" x="0" y="0"/> (u otros orígenes distanciados).
 - Paso 4 (Pre-Inyección M.A.S.): Si la prenda pertenece al tren superior (camisa, chaqueta, bata), se debe declarar la variable ALERTA_SISA_ESTRECHA anclada a F_Origen incluso antes de empezar a dibujar las curvas, para asegurar que el blindaje nazca con el archivo.
 
-19. PROTOCOLO DE COPA DE MANGA (Estandarización Bezier):
-Toda curva que construya la copa de una manga debe ser matemáticamente escalable a su sisa perimetral. Queda ESTRICTAMENTE PROHIBIDO usar valores fijos (ej. length="10") en los tiradores Bezier de la copa. Se deben usar vectores relacionales con multiplicadores estándar:
-- Para la curva de la Cimera (Copa Superior): Multiplicadores de * 0.55 y * 0.05.
-- Para la curva de la Bajera (Sisa Inferior): Multiplicadores de * 0.4 (o 0.3) y * 0.2.
-Esto asegura que el perímetro de la copa siempre sea superior y proporcional a la sisa, permitiendo la costura de embebido natural en sastrería sin desproporcionarse al escalar tallas.
+19. PROTOCOLO DE COPA DE MANGA Y ESCALABILIDAD AL PERÍMETRO (M.A.S.):
+Toda curva que construya la copa de una manga debe ser matemáticamente escalable a su sisa perimetral. Queda ESTRICTAMENTE PROHIBIDO usar medidas de contorno de brazo (ej. `@S_CONT_BICEP`) o valores fijos para definir el ancho del bíceps en el patrón maestro si la manga está diseñada para acoplar a la sisa.
+- Anclaje Perimetral: Los puntos que definen el ancho de la manga (eje X en el nivel de sisa) DEBEN originarse mediante la herramienta matemática de Intersección de Arco y Eje (`pointIntersectionArcAndAxis`), utilizando como radio (radius) la suma exacta de las longitudes de las splines de la sisa correspondiente (ej. `Spl_F_... + Spl_F_...`).
+- Estandarización Bezier: Para la curva de la Cimera (Copa Superior): Multiplicadores de * 0.55 y * 0.05. Para la curva de la Bajera (Sisa Inferior): Multiplicadores de * 0.4 (o 0.3) y * 0.2. Esto asegura que el perímetro de la copa siempre sea superior y proporcional a la sisa, permitiendo la costura de embebido natural en sastrería sin desproporcionarse al escalar tallas.
+- ALERTA MANGA DESPROPORCIONADA: Todo patrón que contenga manga DEBE incluir un nodo de vigilancia visual `ALERTA_MANGA_DESPROPORCIONADA` anclado al origen de la manga (`M_Origen`). Debe proyectarse (ej. 20 cm) SÓLO si la suma de los perímetros de la manga es inferior a la suma de los perímetros de la sisa, indicando que la manga es inservible por ser más pequeña que la abertura.
