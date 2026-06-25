@@ -2,7 +2,7 @@
       REPORTE DEL VIGILANTE DE CONTORNOS Y PINZAS
 ==========================================================
 
-[Basico_Superior_Dama_Maestro.val]
+[Blusa_Cuello_Mao_Dama_Maestro.val]
   -> F_Costado_Cintura
      Formula: ((@S_CONT_BUSTO + #holgura_busto)/4) - ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)
      Estado: OK (Bloque con Descuento) 
