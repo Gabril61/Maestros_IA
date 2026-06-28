@@ -1,0 +1,739 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+
+
+<pattern>
+
+
+
+    <version>0.7.3</version>
+
+
+
+    <unit>cm</unit>
+
+
+
+    <description>Scrub Top Básico Maestro - TextilFit</description>
+
+
+
+    <notes>Patrón Básico Maestro validado por topología 3D, parametrizado con Reglas Antigravity.</notes>
+
+
+
+    <measurements>Maestro_Variables_IA.smis</measurements>
+
+
+
+    <variables>
+
+
+
+        <variable description="Holgura pecho por cuarto" formula="5.0" name="#holgura_pecho" />
+
+
+
+        <variable description="Extensión de hombro caído" formula="2.0" name="#hombro_extendido" />
+
+
+
+        <variable description="Largo de Manga" formula="24.0" name="#largo_manga_corta" />
+
+
+
+        <variable description="Largo extra de blusa" formula="25.0" name="#largo_extra" />
+
+
+
+        <variable name="#caida_hombro_espalda" formula="3.5" description="Caída de hombro trasero" />
+
+
+
+        <variable name="#caida_hombro_delantero" formula="4.5" description="Caída de hombro delantero" />
+
+
+
+        <variable name="#caida_cuello_espalda" formula="2.5" description="Profundidad de escote trasero" />
+
+
+
+        <variable name="#prof_cuello_v" formula="20.0" description="Profundidad del cuello V delantero" />
+
+
+
+        <variable name="#ancho_bolsillo" formula="16.5" description="Ancho del bolsillo superior e inferior" />
+
+
+
+        <variable name="#alto_bolsillo" formula="19.3" description="Altura del bolsillo" />
+
+
+
+        <variable name="#largo_abertura" formula="12.0" description="Largo de la abertura lateral (tajo)" />
+
+
+
+        <variable name="#ruedo_prenda" formula="3.0" description="Dobladillo de ruedo estandar" />
+
+
+
+    </variables>
+
+
+
+    <draftBlock name="Scrub_Top_Basico">
+
+
+
+        <calculation>
+
+
+
+            <point id="1" mx="0" my="0" name="E_Origen" type="single" x="0" y="0" />
+
+
+
+            <point angle="270" basePoint="1" id="2" length="@S_TALLE_TRASERO + #largo_extra" name="E_Largo_Total" type="endLine" />
+
+
+
+            <line firstPoint="1" id="3" secondPoint="2" />
+
+
+
+            <point angle="270" basePoint="1" id="4" length="#caida_cuello_espalda" name="E_Cuello_Prof" type="endLine" />
+
+
+
+            <point angle="0" basePoint="1" id="5" length="(@S_CONT_CUELLO / 6) + 1.5" name="E_Cuello_Ancho" type="endLine" />
+
+
+
+            <spline angle1="0" angle2="270" color="black" id="6" length1="Line_E_Origen_E_Cuello_Prof * 0.5" length2="Line_E_Origen_E_Cuello_Ancho * 0.3" lineWeight="0.35" penStyle="solidLine" point1="4" point4="5" type="simpleInteractive" />
+
+
+
+            <point angle="270" basePoint="1" id="7" length="(@S_TALLE_TRASERO / 2) + 2" name="E_Nivel_Sisa" type="endLine" />
+
+
+
+            <point angle="0" basePoint="7" id="8" length="(@S_CONT_BUSTO / 4) + #holgura_pecho" name="E_Axila" type="endLine" />
+
+
+
+            <line firstPoint="7" id="9" secondPoint="8" />
+
+
+
+            <point angle="0" basePoint="2" id="10" length="(@S_CONT_BUSTO / 4) + #holgura_pecho" name="E_Ruedo_Costado" type="endLine" />
+
+
+
+            <line firstPoint="8" id="11" secondPoint="10" />
+
+
+
+            <line firstPoint="2" id="12" secondPoint="10" />
+
+
+
+            <point angle="270" basePoint="2" id="20" length="#ruedo_prenda" name="E_Ruedo_Centro_Ext" type="endLine" />
+
+
+
+            <point angle="540 - AngleLine_E_Axila_E_Ruedo_Costado" basePoint="10" id="21" length="#ruedo_prenda" name="E_Ruedo_Costado_Ext" type="endLine" />
+
+
+
+            <line firstPoint="20" id="22" secondPoint="21" />
+
+
+
+            <line firstPoint="10" id="23" secondPoint="21" />
+
+
+
+            <line firstPoint="2" id="24" secondPoint="20" />
+
+
+
+            <point angle="0" basePoint="1" id="13" length="(@S_ANCHO_ESPALDA / 2) + #hombro_extendido" name="E_Hombro_Guia" type="endLine" />
+
+
+
+            <point angle="270" basePoint="13" id="14" length="#caida_hombro_espalda" name="E_Hombro_Punta" type="endLine" />
+
+
+
+            <line firstPoint="5" id="15" secondPoint="14" />
+
+
+
+            <line firstPoint="14" id="999" secondPoint="8" />
+
+
+
+            <point angle="270" basePoint="14" id="16" length="Line_E_Hombro_Guia_E_Hombro_Punta" name="E_Sisa_Guia" type="endLine" />
+
+
+
+            <point angle="270" basePoint="14" id="17" length="(Line_E_Hombro_Punta_E_Axila) * 0.4" name="E_Sisa_Medio_Y" type="endLine" />
+
+
+
+            <point angle="180" basePoint="17" id="18" length="0.5" name="E_Sisa_Medio" type="endLine" />
+
+
+
+            <spline angle1="AngleLine_E_Cuello_Ancho_E_Hombro_Punta - 90" angle2="180" color="black" id="19" length1="Line_E_Hombro_Punta_E_Axila * 0.4" length2="Line_E_Hombro_Punta_E_Axila * 0.4" lineWeight="0.35" penStyle="solidLine" point1="14" point4="8" type="simpleInteractive" />
+
+
+
+            <point id="100" mx="0" my="0" name="D_Origen" type="single" x="100" y="0" />
+
+
+
+            <point angle="270" basePoint="100" id="101" length="@S_TALLE_DELANTERO + #largo_extra" name="D_Largo_Total" type="endLine" />
+
+
+
+            <line firstPoint="100" id="102" secondPoint="101" />
+
+
+
+            <point angle="270" basePoint="100" id="103" length="#prof_cuello_v" name="D_Cuello_Prof" type="endLine" />
+
+
+
+            <point angle="180" basePoint="100" id="104" length="Line_E_Origen_E_Cuello_Ancho" name="D_Cuello_Ancho" type="endLine" />
+
+
+
+            <line firstPoint="104" id="105" secondPoint="103" />
+
+
+
+            <point angle="270" basePoint="100" id="106" length="Line_E_Origen_E_Nivel_Sisa" name="D_Nivel_Sisa" type="endLine" />
+
+
+
+            <point angle="180" basePoint="106" id="107" length="Line_E_Nivel_Sisa_E_Axila" name="D_Axila" type="endLine" />
+
+
+
+            <line firstPoint="106" id="108" secondPoint="107" />
+
+
+
+            <point angle="270" basePoint="107" id="109" length="Line_E_Axila_E_Ruedo_Costado" name="D_Ruedo_Costado" type="endLine" />
+
+
+
+            <line firstPoint="107" id="110" secondPoint="109" />
+
+
+
+            <line firstPoint="101" id="111" secondPoint="109" />
+
+
+
+            <point angle="270" basePoint="101" id="120" length="#ruedo_prenda" name="D_Ruedo_Centro_Ext" type="endLine" />
+
+
+
+            <point angle="540 - AngleLine_D_Axila_D_Ruedo_Costado" basePoint="109" id="121" length="#ruedo_prenda" name="D_Ruedo_Costado_Ext" type="endLine" />
+
+
+
+            <line firstPoint="120" id="122" secondPoint="121" />
+
+
+
+            <line firstPoint="109" id="123" secondPoint="121" />
+
+
+
+            <line firstPoint="101" id="124" secondPoint="120" />
+
+
+
+            <point angle="180" basePoint="100" id="112" length="Line_E_Origen_E_Hombro_Guia" name="D_Hombro_Guia" type="endLine" />
+
+
+
+            <point angle="270" basePoint="112" id="1120" length="#caida_hombro_delantero" name="D_Hombro_Temp" type="endLine" />
+
+            <line firstPoint="104" id="1121" secondPoint="1120" />
+
+
+
+            <point angle="AngleLine_D_Cuello_Ancho_D_Hombro_Temp" basePoint="104" id="113" length="Line_E_Cuello_Ancho_E_Hombro_Punta" name="D_Hombro_Punta" type="endLine" />
+
+
+
+            <line firstPoint="104" id="114" secondPoint="113" />
+
+
+
+            <line firstPoint="113" id="998" secondPoint="107" />
+
+
+
+            <spline angle1="AngleLine_D_Cuello_Ancho_D_Hombro_Punta + 90" angle2="0" color="black" id="115" length1="Line_D_Hombro_Punta_D_Axila * 0.4" length2="Line_D_Hombro_Punta_D_Axila * 0.4" lineWeight="0.35" penStyle="solidLine" point1="113" point4="107" type="simpleInteractive" />
+
+
+
+            <point id="200" mx="0" my="0" name="M_Origen" type="single" x="200" y="0" />
+
+
+
+            <point angle="270" basePoint="200" id="201" length="#largo_manga_corta" name="M_Largo_Total" type="endLine" />
+
+
+
+            <line firstPoint="200" id="202" secondPoint="201" />
+
+
+
+            <point angle="270" basePoint="200" id="203" length="(@S_ANCHO_ESPALDA / 3)" name="M_Nivel_Copa" type="endLine" />
+
+
+
+            <point angle="180" basePoint="203" id="204" length="sqrt((Spl_E_Hombro_Punta_E_Axila * Spl_E_Hombro_Punta_E_Axila) - (Line_M_Origen_M_Nivel_Copa * Line_M_Origen_M_Nivel_Copa))" name="M_Sisa_Izq" type="endLine" />
+
+
+
+            <point angle="0" basePoint="203" id="205" length="sqrt((Spl_D_Hombro_Punta_D_Axila * Spl_D_Hombro_Punta_D_Axila) - (Line_M_Origen_M_Nivel_Copa * Line_M_Origen_M_Nivel_Copa))" name="M_Sisa_Der" type="endLine" />
+
+
+
+            <line firstPoint="204" id="206" secondPoint="205" />
+
+
+
+            <spline angle1="0" angle2="180" color="black" id="207" length1="Line_M_Nivel_Copa_M_Sisa_Izq * 0.15" length2="Line_M_Nivel_Copa_M_Sisa_Izq * 0.55" lineWeight="0.35" penStyle="solidLine" point1="204" point4="200" type="simpleInteractive" />
+
+
+
+            <spline angle1="0" angle2="180" color="black" id="208" length1="Line_M_Nivel_Copa_M_Sisa_Der * 0.55" length2="Line_M_Nivel_Copa_M_Sisa_Der * 0.15" lineWeight="0.35" penStyle="solidLine" point1="200" point4="205" type="simpleInteractive" />
+
+
+
+            <point angle="90" basePoint="200" id="2000" length="((Spl_E_Hombro_Punta_E_Axila + Spl_D_Hombro_Punta_D_Axila) &gt; (Spl_M_Sisa_Izq_M_Origen + Spl_M_Origen_M_Sisa_Der)) ? 20 : 0" name="ALERTA_MANGA_DESPROPORCIONADA" type="endLine" />
+
+
+
+            <line firstPoint="200" id="2001" secondPoint="2000" />
+
+
+
+            <point angle="180" basePoint="201" id="209" length="Line_M_Nivel_Copa_M_Sisa_Izq * 0.85" name="M_Ruedo_Izq" type="endLine" />
+
+
+
+            <point angle="0" basePoint="201" id="210" length="Line_M_Nivel_Copa_M_Sisa_Der * 0.85" name="M_Ruedo_Der" type="endLine" />
+
+
+
+            <line firstPoint="209" id="211" secondPoint="210" />
+
+
+
+            <line firstPoint="204" id="212" secondPoint="209" />
+
+
+
+            <line firstPoint="205" id="213" secondPoint="210" />
+
+
+
+            <point id="300" mx="0" my="0" name="B_Origen" type="single" x="300" y="0" />
+
+
+
+            <point angle="270" basePoint="300" id="301" length="#alto_bolsillo" name="B_Alto" type="endLine" />
+
+
+
+            <point angle="0" basePoint="300" id="302" length="#ancho_bolsillo" name="B_Ancho_Top" type="endLine" />
+
+
+
+            <point angle="0" basePoint="301" id="303" length="#ancho_bolsillo" name="B_Ancho_Bot" type="endLine" />
+
+
+
+            <line firstPoint="300" id="304" secondPoint="301" />
+
+
+
+            <line firstPoint="300" id="305" secondPoint="302" />
+
+
+
+            <line firstPoint="301" id="306" secondPoint="303" />
+
+
+
+            <line firstPoint="302" id="307" secondPoint="303" />
+
+
+
+            <point id="800" name="E_Abertura" type="endLine" basePoint="10" angle="90" length="#largo_abertura" />
+
+
+
+            <point id="801" name="D_Abertura" type="endLine" basePoint="109" angle="90" length="#largo_abertura" />
+
+
+
+        </calculation>
+
+
+
+        <modeling>
+
+
+
+            <point id="400" idObject="4" inUse="true" type="modeling" />
+
+
+
+            <point id="401" idObject="2" inUse="true" type="modeling" />
+
+
+
+            <point id="402" idObject="10" inUse="true" type="modeling" />
+
+
+
+            <point id="403" idObject="8" inUse="true" type="modeling" />
+
+
+
+            <spline id="405" idObject="19" inUse="true" type="modelingSpline" />
+
+
+
+            <point id="406" idObject="14" inUse="true" type="modeling" />
+
+
+
+            <point id="407" idObject="5" inUse="true" type="modeling" />
+
+
+
+            <spline id="408" idObject="6" inUse="true" type="modelingSpline" />
+
+
+
+            <point id="500" idObject="101" inUse="true" type="modeling" />
+
+
+
+            <point id="501" idObject="103" inUse="true" type="modeling" />
+
+
+
+            <point id="503" idObject="104" inUse="true" type="modeling" />
+
+
+
+            <point id="504" idObject="113" inUse="true" type="modeling" />
+
+
+
+            <spline id="505" idObject="115" inUse="true" type="modelingSpline" />
+
+
+
+            <point id="506" idObject="107" inUse="true" type="modeling" />
+
+
+
+            <point id="507" idObject="109" inUse="true" type="modeling" />
+
+
+
+            <point id="600" idObject="204" inUse="true" type="modeling" />
+
+
+
+            <spline id="601" idObject="207" inUse="true" type="modelingSpline" />
+
+
+
+            <point id="602" idObject="200" inUse="true" type="modeling" />
+
+
+
+            <spline id="603" idObject="208" inUse="true" type="modelingSpline" />
+
+
+
+            <point id="604" idObject="205" inUse="true" type="modeling" />
+
+
+
+            <point id="605" idObject="210" inUse="true" type="modeling" />
+
+
+
+            <point id="606" idObject="209" inUse="true" type="modeling" />
+
+
+
+            <point id="700" idObject="300" inUse="true" type="modeling" />
+
+
+
+            <point id="701" idObject="301" inUse="true" type="modeling" />
+
+
+
+            <point id="702" idObject="303" inUse="true" type="modeling" />
+
+
+
+            <point id="703" idObject="302" inUse="true" type="modeling" />
+
+
+
+            <point id="802" idObject="800" inUse="true" type="modeling" />
+
+
+
+            <point id="803" idObject="801" inUse="true" type="modeling" />
+
+
+
+            <point id="411" idObject="20" inUse="true" type="modeling" />
+
+
+
+            <point id="412" idObject="21" inUse="true" type="modeling" />
+
+
+
+            <point id="511" idObject="120" inUse="true" type="modeling" />
+
+
+
+            <point id="512" idObject="121" inUse="true" type="modeling" />
+
+
+
+        </modeling>
+
+
+
+        <pieces>
+
+
+
+            <piece id="410" inLayout="true" name="Espalda" seamAllowance="true" version="2">
+
+
+
+                <nodes>
+
+
+
+                    <node idObject="400" type="NodePoint" />
+
+
+
+                    <node idObject="401" type="NodePoint" />
+
+
+
+                    <node idObject="411" type="NodePoint" />
+
+
+
+                    <node idObject="412" type="NodePoint" />
+
+
+
+                    <node idObject="402" type="NodePoint" />
+
+
+
+                    <node idObject="802" type="NodePoint" />
+
+
+
+                    <node idObject="403" type="NodePoint" />
+
+
+
+                    <node idObject="405" reverse="1" type="NodeSpline" />
+
+
+
+                    <node idObject="406" type="NodePoint" />
+
+
+
+                    <node idObject="407" type="NodePoint" />
+
+
+
+                    <node idObject="408" reverse="1" type="NodeSpline" />
+
+
+
+                </nodes>
+
+
+
+            </piece>
+
+
+
+            <piece id="510" inLayout="true" name="Delantero" seamAllowance="true" version="2">
+
+
+
+                <nodes>
+
+
+
+                    <node idObject="500" type="NodePoint" />
+
+
+
+                    <node idObject="501" type="NodePoint" />
+
+
+
+                    <node idObject="503" type="NodePoint" />
+
+
+
+                    <node idObject="504" type="NodePoint" />
+
+
+
+                    <node idObject="505" reverse="0" type="NodeSpline" />
+
+
+
+                    <node idObject="506" type="NodePoint" />
+
+
+
+                    <node idObject="803" type="NodePoint" />
+
+
+
+                    <node idObject="507" type="NodePoint" />
+
+
+
+                    <node idObject="512" type="NodePoint" />
+
+
+
+                    <node idObject="511" type="NodePoint" />
+
+
+
+                </nodes>
+
+
+
+            </piece>
+
+
+
+            <piece id="610" inLayout="true" name="Manga" seamAllowance="true" version="2">
+
+
+
+                <nodes>
+
+
+
+                    <node idObject="600" type="NodePoint" />
+
+
+
+                    <node idObject="601" reverse="0" type="NodeSpline" />
+
+
+
+                    <node idObject="602" type="NodePoint" />
+
+
+
+                    <node idObject="603" reverse="0" type="NodeSpline" />
+
+
+
+                    <node idObject="604" type="NodePoint" />
+
+
+
+                    <node idObject="605" type="NodePoint" />
+
+
+
+                    <node idObject="606" type="NodePoint" />
+
+
+
+                </nodes>
+
+
+
+            </piece>
+
+
+
+            <piece id="710" inLayout="true" name="Bolsillo" seamAllowance="true" version="2">
+
+
+
+                <nodes>
+
+
+
+                    <node idObject="700" type="NodePoint" />
+
+
+
+                    <node idObject="701" type="NodePoint" />
+
+
+
+                    <node idObject="702" type="NodePoint" />
+
+
+
+                    <node idObject="703" type="NodePoint" />
+
+
+
+                </nodes>
+
+
+
+            </piece>
+
+
+
+        </pieces>
+
+
+
+        <groups />
+
+
+
+    </draftBlock>
+
+
+
+</pattern>
