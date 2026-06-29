@@ -2,13 +2,19 @@
       REPORTE DEL VIGILANTE DE CONTORNOS Y PINZAS
 ==========================================================
 
-[Blusa_Cuello_Mao_Dama_Maestro.val]
-  -> F_Costado_Cintura
+[Basico_Superior_Dama_Maestro.val]
+  -> F_Costado_Cintura_Ref
      Formula: ((@S_CONT_BUSTO + #holgura_busto)/4) - ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)
      Estado: OK (Bloque con Descuento) 
-  -> F_Costado_Ruedo
+  -> F_Costado_Cintura
+     Formula: sqrt(((@S_TALLE_TRASERO - ((@S_CONT_SISA / 2) + (#holgura_sisa / 2))) * (@S_TALLE_TRASERO - ((@S_CONT_SISA / 2) + (#holgura_sisa / 2)))) + (((@S_CONT_BUSTO - @G_CONT_CINTURA)/10) * ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)))
+     Estado: OK (Bloque con Descuento) 
+  -> F_Costado_Ruedo_Ref
      Formula: ((@G_CONT_CADERA_BAJA + #holgura_cadera)/4)
      Estado: OK 
+  -> F_Costado_Ruedo
+     Formula: sqrt((25 * 25) + (((((@S_CONT_BUSTO + #holgura_busto)/4) - ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)) - ((@G_CONT_CADERA_BAJA + #holgura_cadera)/4)) * ((((@S_CONT_BUSTO + #holgura_busto)/4) - ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)) - ((@G_CONT_CADERA_BAJA + #holgura_cadera)/4))))
+     Estado: OK (Bloque con Descuento) 
   -> T_Costado_Cintura
      Formula: ((@S_CONT_BUSTO + #holgura_busto)/4) - ((@S_CONT_BUSTO - @G_CONT_CINTURA)/10)
      Estado: OK (Bloque con Descuento) 
